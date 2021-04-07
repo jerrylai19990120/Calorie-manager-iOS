@@ -9,11 +9,14 @@
 /* Begin PBXBuildFile section */
 		92BF5429261E419D0055051E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BF5428261E419D0055051E /* AppDelegate.m */; };
 		92BF542C261E419D0055051E /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BF542B261E419D0055051E /* SceneDelegate.m */; };
-		92BF542F261E419D0055051E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BF542E261E419D0055051E /* ViewController.m */; };
+		92BF542F261E419D0055051E /* WelcomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BF542E261E419D0055051E /* WelcomeVC.m */; };
 		92BF5432261E419D0055051E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92BF5430261E419D0055051E /* Main.storyboard */; };
 		92BF5434261E419F0055051E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92BF5433261E419F0055051E /* Assets.xcassets */; };
 		92BF5437261E419F0055051E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92BF5435261E419F0055051E /* LaunchScreen.storyboard */; };
 		92BF543A261E419F0055051E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BF5439261E419F0055051E /* main.m */; };
+		92BF5449261E460D0055051E /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BF5448261E460D0055051E /* LoginVC.m */; };
+		92BF544B261E469A0055051E /* SignupVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BF544A261E469A0055051E /* SignupVC.m */; };
+		92BF544D261E47090055051E /* AuthService.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BF544C261E47090055051E /* AuthService.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,13 +25,16 @@
 		92BF5428261E419D0055051E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		92BF542A261E419D0055051E /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		92BF542B261E419D0055051E /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		92BF542D261E419D0055051E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		92BF542E261E419D0055051E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		92BF542D261E419D0055051E /* WelcomeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WelcomeVC.h; sourceTree = "<group>"; };
+		92BF542E261E419D0055051E /* WelcomeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WelcomeVC.m; sourceTree = "<group>"; };
 		92BF5431261E419D0055051E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		92BF5433261E419F0055051E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		92BF5436261E419F0055051E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		92BF5438261E419F0055051E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92BF5439261E419F0055051E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		92BF5448261E460D0055051E /* LoginVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginVC.m; sourceTree = "<group>"; };
+		92BF544A261E469A0055051E /* SignupVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignupVC.m; sourceTree = "<group>"; };
+		92BF544C261E47090055051E /* AuthService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuthService.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,12 +67,15 @@
 		92BF5426261E419D0055051E /* Calorie Manager */ = {
 			isa = PBXGroup;
 			children = (
+				92BF5444261E42D10055051E /* Utilities */,
+				92BF5443261E42C50055051E /* Services */,
+				92BF5442261E42B90055051E /* ViewControllers */,
+				92BF5441261E42970055051E /* Views */,
+				92BF5440261E428F0055051E /* Models */,
 				92BF5427261E419D0055051E /* AppDelegate.h */,
 				92BF5428261E419D0055051E /* AppDelegate.m */,
 				92BF542A261E419D0055051E /* SceneDelegate.h */,
 				92BF542B261E419D0055051E /* SceneDelegate.m */,
-				92BF542D261E419D0055051E /* ViewController.h */,
-				92BF542E261E419D0055051E /* ViewController.m */,
 				92BF5430261E419D0055051E /* Main.storyboard */,
 				92BF5433261E419F0055051E /* Assets.xcassets */,
 				92BF5435261E419F0055051E /* LaunchScreen.storyboard */,
@@ -74,6 +83,46 @@
 				92BF5439261E419F0055051E /* main.m */,
 			);
 			path = "Calorie Manager";
+			sourceTree = "<group>";
+		};
+		92BF5440261E428F0055051E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		92BF5441261E42970055051E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		92BF5442261E42B90055051E /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				92BF542D261E419D0055051E /* WelcomeVC.h */,
+				92BF542E261E419D0055051E /* WelcomeVC.m */,
+				92BF5448261E460D0055051E /* LoginVC.m */,
+				92BF544A261E469A0055051E /* SignupVC.m */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		92BF5443261E42C50055051E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				92BF544C261E47090055051E /* AuthService.m */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		92BF5444261E42D10055051E /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,8 +195,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92BF542F261E419D0055051E /* ViewController.m in Sources */,
+				92BF542F261E419D0055051E /* WelcomeVC.m in Sources */,
 				92BF5429261E419D0055051E /* AppDelegate.m in Sources */,
+				92BF544D261E47090055051E /* AuthService.m in Sources */,
+				92BF544B261E469A0055051E /* SignupVC.m in Sources */,
+				92BF5449261E460D0055051E /* LoginVC.m in Sources */,
 				92BF543A261E419F0055051E /* main.m in Sources */,
 				92BF542C261E419D0055051E /* SceneDelegate.m in Sources */,
 			);
@@ -298,7 +350,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "jerry-lai.Calorie-Manager";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -315,7 +367,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "jerry-lai.Calorie-Manager";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -6,13 +6,17 @@
 //  Copyright © 2021 Jerry Lai. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "WelcomeVC.h"
 
-@interface ViewController ()
+@interface WelcomeVC ()
+@property (weak, nonatomic) IBOutlet UIButton *loginBtn;
+
+@property (weak, nonatomic) IBOutlet UIButton *SignUpBtn;
+
 
 @end
 
-@implementation ViewController
+@implementation WelcomeVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
