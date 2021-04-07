@@ -15,18 +15,61 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y2c-FV-uXz">
-                                <rect key="frame" x="186" y="684" width="42" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Log in"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y2c-FV-uXz">
+                                <rect key="frame" x="87" y="658" width="240" height="67"/>
+                                <color key="backgroundColor" red="0.96862745098039216" green="0.52941176470588236" blue="0.54509803921568623" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="2JL-Dj-uTP"/>
+                                    <constraint firstAttribute="height" constant="67" id="Caa-dD-oLW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="22"/>
+                                <state key="normal" title="Log in">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="18C-Cs-ccc" kind="presentation" modalPresentationStyle="fullScreen" id="HAu-jj-AHV"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lJR-Ze-6Ss">
-                                <rect key="frame" x="181" y="749" width="52" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Sign up"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lJR-Ze-6Ss">
+                                <rect key="frame" x="87" y="750" width="240" height="67"/>
+                                <color key="backgroundColor" red="0.1764705882352941" green="0.2196078431372549" blue="0.38431372549019605" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="d7Q-Ds-GfC"/>
+                                    <constraint firstAttribute="height" constant="67" id="jb4-l2-Gau"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="22"/>
+                                <state key="normal" title="Sign up">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="FDz-18-dgx" kind="presentation" modalPresentationStyle="fullScreen" id="WfS-rY-pe9"/>
+                                </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="gy3-oZ-sR2">
+                                <rect key="frame" x="74" y="271" width="266" height="266"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="266" id="GWX-5b-0yR"/>
+                                    <constraint firstAttribute="width" constant="266" id="jBa-YO-7d3"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calorie Manager" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yi0-ol-7GA">
+                                <rect key="frame" x="98" y="126" width="218" height="39"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="28"/>
+                                <color key="textColor" red="0.1764705882" green="0.21960784310000001" blue="0.38431372549999998" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.94509803921568625" green="0.94901960784313721" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="lJR-Ze-6Ss" secondAttribute="bottom" constant="45" id="54t-GH-SeW"/>
+                            <constraint firstItem="gy3-oZ-sR2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ow9-FH-1tg"/>
+                            <constraint firstItem="yi0-ol-7GA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="82" id="Qme-aU-YY3"/>
+                            <constraint firstItem="gy3-oZ-sR2" firstAttribute="top" secondItem="yi0-ol-7GA" secondAttribute="bottom" constant="106" id="RtW-Ky-raU"/>
+                            <constraint firstItem="yi0-ol-7GA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="T9E-PA-EfK"/>
+                            <constraint firstItem="Y2c-FV-uXz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oQf-JH-3RM"/>
+                            <constraint firstItem="lJR-Ze-6Ss" firstAttribute="top" secondItem="Y2c-FV-uXz" secondAttribute="bottom" constant="25" id="orP-vf-ElA"/>
+                            <constraint firstItem="lJR-Ze-6Ss" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zSo-Eu-Rnj"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
@@ -36,7 +79,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="118"/>
+            <point key="canvasLocation" x="137.68115942028987" y="117.85714285714285"/>
         </scene>
         <!--SignupVC-->
         <scene sceneID="5Kg-hD-Cw5">
@@ -51,7 +94,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nj9-Gc-fji" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="167" y="796"/>
+            <point key="canvasLocation" x="138" y="869"/>
         </scene>
         <!--LoginVC-->
         <scene sceneID="Y0b-ne-107">
@@ -66,7 +109,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gPR-WL-lyC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="825" y="118"/>
+            <point key="canvasLocation" x="939" y="118"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bg" width="412" height="412"/>
+    </resources>
 </document>
