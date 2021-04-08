@@ -14,16 +14,11 @@ IB_DESIGNABLE
 {
     self = [super init];
     if (self) {
-        
+        self.layer.cornerRadius = 10;
+        self.layer.masksToBounds = true;
     }
     return self;
 }
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
+
 
 @end
