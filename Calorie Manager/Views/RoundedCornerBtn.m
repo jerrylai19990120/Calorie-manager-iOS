@@ -7,6 +7,7 @@
 //
 
 #import "RoundedCornerBtn.h"
+
 IB_DESIGNABLE
 @implementation RoundedCornerBtn
 
@@ -15,7 +16,6 @@ IB_DESIGNABLE
     self = [super init];
     if (self) {
         self.layer.cornerRadius = 10;
-        self.layer.masksToBounds = true;
     }
     return self;
 }

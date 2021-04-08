@@ -19,6 +19,10 @@
     // Do any additional setup after loading the view.
 }
 
+- (IBAction)backBtnPressed:(id)sender {
+    [self dismissViewControllerAnimated:true completion:nil];
+}
+
 /*
 #pragma mark - Navigation
 
