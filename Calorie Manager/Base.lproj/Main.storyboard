@@ -15,7 +15,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y2c-FV-uXz">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y2c-FV-uXz" customClass="RoundedCornerBtn">
                                 <rect key="frame" x="87" y="658" width="240" height="67"/>
                                 <color key="backgroundColor" red="0.96862745098039216" green="0.52941176470588236" blue="0.54509803921568623" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -30,7 +30,7 @@
                                     <segue destination="18C-Cs-ccc" kind="presentation" modalPresentationStyle="fullScreen" id="HAu-jj-AHV"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lJR-Ze-6Ss">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lJR-Ze-6Ss" customClass="RoundedCornerBtn">
                                 <rect key="frame" x="87" y="750" width="240" height="67"/>
                                 <color key="backgroundColor" red="0.1764705882352941" green="0.2196078431372549" blue="0.38431372549019605" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -45,26 +45,21 @@
                                     <segue destination="FDz-18-dgx" kind="presentation" modalPresentationStyle="fullScreen" id="WfS-rY-pe9"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="gy3-oZ-sR2">
-                                <rect key="frame" x="74" y="271" width="266" height="266"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="266" id="GWX-5b-0yR"/>
-                                    <constraint firstAttribute="width" constant="266" id="jBa-YO-7d3"/>
-                                </constraints>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calorie Manager" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yi0-ol-7GA">
                                 <rect key="frame" x="98" y="126" width="218" height="39"/>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="28"/>
                                 <color key="textColor" red="0.1764705882" green="0.21960784310000001" blue="0.38431372549999998" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="gy3-oZ-sR2">
+                                <rect key="frame" x="38" y="224" width="338" height="329"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.94509803921568625" green="0.94901960784313721" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="lJR-Ze-6Ss" secondAttribute="bottom" constant="45" id="54t-GH-SeW"/>
-                            <constraint firstItem="gy3-oZ-sR2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ow9-FH-1tg"/>
                             <constraint firstItem="yi0-ol-7GA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="82" id="Qme-aU-YY3"/>
-                            <constraint firstItem="gy3-oZ-sR2" firstAttribute="top" secondItem="yi0-ol-7GA" secondAttribute="bottom" constant="106" id="RtW-Ky-raU"/>
                             <constraint firstItem="yi0-ol-7GA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="T9E-PA-EfK"/>
                             <constraint firstItem="Y2c-FV-uXz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oQf-JH-3RM"/>
                             <constraint firstItem="lJR-Ze-6Ss" firstAttribute="top" secondItem="Y2c-FV-uXz" secondAttribute="bottom" constant="25" id="orP-vf-ElA"/>
@@ -113,6 +108,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bg" width="412" height="412"/>
+        <image name="bg" width="338" height="634"/>
     </resources>
 </document>

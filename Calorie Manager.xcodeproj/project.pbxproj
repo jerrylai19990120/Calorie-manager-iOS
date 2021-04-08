@@ -14,9 +14,10 @@
 		92BF5434261E419F0055051E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92BF5433261E419F0055051E /* Assets.xcassets */; };
 		92BF5437261E419F0055051E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92BF5435261E419F0055051E /* LaunchScreen.storyboard */; };
 		92BF543A261E419F0055051E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BF5439261E419F0055051E /* main.m */; };
-		92BF5449261E460D0055051E /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BF5448261E460D0055051E /* LoginVC.m */; };
-		92BF544B261E469A0055051E /* SignupVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BF544A261E469A0055051E /* SignupVC.m */; };
 		92BF544D261E47090055051E /* AuthService.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BF544C261E47090055051E /* AuthService.m */; };
+		92BF5453261E83960055051E /* RoundedCornerBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BF5452261E83960055051E /* RoundedCornerBtn.m */; };
+		92BF5456261E83DD0055051E /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BF5455261E83DD0055051E /* LoginVC.m */; };
+		92BF5459261E83F00055051E /* SignupVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BF5458261E83F00055051E /* SignupVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,9 +33,13 @@
 		92BF5436261E419F0055051E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		92BF5438261E419F0055051E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92BF5439261E419F0055051E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		92BF5448261E460D0055051E /* LoginVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginVC.m; sourceTree = "<group>"; };
-		92BF544A261E469A0055051E /* SignupVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignupVC.m; sourceTree = "<group>"; };
 		92BF544C261E47090055051E /* AuthService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuthService.m; sourceTree = "<group>"; };
+		92BF5451261E83960055051E /* RoundedCornerBtn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RoundedCornerBtn.h; sourceTree = "<group>"; };
+		92BF5452261E83960055051E /* RoundedCornerBtn.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RoundedCornerBtn.m; sourceTree = "<group>"; };
+		92BF5454261E83DD0055051E /* LoginVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginVC.h; sourceTree = "<group>"; };
+		92BF5455261E83DD0055051E /* LoginVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginVC.m; sourceTree = "<group>"; };
+		92BF5457261E83F00055051E /* SignupVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignupVC.h; sourceTree = "<group>"; };
+		92BF5458261E83F00055051E /* SignupVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignupVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +100,8 @@
 		92BF5441261E42970055051E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				92BF5451261E83960055051E /* RoundedCornerBtn.h */,
+				92BF5452261E83960055051E /* RoundedCornerBtn.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -104,8 +111,10 @@
 			children = (
 				92BF542D261E419D0055051E /* WelcomeVC.h */,
 				92BF542E261E419D0055051E /* WelcomeVC.m */,
-				92BF5448261E460D0055051E /* LoginVC.m */,
-				92BF544A261E469A0055051E /* SignupVC.m */,
+				92BF5454261E83DD0055051E /* LoginVC.h */,
+				92BF5455261E83DD0055051E /* LoginVC.m */,
+				92BF5457261E83F00055051E /* SignupVC.h */,
+				92BF5458261E83F00055051E /* SignupVC.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -198,9 +207,10 @@
 				92BF542F261E419D0055051E /* WelcomeVC.m in Sources */,
 				92BF5429261E419D0055051E /* AppDelegate.m in Sources */,
 				92BF544D261E47090055051E /* AuthService.m in Sources */,
-				92BF544B261E469A0055051E /* SignupVC.m in Sources */,
-				92BF5449261E460D0055051E /* LoginVC.m in Sources */,
+				92BF5453261E83960055051E /* RoundedCornerBtn.m in Sources */,
+				92BF5459261E83F00055051E /* SignupVC.m in Sources */,
 				92BF543A261E419F0055051E /* main.m in Sources */,
+				92BF5456261E83DD0055051E /* LoginVC.m in Sources */,
 				92BF542C261E419D0055051E /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
