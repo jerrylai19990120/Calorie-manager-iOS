@@ -11,14 +11,19 @@
 IB_DESIGNABLE
 @implementation RoundedCornerBtn
 
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-        self.layer.cornerRadius = 10;
-    }
-    return self;
+- (void)awakeFromNib{
+    [super awakeFromNib];
+    [self setUpView];
 }
 
+- (void)setUpView{
+    self.layer.cornerRadius = 10;
+    self.layer.masksToBounds = true;
+}
+
+- (void)prepareForInterfaceBuilder{
+    [self prepareForInterfaceBuilder];
+    [self setUpView];
+}
 
 @end
