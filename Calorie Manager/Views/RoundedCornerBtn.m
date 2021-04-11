@@ -12,7 +12,6 @@ IB_DESIGNABLE
 @implementation RoundedCornerBtn
 
 - (void)awakeFromNib{
-    [super awakeFromNib];
     [self setUpView];
 }
 
