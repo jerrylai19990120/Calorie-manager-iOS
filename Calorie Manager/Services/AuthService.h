@@ -11,7 +11,9 @@
 
 
 @interface AuthService: NSObject
-
++ (instancetype)sharedInstance;
+- (void)loginUser;
+- (void)createUser;
 @end
 
 #endif /* AuthService_h */

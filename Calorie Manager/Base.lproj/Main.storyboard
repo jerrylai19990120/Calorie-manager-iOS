@@ -173,6 +173,9 @@
                                         <state key="normal" title="Join us">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="signupBtnPressed:" destination="FDz-18-dgx" eventType="touchUpInside" id="h2n-My-QQT"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hoq-mi-HCy">
                                         <rect key="frame" x="0.0" y="525" width="260" height="213"/>
@@ -273,6 +276,9 @@
                                                 <state key="normal" title="Log in">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="loginBtnPressed:" destination="18C-Cs-ccc" eventType="touchUpInside" id="tM2-wX-cPf"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aAz-Od-K3I">
                                                 <rect key="frame" x="106" y="192" width="48" height="318"/>

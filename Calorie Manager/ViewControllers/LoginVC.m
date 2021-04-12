@@ -7,6 +7,7 @@
 //
 
 #import "LoginVC.h"
+#import "AuthService.h"
 
 @interface LoginVC ()
 
@@ -21,6 +22,12 @@
 
 - (IBAction)backBtnPressed:(id)sender {
     [self dismissViewControllerAnimated:true completion:nil];
+}
+
+- (IBAction)loginBtnPressed:(id)sender {
+    AuthService *instance = [AuthService sharedInstance];
+
+    [instance loginUser];
 }
 
 /*

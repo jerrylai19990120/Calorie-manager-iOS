@@ -28,11 +28,11 @@
 }
 
 - (void)loginUser{
-    
+    NSLog(@"log in");
 }
 
 -(void)createUser{
-    
+    NSLog(@"sign up");
 }
 
 @end

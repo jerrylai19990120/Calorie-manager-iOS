@@ -7,6 +7,7 @@
 //
 
 #import "SignupVC.h"
+#import "AuthService.h"
 
 @interface SignupVC ()
 
@@ -21,6 +22,12 @@
 - (IBAction)backBtnPressed:(id)sender {
     [self dismissViewControllerAnimated:true completion:nil];
 }
+
+- (IBAction)signupBtnPressed:(id)sender {
+    AuthService *instance = [AuthService sharedInstance];
+    [instance createUser];
+}
+
 
 /*
 #pragma mark - Navigation
