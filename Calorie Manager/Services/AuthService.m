@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "AuthService.h"
+@import Firebase;
 
 @interface AuthService()
 + (instancetype)sharedInstance;
@@ -27,12 +28,16 @@
     return sharedInstance;
 }
 
-- (void)loginUser{
-    NSLog(@"log in");
+- (void)loginUserWithEmail:(NSString *)email password:(NSString *)password{
+    [[FIRAuth auth] signInWithEmail:email password:password completion:^(FIRAuthDataResult * _Nullable authResult, NSError * _Nullable error) {
+        
+    }];
 }
 
--(void)createUser{
-    NSLog(@"sign up");
+-(void)createUserWithEmail:(NSString *)email password:(NSString *)password{
+    [[FIRAuth auth] createUserWithEmail:email password:password completion:^(FIRAuthDataResult * _Nullable authResult, NSError * _Nullable error) {
+        
+    }];
 }
 
 @end

@@ -10,6 +10,10 @@
 #import "AuthService.h"
 
 @interface SignupVC ()
+@property (weak, nonatomic) IBOutlet UITextField *usernameTxt;
+@property (weak, nonatomic) IBOutlet UITextField *emailTxt;
+@property (weak, nonatomic) IBOutlet UITextField *password;
+@property (weak, nonatomic) IBOutlet UITextField *confirmPassword;
 
 @end
 
@@ -25,7 +29,7 @@
 
 - (IBAction)signupBtnPressed:(id)sender {
     AuthService *instance = [AuthService sharedInstance];
-    [instance createUser];
+    [instance createUserWithEmail:self.emailTxt.text password:self.password.text];
 }
 
 

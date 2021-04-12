@@ -10,6 +10,8 @@
 #import "AuthService.h"
 
 @interface LoginVC ()
+@property (weak, nonatomic) IBOutlet UITextField *emailTxt;
+@property (weak, nonatomic) IBOutlet UITextField *passwordTxt;
 
 @end
 
@@ -27,7 +29,7 @@
 - (IBAction)loginBtnPressed:(id)sender {
     AuthService *instance = [AuthService sharedInstance];
 
-    [instance loginUser];
+    [instance loginUserWithEmail:self.emailTxt.text password:self.passwordTxt.text];
 }
 
 /*
