@@ -8,7 +8,7 @@
 
 #import "RoundedCornerBtn.h"
 
-IB_DESIGNABLE
+
 @implementation RoundedCornerBtn
 
 - (void)awakeFromNib{

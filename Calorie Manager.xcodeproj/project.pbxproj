@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		16FAEC126A1308689A28B388 /* Pods_Calorie_Manager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D740D1ACFB7DFAB4FB56FA8 /* Pods_Calorie_Manager.framework */; };
+		9231785D2623C5220068B8BE /* HomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9231785C2623C5220068B8BE /* HomeVC.m */; };
+		9231785F2623C5B60068B8BE /* AuthService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9231785E2623C5B60068B8BE /* AuthService.m */; };
+		923178622623C8E70068B8BE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 923178612623C8E70068B8BE /* GoogleService-Info.plist */; };
 		92BF5429261E419D0055051E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BF5428261E419D0055051E /* AppDelegate.m */; };
 		92BF542C261E419D0055051E /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BF542B261E419D0055051E /* SceneDelegate.m */; };
 		92BF542F261E419D0055051E /* WelcomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BF542E261E419D0055051E /* WelcomeVC.m */; };
@@ -14,13 +18,19 @@
 		92BF5434261E419F0055051E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92BF5433261E419F0055051E /* Assets.xcassets */; };
 		92BF5437261E419F0055051E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92BF5435261E419F0055051E /* LaunchScreen.storyboard */; };
 		92BF543A261E419F0055051E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BF5439261E419F0055051E /* main.m */; };
-		92BF544D261E47090055051E /* AuthService.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BF544C261E47090055051E /* AuthService.m */; };
 		92BF5453261E83960055051E /* RoundedCornerBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BF5452261E83960055051E /* RoundedCornerBtn.m */; };
 		92BF5456261E83DD0055051E /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BF5455261E83DD0055051E /* LoginVC.m */; };
 		92BF5459261E83F00055051E /* SignupVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BF5458261E83F00055051E /* SignupVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		00689C612E9D2A93F1B5E20C /* Pods-Calorie Manager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Calorie Manager.release.xcconfig"; path = "Target Support Files/Pods-Calorie Manager/Pods-Calorie Manager.release.xcconfig"; sourceTree = "<group>"; };
+		3D740D1ACFB7DFAB4FB56FA8 /* Pods_Calorie_Manager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Calorie_Manager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9231785B2623C5220068B8BE /* HomeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeVC.h; sourceTree = "<group>"; };
+		9231785C2623C5220068B8BE /* HomeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeVC.m; sourceTree = "<group>"; };
+		9231785E2623C5B60068B8BE /* AuthService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuthService.m; sourceTree = "<group>"; };
+		923178602623C5D30068B8BE /* AuthService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuthService.h; sourceTree = "<group>"; };
+		923178612623C8E70068B8BE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		92BF5424261E419D0055051E /* Calorie Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Calorie Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		92BF5427261E419D0055051E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		92BF5428261E419D0055051E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -33,13 +43,13 @@
 		92BF5436261E419F0055051E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		92BF5438261E419F0055051E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92BF5439261E419F0055051E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		92BF544C261E47090055051E /* AuthService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuthService.m; sourceTree = "<group>"; };
 		92BF5451261E83960055051E /* RoundedCornerBtn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RoundedCornerBtn.h; sourceTree = "<group>"; };
 		92BF5452261E83960055051E /* RoundedCornerBtn.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RoundedCornerBtn.m; sourceTree = "<group>"; };
 		92BF5454261E83DD0055051E /* LoginVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginVC.h; sourceTree = "<group>"; };
 		92BF5455261E83DD0055051E /* LoginVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginVC.m; sourceTree = "<group>"; };
 		92BF5457261E83F00055051E /* SignupVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignupVC.h; sourceTree = "<group>"; };
 		92BF5458261E83F00055051E /* SignupVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignupVC.m; sourceTree = "<group>"; };
+		AA013367F1B815BBFDF0161B /* Pods-Calorie Manager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Calorie Manager.debug.xcconfig"; path = "Target Support Files/Pods-Calorie Manager/Pods-Calorie Manager.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,17 +57,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16FAEC126A1308689A28B388 /* Pods_Calorie_Manager.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E13A660795D18B16CAD3E2B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3D740D1ACFB7DFAB4FB56FA8 /* Pods_Calorie_Manager.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		92BF541B261E419D0055051E = {
 			isa = PBXGroup;
 			children = (
 				92BF5426261E419D0055051E /* Calorie Manager */,
 				92BF5425261E419D0055051E /* Products */,
+				F4854666D0022A3C36EC4DE4 /* Pods */,
+				4E13A660795D18B16CAD3E2B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -85,6 +106,7 @@
 				92BF5433261E419F0055051E /* Assets.xcassets */,
 				92BF5435261E419F0055051E /* LaunchScreen.storyboard */,
 				92BF5438261E419F0055051E /* Info.plist */,
+				923178612623C8E70068B8BE /* GoogleService-Info.plist */,
 				92BF5439261E419F0055051E /* main.m */,
 			);
 			path = "Calorie Manager";
@@ -115,6 +137,8 @@
 				92BF5455261E83DD0055051E /* LoginVC.m */,
 				92BF5457261E83F00055051E /* SignupVC.h */,
 				92BF5458261E83F00055051E /* SignupVC.m */,
+				9231785B2623C5220068B8BE /* HomeVC.h */,
+				9231785C2623C5220068B8BE /* HomeVC.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -122,7 +146,8 @@
 		92BF5443261E42C50055051E /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				92BF544C261E47090055051E /* AuthService.m */,
+				923178602623C5D30068B8BE /* AuthService.h */,
+				9231785E2623C5B60068B8BE /* AuthService.m */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -134,6 +159,16 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		F4854666D0022A3C36EC4DE4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AA013367F1B815BBFDF0161B /* Pods-Calorie Manager.debug.xcconfig */,
+				00689C612E9D2A93F1B5E20C /* Pods-Calorie Manager.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -141,9 +176,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 92BF543D261E419F0055051E /* Build configuration list for PBXNativeTarget "Calorie Manager" */;
 			buildPhases = (
+				00E001EF8BE2365092129CB5 /* [CP] Check Pods Manifest.lock */,
 				92BF5420261E419D0055051E /* Sources */,
 				92BF5421261E419D0055051E /* Frameworks */,
 				92BF5422261E419D0055051E /* Resources */,
+				1056B1BF6DFA89ADD5BD412C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -191,6 +228,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				923178622623C8E70068B8BE /* GoogleService-Info.plist in Resources */,
 				92BF5437261E419F0055051E /* LaunchScreen.storyboard in Resources */,
 				92BF5434261E419F0055051E /* Assets.xcassets in Resources */,
 				92BF5432261E419D0055051E /* Main.storyboard in Resources */,
@@ -199,6 +237,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		00E001EF8BE2365092129CB5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Calorie Manager-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1056B1BF6DFA89ADD5BD412C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Calorie Manager/Pods-Calorie Manager-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Calorie Manager/Pods-Calorie Manager-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Calorie Manager/Pods-Calorie Manager-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		92BF5420261E419D0055051E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -206,10 +286,11 @@
 			files = (
 				92BF542F261E419D0055051E /* WelcomeVC.m in Sources */,
 				92BF5429261E419D0055051E /* AppDelegate.m in Sources */,
-				92BF544D261E47090055051E /* AuthService.m in Sources */,
+				9231785D2623C5220068B8BE /* HomeVC.m in Sources */,
 				92BF5453261E83960055051E /* RoundedCornerBtn.m in Sources */,
 				92BF5459261E83F00055051E /* SignupVC.m in Sources */,
 				92BF543A261E419F0055051E /* main.m in Sources */,
+				9231785F2623C5B60068B8BE /* AuthService.m in Sources */,
 				92BF5456261E83DD0055051E /* LoginVC.m in Sources */,
 				92BF542C261E419D0055051E /* SceneDelegate.m in Sources */,
 			);
@@ -349,6 +430,7 @@
 		};
 		92BF543E261E419F0055051E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA013367F1B815BBFDF0161B /* Pods-Calorie Manager.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -366,6 +448,7 @@
 		};
 		92BF543F261E419F0055051E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 00689C612E9D2A93F1B5E20C /* Pods-Calorie Manager.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
