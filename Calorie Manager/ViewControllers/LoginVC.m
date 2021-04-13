@@ -29,7 +29,13 @@
 - (IBAction)loginBtnPressed:(id)sender {
     AuthService *instance = [AuthService sharedInstance];
 
-    [instance loginUserWithEmail:self.emailTxt.text password:self.passwordTxt.text];
+    [instance loginUserWithEmail:self.emailTxt.text password:self.passwordTxt.text completion:^(BOOL *status) {
+        if(status){
+            
+        }else{
+            
+        }
+    }];
 }
 
 /*

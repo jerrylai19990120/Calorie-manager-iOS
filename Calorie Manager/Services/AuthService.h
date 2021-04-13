@@ -12,8 +12,8 @@
 
 @interface AuthService: NSObject
 + (instancetype)sharedInstance;
-- (void)loginUserWithEmail:(NSString *)email password:(NSString *)password;
-- (void)createUserWithEmail:(NSString *)email password:(NSString *)password;
+- (void)loginUserWithEmail:(NSString *)email password:(NSString *)password completion:(void (^)(BOOL *status))completion;
+- (void)createUserWithEmail:(NSString *)email password:(NSString *)password completion:(void (^)(BOOL *status))completion;
 @end
 
 #endif /* AuthService_h */

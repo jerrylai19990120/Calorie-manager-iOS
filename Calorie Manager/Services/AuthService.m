@@ -28,15 +28,24 @@
     return sharedInstance;
 }
 
-- (void)loginUserWithEmail:(NSString *)email password:(NSString *)password{
+- (void)loginUserWithEmail:(NSString *)email password:(NSString *)password completion:(void (^)(BOOL *status))completion{
     [[FIRAuth auth] signInWithEmail:email password:password completion:^(FIRAuthDataResult * _Nullable authResult, NSError * _Nullable error) {
-        
+        if(error == nil){
+            completion(true);
+        }else{
+            completion(false);
+        }
     }];
 }
 
--(void)createUserWithEmail:(NSString *)email password:(NSString *)password{
+-(void)createUserWithEmail:(NSString *)email password:(NSString *)password completion:(void (^)(BOOL *))completion{
+    
     [[FIRAuth auth] createUserWithEmail:email password:password completion:^(FIRAuthDataResult * _Nullable authResult, NSError * _Nullable error) {
-        
+        if(error == nil){
+            completion(true);
+        }else{
+            completion(false);
+        }
     }];
 }
 

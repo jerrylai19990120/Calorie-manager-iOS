@@ -29,7 +29,14 @@
 
 - (IBAction)signupBtnPressed:(id)sender {
     AuthService *instance = [AuthService sharedInstance];
-    [instance createUserWithEmail:self.emailTxt.text password:self.password.text];
+    
+    [instance createUserWithEmail:self.emailTxt.text password:self.password.text completion:^(BOOL *status) {
+        if(status){
+            NSLog(@"success");
+        }else{
+            NSLog(@"failed");
+        }
+    }];
 }
 
 
