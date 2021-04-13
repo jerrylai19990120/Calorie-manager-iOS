@@ -320,7 +320,23 @@
             </objects>
             <point key="canvasLocation" x="964" y="118"/>
         </scene>
-        <!--Item 2-->
+        <!--Profile-->
+        <scene sceneID="8J6-Rj-1ra">
+            <objects>
+                <viewController id="5EU-Xe-Ig9" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RFE-LV-85Q">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="9eX-mZ-UqI"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Profile" image="person" catalog="system" id="mMh-VW-2An"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sgm-zo-zSH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1816" y="1323"/>
+        </scene>
+        <!--Progress-->
         <scene sceneID="cmY-Vb-BGG">
             <objects>
                 <viewController id="iZ8-9g-SgE" sceneMemberID="viewController">
@@ -330,13 +346,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="kfg-uM-jET"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="moP-aE-WyU"/>
+                    <tabBarItem key="tabBarItem" title="Progress" image="circle.grid.2x2" catalog="system" id="moP-aE-WyU"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9j2-ri-eWB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2612" y="867"/>
         </scene>
-        <!--Item 1-->
+        <!--Home-->
         <scene sceneID="tpE-mM-IfO">
             <objects>
                 <viewController id="aji-iF-u9f" sceneMemberID="viewController">
@@ -346,7 +362,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="PmJ-No-z0E"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="ke5-j6-Gwy"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="ke5-j6-Gwy"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MBb-v6-Xhx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -359,11 +375,14 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sLR-kP-xJj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.1764705882" green="0.21960784310000001" blue="0.38431372549999998" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.1764705882" green="0.21960784310000001" blue="0.38431372549999998" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="aji-iF-u9f" kind="relationship" relationship="viewControllers" id="cQY-fr-9bI"/>
                         <segue destination="iZ8-9g-SgE" kind="relationship" relationship="viewControllers" id="H9B-gA-AVi"/>
+                        <segue destination="5EU-Xe-Ig9" kind="relationship" relationship="viewControllers" id="jeX-KE-Tce"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dLg-3o-KeI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -376,5 +395,8 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="bg" width="338" height="634"/>
+        <image name="circle.grid.2x2" catalog="system" width="128" height="112"/>
+        <image name="house" catalog="system" width="128" height="110"/>
+        <image name="person" catalog="system" width="128" height="117"/>
     </resources>
 </document>
