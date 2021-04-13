@@ -32,9 +32,7 @@
     
     [instance createUserWithEmail:self.emailTxt.text password:self.password.text completion:^(BOOL *status) {
         if(status){
-            NSLog(@"success");
-        }else{
-            NSLog(@"failed");
+            [self performSegueWithIdentifier:@"HomeVC2" sender:self];
         }
     }];
 }

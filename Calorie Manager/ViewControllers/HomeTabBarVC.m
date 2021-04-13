@@ -1,18 +1,18 @@
 //
-//  HomeVC.m
+//  HomeTabBarVC.m
 //  Calorie Manager
 //
-//  Created by Jerry Lai on 2021-04-11.
+//  Created by Jerry Lai on 2021-04-12.
 //  Copyright © 2021 Jerry Lai. All rights reserved.
 //
 
-#import "HomeVC.h"
+#import "HomeTabBarVC.h"
 
-@interface HomeVC ()
+@interface HomeTabBarVC ()
 
 @end
 
-@implementation HomeVC
+@implementation HomeTabBarVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];

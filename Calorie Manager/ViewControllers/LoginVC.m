@@ -31,9 +31,7 @@
 
     [instance loginUserWithEmail:self.emailTxt.text password:self.passwordTxt.text completion:^(BOOL *status) {
         if(status){
-            
-        }else{
-            
+            [self performSegueWithIdentifier:@"HomeVC" sender:self];
         }
     }];
 }
