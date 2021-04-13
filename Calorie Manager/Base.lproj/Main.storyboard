@@ -337,7 +337,7 @@
         <!--Profile-->
         <scene sceneID="8J6-Rj-1ra">
             <objects>
-                <viewController id="5EU-Xe-Ig9" sceneMemberID="viewController">
+                <viewController id="5EU-Xe-Ig9" customClass="ProfileVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RFE-LV-85Q">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -353,7 +353,7 @@
         <!--Progress-->
         <scene sceneID="cmY-Vb-BGG">
             <objects>
-                <viewController id="iZ8-9g-SgE" sceneMemberID="viewController">
+                <viewController id="iZ8-9g-SgE" customClass="ProgressVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aPc-4i-MO3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -369,7 +369,7 @@
         <!--Home-->
         <scene sceneID="tpE-mM-IfO">
             <objects>
-                <viewController id="aji-iF-u9f" sceneMemberID="viewController">
+                <viewController id="aji-iF-u9f" customClass="HomeVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KdU-ib-Ggr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

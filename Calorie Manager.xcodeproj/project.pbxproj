@@ -11,6 +11,9 @@
 		9231785F2623C5B60068B8BE /* AuthService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9231785E2623C5B60068B8BE /* AuthService.m */; };
 		923178622623C8E70068B8BE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 923178612623C8E70068B8BE /* GoogleService-Info.plist */; };
 		92317865262522C60068B8BE /* HomeTabBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 92317864262522C60068B8BE /* HomeTabBarVC.m */; };
+		923178682625EC9F0068B8BE /* ProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 923178672625EC9F0068B8BE /* ProfileVC.m */; };
+		9231786B2625ECD30068B8BE /* HomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9231786A2625ECD30068B8BE /* HomeVC.m */; };
+		9231786E2625ED2F0068B8BE /* ProgressVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9231786D2625ED2F0068B8BE /* ProgressVC.m */; };
 		92BF5429261E419D0055051E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BF5428261E419D0055051E /* AppDelegate.m */; };
 		92BF542C261E419D0055051E /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BF542B261E419D0055051E /* SceneDelegate.m */; };
 		92BF542F261E419D0055051E /* WelcomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BF542E261E419D0055051E /* WelcomeVC.m */; };
@@ -31,6 +34,12 @@
 		923178612623C8E70068B8BE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		92317863262522C60068B8BE /* HomeTabBarVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeTabBarVC.h; sourceTree = "<group>"; };
 		92317864262522C60068B8BE /* HomeTabBarVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeTabBarVC.m; sourceTree = "<group>"; };
+		923178662625EC9F0068B8BE /* ProfileVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileVC.h; sourceTree = "<group>"; };
+		923178672625EC9F0068B8BE /* ProfileVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileVC.m; sourceTree = "<group>"; };
+		923178692625ECD30068B8BE /* HomeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeVC.h; sourceTree = "<group>"; };
+		9231786A2625ECD30068B8BE /* HomeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeVC.m; sourceTree = "<group>"; };
+		9231786C2625ED2F0068B8BE /* ProgressVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProgressVC.h; sourceTree = "<group>"; };
+		9231786D2625ED2F0068B8BE /* ProgressVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProgressVC.m; sourceTree = "<group>"; };
 		92BF5424261E419D0055051E /* Calorie Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Calorie Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		92BF5427261E419D0055051E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		92BF5428261E419D0055051E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -139,6 +148,12 @@
 				92BF5458261E83F00055051E /* SignupVC.m */,
 				92317863262522C60068B8BE /* HomeTabBarVC.h */,
 				92317864262522C60068B8BE /* HomeTabBarVC.m */,
+				923178662625EC9F0068B8BE /* ProfileVC.h */,
+				923178672625EC9F0068B8BE /* ProfileVC.m */,
+				923178692625ECD30068B8BE /* HomeVC.h */,
+				9231786A2625ECD30068B8BE /* HomeVC.m */,
+				9231786C2625ED2F0068B8BE /* ProgressVC.h */,
+				9231786D2625ED2F0068B8BE /* ProgressVC.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -288,7 +303,10 @@
 				92BF5429261E419D0055051E /* AppDelegate.m in Sources */,
 				92BF5453261E83960055051E /* RoundedCornerBtn.m in Sources */,
 				92BF5459261E83F00055051E /* SignupVC.m in Sources */,
+				9231786E2625ED2F0068B8BE /* ProgressVC.m in Sources */,
 				92BF543A261E419F0055051E /* main.m in Sources */,
+				9231786B2625ECD30068B8BE /* HomeVC.m in Sources */,
+				923178682625EC9F0068B8BE /* ProfileVC.m in Sources */,
 				9231785F2623C5B60068B8BE /* AuthService.m in Sources */,
 				92BF5456261E83DD0055051E /* LoginVC.m in Sources */,
 				92BF542C261E419D0055051E /* SceneDelegate.m in Sources */,
