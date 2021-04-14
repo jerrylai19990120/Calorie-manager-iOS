@@ -14,6 +14,7 @@
 		923178682625EC9F0068B8BE /* ProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 923178672625EC9F0068B8BE /* ProfileVC.m */; };
 		9231786B2625ECD30068B8BE /* HomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9231786A2625ECD30068B8BE /* HomeVC.m */; };
 		9231786E2625ED2F0068B8BE /* ProgressVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9231786D2625ED2F0068B8BE /* ProgressVC.m */; };
+		923178712625F0B60068B8BE /* DataService.m in Sources */ = {isa = PBXBuildFile; fileRef = 923178702625F0B60068B8BE /* DataService.m */; };
 		92BF5429261E419D0055051E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BF5428261E419D0055051E /* AppDelegate.m */; };
 		92BF542C261E419D0055051E /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BF542B261E419D0055051E /* SceneDelegate.m */; };
 		92BF542F261E419D0055051E /* WelcomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BF542E261E419D0055051E /* WelcomeVC.m */; };
@@ -40,6 +41,8 @@
 		9231786A2625ECD30068B8BE /* HomeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeVC.m; sourceTree = "<group>"; };
 		9231786C2625ED2F0068B8BE /* ProgressVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProgressVC.h; sourceTree = "<group>"; };
 		9231786D2625ED2F0068B8BE /* ProgressVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProgressVC.m; sourceTree = "<group>"; };
+		9231786F2625F0A30068B8BE /* DataService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataService.h; sourceTree = "<group>"; };
+		923178702625F0B60068B8BE /* DataService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataService.m; sourceTree = "<group>"; };
 		92BF5424261E419D0055051E /* Calorie Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Calorie Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		92BF5427261E419D0055051E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		92BF5428261E419D0055051E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -163,6 +166,8 @@
 			children = (
 				923178602623C5D30068B8BE /* AuthService.h */,
 				9231785E2623C5B60068B8BE /* AuthService.m */,
+				9231786F2625F0A30068B8BE /* DataService.h */,
+				923178702625F0B60068B8BE /* DataService.m */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -307,6 +312,7 @@
 				92BF543A261E419F0055051E /* main.m in Sources */,
 				9231786B2625ECD30068B8BE /* HomeVC.m in Sources */,
 				923178682625EC9F0068B8BE /* ProfileVC.m in Sources */,
+				923178712625F0B60068B8BE /* DataService.m in Sources */,
 				9231785F2623C5B60068B8BE /* AuthService.m in Sources */,
 				92BF5456261E83DD0055051E /* LoginVC.m in Sources */,
 				92BF542C261E419D0055051E /* SceneDelegate.m in Sources */,
