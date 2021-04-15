@@ -26,6 +26,7 @@
 		92BF5456261E83DD0055051E /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BF5455261E83DD0055051E /* LoginVC.m */; };
 		92BF5459261E83F00055051E /* SignupVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BF5458261E83F00055051E /* SignupVC.m */; };
 		92C04AD52628D9B3004DC450 /* RoundedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C04AD42628D9B3004DC450 /* RoundedView.m */; };
+		92C04AD82628DB91004DC450 /* MealCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C04AD72628DB91004DC450 /* MealCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,8 @@
 		92BF5458261E83F00055051E /* SignupVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignupVC.m; sourceTree = "<group>"; };
 		92C04AD32628D9B3004DC450 /* RoundedView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RoundedView.h; sourceTree = "<group>"; };
 		92C04AD42628D9B3004DC450 /* RoundedView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RoundedView.m; sourceTree = "<group>"; };
+		92C04AD62628DB91004DC450 /* MealCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MealCell.h; sourceTree = "<group>"; };
+		92C04AD72628DB91004DC450 /* MealCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MealCell.m; sourceTree = "<group>"; };
 		AA013367F1B815BBFDF0161B /* Pods-Calorie Manager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Calorie Manager.debug.xcconfig"; path = "Target Support Files/Pods-Calorie Manager/Pods-Calorie Manager.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -141,6 +144,8 @@
 				92BF5452261E83960055051E /* RoundedCornerBtn.m */,
 				92C04AD32628D9B3004DC450 /* RoundedView.h */,
 				92C04AD42628D9B3004DC450 /* RoundedView.m */,
+				92C04AD62628DB91004DC450 /* MealCell.h */,
+				92C04AD72628DB91004DC450 /* MealCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -308,6 +313,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92C04AD82628DB91004DC450 /* MealCell.m in Sources */,
 				92BF542F261E419D0055051E /* WelcomeVC.m in Sources */,
 				92317865262522C60068B8BE /* HomeTabBarVC.m in Sources */,
 				92BF5429261E419D0055051E /* AppDelegate.m in Sources */,
