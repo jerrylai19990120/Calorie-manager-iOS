@@ -25,6 +25,7 @@
 		92BF5453261E83960055051E /* RoundedCornerBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BF5452261E83960055051E /* RoundedCornerBtn.m */; };
 		92BF5456261E83DD0055051E /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BF5455261E83DD0055051E /* LoginVC.m */; };
 		92BF5459261E83F00055051E /* SignupVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BF5458261E83F00055051E /* SignupVC.m */; };
+		92C04AD52628D9B3004DC450 /* RoundedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C04AD42628D9B3004DC450 /* RoundedView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,8 @@
 		92BF5455261E83DD0055051E /* LoginVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginVC.m; sourceTree = "<group>"; };
 		92BF5457261E83F00055051E /* SignupVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignupVC.h; sourceTree = "<group>"; };
 		92BF5458261E83F00055051E /* SignupVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignupVC.m; sourceTree = "<group>"; };
+		92C04AD32628D9B3004DC450 /* RoundedView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RoundedView.h; sourceTree = "<group>"; };
+		92C04AD42628D9B3004DC450 /* RoundedView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RoundedView.m; sourceTree = "<group>"; };
 		AA013367F1B815BBFDF0161B /* Pods-Calorie Manager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Calorie Manager.debug.xcconfig"; path = "Target Support Files/Pods-Calorie Manager/Pods-Calorie Manager.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -136,6 +139,8 @@
 			children = (
 				92BF5451261E83960055051E /* RoundedCornerBtn.h */,
 				92BF5452261E83960055051E /* RoundedCornerBtn.m */,
+				92C04AD32628D9B3004DC450 /* RoundedView.h */,
+				92C04AD42628D9B3004DC450 /* RoundedView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -313,6 +318,7 @@
 				9231786B2625ECD30068B8BE /* HomeVC.m in Sources */,
 				923178682625EC9F0068B8BE /* ProfileVC.m in Sources */,
 				923178712625F0B60068B8BE /* DataService.m in Sources */,
+				92C04AD52628D9B3004DC450 /* RoundedView.m in Sources */,
 				9231785F2623C5B60068B8BE /* AuthService.m in Sources */,
 				92BF5456261E83DD0055051E /* LoginVC.m in Sources */,
 				92BF542C261E419D0055051E /* SceneDelegate.m in Sources */,
