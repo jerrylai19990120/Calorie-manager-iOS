@@ -27,7 +27,8 @@
 }
 
 - (void)configureCell{
-    
+    self.calories.text = @"80kCal";
+    self.name.text = @"Green Salad";
 }
 
 @end
