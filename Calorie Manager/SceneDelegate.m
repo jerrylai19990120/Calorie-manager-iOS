@@ -7,6 +7,7 @@
 //
 
 #import "SceneDelegate.h"
+#import "HomeTabBarVC.h"
 @import Firebase;
 
 @interface SceneDelegate ()
@@ -21,9 +22,9 @@
     // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
     // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
     if([[FIRAuth auth]currentUser] != nil){
-       /* UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        UIViewController* homeVC = [storyboard instantiateViewControllerWithIdentifier:@"HomeTabBarVC"];
-        [(UINavigationController*)self.window.rootViewController pushViewController:homeVC animated:true];*/
+        UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        HomeTabBarVC* homeVC = [storyboard instantiateViewControllerWithIdentifier:@"HomeTabBarVC"];
+        self.window.rootViewController = homeVC;
         
         
     }
