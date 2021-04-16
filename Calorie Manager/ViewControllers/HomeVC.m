@@ -7,6 +7,7 @@
 //
 
 #import "HomeVC.h"
+#import "MealCell.h"
 
 @interface HomeVC ()
 
@@ -26,11 +27,19 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 1;
+    return 2;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return [[UITableViewCell alloc]init];
+    static NSString *identifier = @"MealCell";
+    MealCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
+    
+    if(cell == nil){
+        return [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+    }else{
+        [cell configureCell];
+        return cell;
+    }
 }
 
 /*

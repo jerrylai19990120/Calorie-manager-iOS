@@ -8,6 +8,7 @@
 
 #import "MealCell.h"
 
+
 @interface MealCell()
 
 @end
@@ -22,11 +23,12 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
+    NSLog(@"selected");
     // Configure the view for the selected state
 }
 
 - (void)configureCell{
+    self.img.image = [UIImage imageNamed:@"salad"];
     self.calories.text = @"80kCal";
     self.name.text = @"Green Salad";
 }

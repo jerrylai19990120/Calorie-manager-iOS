@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIImageView *img;
 @property (weak, nonatomic) IBOutlet UILabel *name;
 @property (weak, nonatomic) IBOutlet UILabel *calories;
-
+- (void)configureCell;
 @end
 
 NS_ASSUME_NONNULL_END
