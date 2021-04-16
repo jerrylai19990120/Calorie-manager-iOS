@@ -16,6 +16,8 @@
 		9231786E2625ED2F0068B8BE /* ProgressVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9231786D2625ED2F0068B8BE /* ProgressVC.m */; };
 		923178712625F0B60068B8BE /* DataService.m in Sources */ = {isa = PBXBuildFile; fileRef = 923178702625F0B60068B8BE /* DataService.m */; };
 		92A7B21C262A22FB001C6251 /* CircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A7B21B262A22FB001C6251 /* CircleView.m */; };
+		92A7B220262A4B12001C6251 /* RoundedCornerImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A7B21F262A4B12001C6251 /* RoundedCornerImage.m */; };
+		92A7B223262A4DA0001C6251 /* ShadowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A7B222262A4DA0001C6251 /* ShadowView.m */; };
 		92BF5429261E419D0055051E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BF5428261E419D0055051E /* AppDelegate.m */; };
 		92BF542C261E419D0055051E /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BF542B261E419D0055051E /* SceneDelegate.m */; };
 		92BF542F261E419D0055051E /* WelcomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BF542E261E419D0055051E /* WelcomeVC.m */; };
@@ -49,6 +51,10 @@
 		923178702625F0B60068B8BE /* DataService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataService.m; sourceTree = "<group>"; };
 		92A7B21A262A22FB001C6251 /* CircleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CircleView.h; sourceTree = "<group>"; };
 		92A7B21B262A22FB001C6251 /* CircleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CircleView.m; sourceTree = "<group>"; };
+		92A7B21E262A4B12001C6251 /* RoundedCornerImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RoundedCornerImage.h; sourceTree = "<group>"; };
+		92A7B21F262A4B12001C6251 /* RoundedCornerImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RoundedCornerImage.m; sourceTree = "<group>"; };
+		92A7B221262A4DA0001C6251 /* ShadowView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShadowView.h; sourceTree = "<group>"; };
+		92A7B222262A4DA0001C6251 /* ShadowView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShadowView.m; sourceTree = "<group>"; };
 		92BF5424261E419D0055051E /* Calorie Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Calorie Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		92BF5427261E419D0055051E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		92BF5428261E419D0055051E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -154,6 +160,10 @@
 				92C04AD72628DB91004DC450 /* MealCell.m */,
 				92A7B21A262A22FB001C6251 /* CircleView.h */,
 				92A7B21B262A22FB001C6251 /* CircleView.m */,
+				92A7B21E262A4B12001C6251 /* RoundedCornerImage.h */,
+				92A7B21F262A4B12001C6251 /* RoundedCornerImage.m */,
+				92A7B221262A4DA0001C6251 /* ShadowView.h */,
+				92A7B222262A4DA0001C6251 /* ShadowView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -325,6 +335,7 @@
 				92D469232629D3DD0026A8B1 /* Meal.m in Sources */,
 				92C04AD82628DB91004DC450 /* MealCell.m in Sources */,
 				92BF542F261E419D0055051E /* WelcomeVC.m in Sources */,
+				92A7B220262A4B12001C6251 /* RoundedCornerImage.m in Sources */,
 				92317865262522C60068B8BE /* HomeTabBarVC.m in Sources */,
 				92BF5429261E419D0055051E /* AppDelegate.m in Sources */,
 				92BF5453261E83960055051E /* RoundedCornerBtn.m in Sources */,
@@ -333,6 +344,7 @@
 				92BF543A261E419F0055051E /* main.m in Sources */,
 				9231786B2625ECD30068B8BE /* HomeVC.m in Sources */,
 				923178682625EC9F0068B8BE /* ProfileVC.m in Sources */,
+				92A7B223262A4DA0001C6251 /* ShadowView.m in Sources */,
 				923178712625F0B60068B8BE /* DataService.m in Sources */,
 				92C04AD52628D9B3004DC450 /* RoundedView.m in Sources */,
 				9231785F2623C5B60068B8BE /* AuthService.m in Sources */,
@@ -479,7 +491,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.0.1;
+				CURRENT_PROJECT_VERSION = 1.0.2;
 				DEVELOPMENT_TEAM = 8L83CZ8839;
 				INFOPLIST_FILE = "Calorie Manager/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -498,7 +510,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.0.1;
+				CURRENT_PROJECT_VERSION = 1.0.2;
 				DEVELOPMENT_TEAM = 8L83CZ8839;
 				INFOPLIST_FILE = "Calorie Manager/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
