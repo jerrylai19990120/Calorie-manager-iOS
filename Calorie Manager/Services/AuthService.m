@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "AuthService.h"
+#import "WelcomeVC.h"
+
 @import Firebase;
 
 @interface AuthService()
@@ -47,6 +49,15 @@
             completion(false);
         }
     }];
+}
+
+- (void)logoutUser{
+    NSError *error;
+    [[FIRAuth auth]signOut:&error];
+    
+    if(error != nil){
+        NSLog(@"Sign out failed.");
+    }
 }
 
 @end

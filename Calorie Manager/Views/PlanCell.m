@@ -22,7 +22,9 @@
 }
 
 - (void)configureCell{
-    
+    self.img.image = [UIImage imageNamed:@"plan"];
+    self.progressBar.progress = 0.6;
+    self.numOfDays.text = @"6 / 10 Days";
 }
 
 @end
