@@ -20,6 +20,7 @@
 		92A7B223262A4DA0001C6251 /* ShadowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A7B222262A4DA0001C6251 /* ShadowView.m */; };
 		92A7B226262B908F001C6251 /* TaskCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A7B225262B908F001C6251 /* TaskCell.m */; };
 		92A7B229262B9CE1001C6251 /* PlanCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A7B228262B9CE1001C6251 /* PlanCell.m */; };
+		92A7B22C262C0705001C6251 /* AddTaskVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A7B22B262C0705001C6251 /* AddTaskVC.m */; };
 		92BF5429261E419D0055051E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BF5428261E419D0055051E /* AppDelegate.m */; };
 		92BF542C261E419D0055051E /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BF542B261E419D0055051E /* SceneDelegate.m */; };
 		92BF542F261E419D0055051E /* WelcomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BF542E261E419D0055051E /* WelcomeVC.m */; };
@@ -61,6 +62,8 @@
 		92A7B225262B908F001C6251 /* TaskCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TaskCell.m; sourceTree = "<group>"; };
 		92A7B227262B9CE1001C6251 /* PlanCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlanCell.h; sourceTree = "<group>"; };
 		92A7B228262B9CE1001C6251 /* PlanCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlanCell.m; sourceTree = "<group>"; };
+		92A7B22A262C0705001C6251 /* AddTaskVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddTaskVC.h; sourceTree = "<group>"; };
+		92A7B22B262C0705001C6251 /* AddTaskVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddTaskVC.m; sourceTree = "<group>"; };
 		92BF5424261E419D0055051E /* Calorie Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Calorie Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		92BF5427261E419D0055051E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		92BF5428261E419D0055051E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -195,6 +198,8 @@
 				9231786A2625ECD30068B8BE /* HomeVC.m */,
 				9231786C2625ED2F0068B8BE /* ProgressVC.h */,
 				9231786D2625ED2F0068B8BE /* ProgressVC.m */,
+				92A7B22A262C0705001C6251 /* AddTaskVC.h */,
+				92A7B22B262C0705001C6251 /* AddTaskVC.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -352,6 +357,7 @@
 				92BF5453261E83960055051E /* RoundedCornerBtn.m in Sources */,
 				92BF5459261E83F00055051E /* SignupVC.m in Sources */,
 				9231786E2625ED2F0068B8BE /* ProgressVC.m in Sources */,
+				92A7B22C262C0705001C6251 /* AddTaskVC.m in Sources */,
 				92BF543A261E419F0055051E /* main.m in Sources */,
 				9231786B2625ECD30068B8BE /* HomeVC.m in Sources */,
 				92A7B226262B908F001C6251 /* TaskCell.m in Sources */,

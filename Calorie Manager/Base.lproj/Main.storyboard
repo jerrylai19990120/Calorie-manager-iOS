@@ -666,6 +666,9 @@
                                 <state key="normal" image="plus.circle" catalog="system">
                                     <color key="titleColor" red="0.1764705882" green="0.21960784310000001" blue="0.38431372549999998" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="iyI-h7-GUG" kind="presentation" id="uh5-Nn-H3v"/>
+                                </connections>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RC3-t5-hXf">
                                 <rect key="frame" x="0.0" y="158" width="414" height="32"/>
@@ -710,6 +713,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9j2-ri-eWB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2608.8000000000002" y="1041.2293853073463"/>
+        </scene>
+        <!--Add TaskVC-->
+        <scene sceneID="yd6-QC-aep">
+            <objects>
+                <viewController id="iyI-h7-GUG" customClass="AddTaskVC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8zw-ok-02o">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="BD5-gg-hhU"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hS9-hD-PCU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3481" y="1041"/>
         </scene>
         <!--Home-->
         <scene sceneID="tpE-mM-IfO">
