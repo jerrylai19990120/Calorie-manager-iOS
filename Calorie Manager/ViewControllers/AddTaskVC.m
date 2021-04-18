@@ -24,4 +24,8 @@
 }
 
 
+- (IBAction)addBtnPressed:(id)sender {
+    [self dismissViewControllerAnimated:true completion:nil];
+}
+
 @end

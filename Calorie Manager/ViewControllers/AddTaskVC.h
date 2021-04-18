@@ -11,6 +11,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface AddTaskVC : UIViewController
+@property (weak, nonatomic) IBOutlet UITextField *planName;
+@property (weak, nonatomic) IBOutlet UITextField *planLength;
 
 @end
 
