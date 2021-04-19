@@ -14,6 +14,7 @@
 +(instancetype)sharedInstance;
 @property (strong, nonatomic) FIRDatabaseReference *ref;
 - (void)createDBUserWithUid:(NSString *)uid dict:(NSDictionary *)dict;
+- (void)addBasicInfoWithAge:(NSNumber *)age height:(NSNumber *)height weight:(NSNumber *)weight uid:(NSString *)uid completion:(void (^)(BOOL *status))completion;
 @end
 
 #endif /* DataService_h */

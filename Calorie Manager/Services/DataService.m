@@ -42,6 +42,15 @@
     [[[self.ref child:@"users"]child:uid]updateChildValues:dict];
 }
 
-
+- (void)addBasicInfoWithAge:(NSNumber *)age height:(NSNumber *)height weight:(NSNumber *)weight uid:(NSString *)uid completion:(void (^)(BOOL *))completion{
+    if(age==nil || height==nil || weight==nil){
+        completion(false);
+    }else{
+        [[[[self.ref child:@"users"]child:uid]child:@"age"]setValue:age];
+        [[[[self.ref child:@"users"]child:uid]child:@"height"]setValue:height];
+        [[[[self.ref child:@"users"]child:uid]child:@"weight"]setValue:weight];
+        completion(true);
+    }
+}
 
 @end

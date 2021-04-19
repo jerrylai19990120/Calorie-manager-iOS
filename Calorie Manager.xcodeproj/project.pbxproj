@@ -17,6 +17,7 @@
 		923178712625F0B60068B8BE /* DataService.m in Sources */ = {isa = PBXBuildFile; fileRef = 923178702625F0B60068B8BE /* DataService.m */; };
 		92720433262DC76800AD2F0F /* Meal.m in Sources */ = {isa = PBXBuildFile; fileRef = 92720432262DC76800AD2F0F /* Meal.m */; };
 		92720436262DC77400AD2F0F /* Plan.m in Sources */ = {isa = PBXBuildFile; fileRef = 92720435262DC77400AD2F0F /* Plan.m */; };
+		92720439262DCA0B00AD2F0F /* BasicInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 92720438262DCA0B00AD2F0F /* BasicInfoVC.m */; };
 		92A7B21C262A22FB001C6251 /* CircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A7B21B262A22FB001C6251 /* CircleView.m */; };
 		92A7B220262A4B12001C6251 /* RoundedCornerImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A7B21F262A4B12001C6251 /* RoundedCornerImage.m */; };
 		92A7B223262A4DA0001C6251 /* ShadowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A7B222262A4DA0001C6251 /* ShadowView.m */; };
@@ -56,6 +57,8 @@
 		92720432262DC76800AD2F0F /* Meal.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Meal.m; sourceTree = "<group>"; };
 		92720434262DC77400AD2F0F /* Plan.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Plan.h; sourceTree = "<group>"; };
 		92720435262DC77400AD2F0F /* Plan.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Plan.m; sourceTree = "<group>"; };
+		92720437262DCA0B00AD2F0F /* BasicInfoVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BasicInfoVC.h; sourceTree = "<group>"; };
+		92720438262DCA0B00AD2F0F /* BasicInfoVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BasicInfoVC.m; sourceTree = "<group>"; };
 		92A7B21A262A22FB001C6251 /* CircleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CircleView.h; sourceTree = "<group>"; };
 		92A7B21B262A22FB001C6251 /* CircleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CircleView.m; sourceTree = "<group>"; };
 		92A7B21E262A4B12001C6251 /* RoundedCornerImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RoundedCornerImage.h; sourceTree = "<group>"; };
@@ -202,6 +205,8 @@
 				9231786D2625ED2F0068B8BE /* ProgressVC.m */,
 				92A7B22A262C0705001C6251 /* AddTaskVC.h */,
 				92A7B22B262C0705001C6251 /* AddTaskVC.m */,
+				92720437262DCA0B00AD2F0F /* BasicInfoVC.h */,
+				92720438262DCA0B00AD2F0F /* BasicInfoVC.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -359,6 +364,7 @@
 				92BF5429261E419D0055051E /* AppDelegate.m in Sources */,
 				92BF5453261E83960055051E /* RoundedCornerBtn.m in Sources */,
 				92BF5459261E83F00055051E /* SignupVC.m in Sources */,
+				92720439262DCA0B00AD2F0F /* BasicInfoVC.m in Sources */,
 				9231786E2625ED2F0068B8BE /* ProgressVC.m in Sources */,
 				92A7B22C262C0705001C6251 /* AddTaskVC.m in Sources */,
 				92BF543A261E419F0055051E /* main.m in Sources */,
