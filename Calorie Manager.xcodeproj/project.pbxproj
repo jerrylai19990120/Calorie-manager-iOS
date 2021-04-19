@@ -18,6 +18,7 @@
 		92720433262DC76800AD2F0F /* Meal.m in Sources */ = {isa = PBXBuildFile; fileRef = 92720432262DC76800AD2F0F /* Meal.m */; };
 		92720436262DC77400AD2F0F /* Plan.m in Sources */ = {isa = PBXBuildFile; fileRef = 92720435262DC77400AD2F0F /* Plan.m */; };
 		92720439262DCA0B00AD2F0F /* BasicInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 92720438262DCA0B00AD2F0F /* BasicInfoVC.m */; };
+		9272043C262DDE5A00AD2F0F /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 9272043B262DDE5A00AD2F0F /* User.m */; };
 		92A7B21C262A22FB001C6251 /* CircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A7B21B262A22FB001C6251 /* CircleView.m */; };
 		92A7B220262A4B12001C6251 /* RoundedCornerImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A7B21F262A4B12001C6251 /* RoundedCornerImage.m */; };
 		92A7B223262A4DA0001C6251 /* ShadowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A7B222262A4DA0001C6251 /* ShadowView.m */; };
@@ -59,6 +60,8 @@
 		92720435262DC77400AD2F0F /* Plan.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Plan.m; sourceTree = "<group>"; };
 		92720437262DCA0B00AD2F0F /* BasicInfoVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BasicInfoVC.h; sourceTree = "<group>"; };
 		92720438262DCA0B00AD2F0F /* BasicInfoVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BasicInfoVC.m; sourceTree = "<group>"; };
+		9272043A262DDE5A00AD2F0F /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		9272043B262DDE5A00AD2F0F /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		92A7B21A262A22FB001C6251 /* CircleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CircleView.h; sourceTree = "<group>"; };
 		92A7B21B262A22FB001C6251 /* CircleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CircleView.m; sourceTree = "<group>"; };
 		92A7B21E262A4B12001C6251 /* RoundedCornerImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RoundedCornerImage.h; sourceTree = "<group>"; };
@@ -161,6 +164,8 @@
 				92720432262DC76800AD2F0F /* Meal.m */,
 				92720434262DC77400AD2F0F /* Plan.h */,
 				92720435262DC77400AD2F0F /* Plan.m */,
+				9272043A262DDE5A00AD2F0F /* User.h */,
+				9272043B262DDE5A00AD2F0F /* User.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -361,6 +366,7 @@
 				92720433262DC76800AD2F0F /* Meal.m in Sources */,
 				92A7B220262A4B12001C6251 /* RoundedCornerImage.m in Sources */,
 				92317865262522C60068B8BE /* HomeTabBarVC.m in Sources */,
+				9272043C262DDE5A00AD2F0F /* User.m in Sources */,
 				92BF5429261E419D0055051E /* AppDelegate.m in Sources */,
 				92BF5453261E83960055051E /* RoundedCornerBtn.m in Sources */,
 				92BF5459261E83F00055051E /* SignupVC.m in Sources */,
