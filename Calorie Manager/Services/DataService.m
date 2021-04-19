@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "DataService.h"
+#import "User.h"
 @import Firebase;
 
 @interface DataService()
@@ -51,6 +52,30 @@
         [[[[self.ref child:@"users"]child:uid]child:@"weight"]setValue:weight];
         completion(true);
     }
+}
+
+- (NSDictionary *)getUserInfo{
+    
+    NSDictionary *dict = nil;
+    
+    [[[self.ref child:@"users"]child:[[[FIRAuth auth]currentUser]uid]]getDataWithCompletionBlock:^(NSError * _Nullable error, FIRDataSnapshot * _Nonnull snapshot) {
+        if(error==nil){
+            NSLog(@"%@", snapshot);
+        }
+    }];
+    
+    return dict;
+}
+
++ (User *)user{
+    static User *user = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        
+        user = [[User alloc]init];
+    });
+    
+    return user;
 }
 
 @end

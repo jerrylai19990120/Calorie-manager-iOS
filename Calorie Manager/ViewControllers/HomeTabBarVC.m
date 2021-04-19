@@ -7,6 +7,7 @@
 //
 
 #import "HomeTabBarVC.h"
+#import "DataService.h"
 
 @interface HomeTabBarVC ()
 
@@ -17,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    [DataService.sharedInstance getUserInfo];
 }
 
 
