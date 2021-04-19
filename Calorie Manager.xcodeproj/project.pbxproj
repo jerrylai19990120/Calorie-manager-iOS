@@ -18,7 +18,6 @@
 		92A7B21C262A22FB001C6251 /* CircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A7B21B262A22FB001C6251 /* CircleView.m */; };
 		92A7B220262A4B12001C6251 /* RoundedCornerImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A7B21F262A4B12001C6251 /* RoundedCornerImage.m */; };
 		92A7B223262A4DA0001C6251 /* ShadowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A7B222262A4DA0001C6251 /* ShadowView.m */; };
-		92A7B226262B908F001C6251 /* TaskCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A7B225262B908F001C6251 /* TaskCell.m */; };
 		92A7B229262B9CE1001C6251 /* PlanCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A7B228262B9CE1001C6251 /* PlanCell.m */; };
 		92A7B22C262C0705001C6251 /* AddTaskVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A7B22B262C0705001C6251 /* AddTaskVC.m */; };
 		92BF5429261E419D0055051E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BF5428261E419D0055051E /* AppDelegate.m */; };
@@ -58,8 +57,6 @@
 		92A7B21F262A4B12001C6251 /* RoundedCornerImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RoundedCornerImage.m; sourceTree = "<group>"; };
 		92A7B221262A4DA0001C6251 /* ShadowView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShadowView.h; sourceTree = "<group>"; };
 		92A7B222262A4DA0001C6251 /* ShadowView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShadowView.m; sourceTree = "<group>"; };
-		92A7B224262B908F001C6251 /* TaskCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TaskCell.h; sourceTree = "<group>"; };
-		92A7B225262B908F001C6251 /* TaskCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TaskCell.m; sourceTree = "<group>"; };
 		92A7B227262B9CE1001C6251 /* PlanCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlanCell.h; sourceTree = "<group>"; };
 		92A7B228262B9CE1001C6251 /* PlanCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlanCell.m; sourceTree = "<group>"; };
 		92A7B22A262C0705001C6251 /* AddTaskVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddTaskVC.h; sourceTree = "<group>"; };
@@ -173,8 +170,6 @@
 				92A7B21F262A4B12001C6251 /* RoundedCornerImage.m */,
 				92A7B221262A4DA0001C6251 /* ShadowView.h */,
 				92A7B222262A4DA0001C6251 /* ShadowView.m */,
-				92A7B224262B908F001C6251 /* TaskCell.h */,
-				92A7B225262B908F001C6251 /* TaskCell.m */,
 				92A7B227262B9CE1001C6251 /* PlanCell.h */,
 				92A7B228262B9CE1001C6251 /* PlanCell.m */,
 			);
@@ -360,7 +355,6 @@
 				92A7B22C262C0705001C6251 /* AddTaskVC.m in Sources */,
 				92BF543A261E419F0055051E /* main.m in Sources */,
 				9231786B2625ECD30068B8BE /* HomeVC.m in Sources */,
-				92A7B226262B908F001C6251 /* TaskCell.m in Sources */,
 				923178682625EC9F0068B8BE /* ProfileVC.m in Sources */,
 				92A7B223262A4DA0001C6251 /* ShadowView.m in Sources */,
 				923178712625F0B60068B8BE /* DataService.m in Sources */,

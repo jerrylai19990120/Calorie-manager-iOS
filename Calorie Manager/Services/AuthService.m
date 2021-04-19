@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "AuthService.h"
 #import "WelcomeVC.h"
+#import "DataService.h"
 
 @import Firebase;
 
@@ -44,6 +45,8 @@
     
     [[FIRAuth auth] createUserWithEmail:email password:password completion:^(FIRAuthDataResult * _Nullable authResult, NSError * _Nullable error) {
         if(error == nil){
+            NSDictionary *dict = @{@"username": @"jerry", @"email": email};
+            [DataService.sharedInstance createDBUserWithUid:authResult.user.uid dict:dict];
             completion(true);
         }else{
             completion(false);

@@ -17,6 +17,16 @@
 
 @implementation DataService
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.ref = nil;
+        self.ref = [[FIRDatabase database]reference];
+    }
+    return self;
+}
+
 + (instancetype)sharedInstance{
     
     static DataService *sharedInstance = nil;
@@ -28,7 +38,9 @@
     return sharedInstance;
 }
 
-
+- (void)createDBUserWithUid:(NSString *)uid dict:(NSDictionary *)dict{
+    [[[self.ref child:@"users"]child:uid]updateChildValues:dict];
+}
 
 
 
