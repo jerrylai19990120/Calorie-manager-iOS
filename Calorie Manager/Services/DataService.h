@@ -17,7 +17,7 @@
 - (void)createDBUserWithUid:(NSString *)uid dict:(NSDictionary *)dict;
 - (void)addBasicInfoWithAge:(NSNumber *)age height:(NSNumber *)height weight:(NSNumber *)weight uid:(NSString *)uid completion:(void (^)(BOOL *status))completion;
 -(NSDictionary *)getUserInfo;
-+(User *)user;
++(void)userWithCompletion:(void (^)(User *user))completion;
 @end
 
 #endif /* DataService_h */

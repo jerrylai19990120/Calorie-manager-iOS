@@ -9,6 +9,7 @@
 #import "HomeTabBarVC.h"
 #import "DataService.h"
 
+
 @interface HomeTabBarVC ()
 
 @end
@@ -18,7 +19,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [DataService.sharedInstance getUserInfo];
+    [DataService userWithCompletion:^(User *user) {
+        self.user = user;
+    }];
 }
 
 

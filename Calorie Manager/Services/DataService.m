@@ -56,26 +56,28 @@
 
 - (NSDictionary *)getUserInfo{
     
-    NSDictionary *dict = nil;
+    __block NSDictionary *dict = nil;
     
     [[[self.ref child:@"users"]child:[[[FIRAuth auth]currentUser]uid]]getDataWithCompletionBlock:^(NSError * _Nullable error, FIRDataSnapshot * _Nonnull snapshot) {
         if(error==nil){
-            NSLog(@"%@", snapshot);
+            
+            
         }
     }];
-    
+    NSLog(@"%@", dict);
     return dict;
 }
 
-+ (User *)user{
-    static User *user = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        
-        user = [[User alloc]init];
-    });
++ (void)userWithCompletion:(void (^)(User *))completion{
     
-    return user;
+    [[[DataService.sharedInstance.ref child:@"users"]child:[[[FIRAuth auth]currentUser]uid]]getDataWithCompletionBlock:^(NSError * _Nullable error, FIRDataSnapshot * _Nonnull snapshot) {
+        if(error==nil){
+            User *user = [[User alloc]initWithUid:[FIRAuth auth].currentUser.uid username:snapshot.value[@"username"] email:snapshot.value[@"email"] age:(NSNumber *)snapshot.value[@"age"] height:(NSNumber *)snapshot.value[@"height"] weight:(NSNumber *)snapshot.value[@"weight"]];
+            completion(user);
+        }else{
+            completion(nil);
+        }
+    }];
 }
 
 @end

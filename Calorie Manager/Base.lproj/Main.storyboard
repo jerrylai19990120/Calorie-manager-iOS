@@ -1111,6 +1111,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="ke5-j6-Gwy"/>
                     <connections>
+                        <outlet property="nameTxt" destination="nMl-T2-MVT" id="173-Ta-dfD"/>
                         <outlet property="tableView" destination="yyy-R4-pOX" id="fve-3c-iYo"/>
                     </connections>
                 </viewController>
