@@ -7,14 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "HomeTabBarVC.h"
+
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface HomeVC : UIViewController<UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UILabel *nameTxt;
-
 
 @end
 

@@ -8,7 +8,7 @@
 
 #import "HomeVC.h"
 #import "MealCell.h"
-
+#import "DataService.h"
 
 @interface HomeVC ()
 
@@ -21,6 +21,11 @@
     // Do any additional setup after loading the view.
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    [DataService userWithCompletion:^(User *user) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.nameTxt.text = [NSString stringWithFormat:@"Hello, %@", user.username];
+        });
+    }];
 
 }
 
