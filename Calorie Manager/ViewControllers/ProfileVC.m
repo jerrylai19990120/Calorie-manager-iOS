@@ -20,16 +20,14 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [DataService userWithCompletion:^(User *user) {
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            
+        dispatch_sync(dispatch_get_main_queue(), ^{
             self.username.text = user.username;
             self.age.text = (NSString *)user.age;
             self.height.text = (NSString *)user.height;
             self.weight.text = (NSString *)user.weight;
             self.userEmail.text = user.email;
-            
         });
+        
     }];
 }
 
