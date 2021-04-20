@@ -8,6 +8,7 @@
 
 #import "ProgressVC.h"
 #import "PlanCell.h"
+#import "DataService.h"
 
 @interface ProgressVC ()
 
@@ -23,6 +24,12 @@
     [self.segmentedControl setTitleTextAttributes:[NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:NSForegroundColorAttributeName] forState:UIControlStateSelected];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    [DataService userWithCompletion:^(User *user) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.username.text = user.username;
+            self.userEmail.text = user.email;
+        });
+    }];
     
 }
 
@@ -31,7 +38,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 1;
+    return _meals.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{

@@ -23,7 +23,10 @@
     self.tableView.dataSource = self;
     [DataService userWithCompletion:^(User *user) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            self.nameTxt.text = [NSString stringWithFormat:@"Hello, %@", user.username];
+            self.nameTxt.text = [NSString stringWithFormat:@"Hello, %@!", user.username];
+            int number = 66+6.23*[user.weight intValue]+12.7*[user.height intValue]-4.7*[user.age intValue];
+            self.calorieBudget.text = [NSString stringWithFormat:@"%d", number];
+            
         });
     }];
 
@@ -34,7 +37,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 2;
+    return _meals.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -49,14 +52,6 @@
     }
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

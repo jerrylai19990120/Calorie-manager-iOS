@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *nameTxt;
 @property (weak, nonatomic) IBOutlet RoundedCornerImage *userImg;
 @property (weak, nonatomic) IBOutlet UILabel *calorieBudget;
+@property (strong, nonatomic) NSMutableArray *meals;
 
 @end
 
