@@ -10,4 +10,16 @@
 
 @implementation Plan
 
+- (id)initWithTitle:(NSString *)title progress:(NSNumber *)progress goalDays:(NSNumber *)goalDays{
+        
+    self = [super init];
+    if(self){
+        self.title = title;
+        self.progress = progress;
+        self.goalDays = goalDays;
+    }
+    
+    return self;
+}
+
 @end

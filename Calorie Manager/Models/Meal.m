@@ -10,4 +10,16 @@
 
 @implementation Meal
 
+- (id)initWithName:(NSString *)name type:(NSString *)type calories:(NSNumber *)calories{
+    
+    self = [super init];
+    if(self){
+        self.mealName = name;
+        self.mealType = type;
+        self.calories = calories;
+    }
+    
+    return self;
+}
+
 @end
