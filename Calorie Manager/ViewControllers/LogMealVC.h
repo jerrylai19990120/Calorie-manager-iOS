@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LogMealVC : UIViewController
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
+@property (weak, nonatomic) IBOutlet UITextField *caloriesTxt;
+@property (weak, nonatomic) IBOutlet UITextField *mealNameTxt;
 
 @end
 

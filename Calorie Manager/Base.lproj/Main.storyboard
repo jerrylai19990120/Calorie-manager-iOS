@@ -1182,12 +1182,11 @@
                                     <constraint firstAttribute="height" constant="52" id="SLH-K8-0cm"/>
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="  Start Now" image="plus" catalog="system">
+                                <state key="normal" title="   Log Your Meal" image="plus" catalog="system">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="addBtnPressed:" destination="GuJ-xG-SSo" eventType="touchUpInside" id="JsA-fp-iUR"/>
-                                    <action selector="addBtnPressed:" destination="iyI-h7-GUG" eventType="touchUpInside" id="SuK-Rx-xt7"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="e.g. Boiled eggs, salted peppers" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2GT-HE-Awn">
@@ -1270,6 +1269,8 @@
                         <viewLayoutGuide key="safeArea" id="8Zv-lM-pUN"/>
                     </view>
                     <connections>
+                        <outlet property="caloriesTxt" destination="a1j-Z9-Ca0" id="BSx-mR-L5N"/>
+                        <outlet property="mealNameTxt" destination="2GT-HE-Awn" id="VKr-d7-zRr"/>
                         <outlet property="segmentedControl" destination="bUY-lW-UmT" id="Tm2-Xb-jwS"/>
                     </connections>
                 </viewController>

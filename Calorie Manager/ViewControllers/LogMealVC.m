@@ -7,6 +7,8 @@
 //
 
 #import "LogMealVC.h"
+#import "DataService.h"
+#import "Meal.h"
 
 @interface LogMealVC ()
 
@@ -26,7 +28,28 @@
 }
 
 - (IBAction)addBtnPressed:(id)sender {
+    
     [self dismissViewControllerAnimated:true completion:nil];
+    NSInteger index = self.segmentedControl.selectedSegmentIndex;
+    NSString *type = @"Unknown";
+    if(index==0){
+        type = @"Breakfast";
+    }else if(index==1){
+        type = @"Lunch";
+    }else if(index==2){
+        type = @"Dinner";
+    }else if(index==3){
+        type = @"Snack";
+    }
+    
+    Meal *meal = [[Meal alloc]initWithName:self.mealNameTxt.text type:type calories:(NSNumber *)self.caloriesTxt.text];
+    [DataService.sharedInstance addMeal:meal completion:^(BOOL *status) {
+        if(status){
+            NSLog(@"success");
+        }
+    }];
 }
+
+
 
 @end

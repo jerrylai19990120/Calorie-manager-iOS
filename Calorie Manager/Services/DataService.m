@@ -82,5 +82,28 @@
     }];
 }
 
+- (void)addMeal:(Meal *)meal completion:(void (^)(BOOL *))completion{
+        
+    NSString *key = [DataService.sharedInstance.ref childByAutoId].key;
+    
+    NSDictionary *values = @{
+        @"mealName": meal.mealName,
+        @"mealType": meal.mealType,
+        @"calories": meal.calories
+    };
+    
+    NSDictionary *updatedValue = @{
+        key: values
+    };
+    
+    [[[[DataService.sharedInstance.ref child:@"users"]child:[FIRAuth auth].currentUser.uid]child:@"meals"]updateChildValues:updatedValue withCompletionBlock:^(NSError * _Nullable error, FIRDatabaseReference * _Nonnull ref) {
+        if(error==nil){
+            
+            completion(true);
+        }else{
+            completion(false);
+        }
+    }];
+}
 
 @end
