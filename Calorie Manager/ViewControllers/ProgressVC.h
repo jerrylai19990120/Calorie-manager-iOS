@@ -7,12 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RoundedCornerImage.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ProgressVC : UIViewController<UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UILabel *username;
+@property (weak, nonatomic) IBOutlet RoundedCornerImage *userImg;
+@property (weak, nonatomic) IBOutlet UILabel *userEmail;
 
 @end
 

@@ -7,13 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "RoundedCornerImage.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface HomeVC : UIViewController<UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UILabel *nameTxt;
+@property (weak, nonatomic) IBOutlet RoundedCornerImage *userImg;
+@property (weak, nonatomic) IBOutlet UILabel *calorieBudget;
 
 @end
 

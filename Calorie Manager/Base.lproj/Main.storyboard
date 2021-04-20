@@ -648,6 +648,12 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="person" catalog="system" id="mMh-VW-2An"/>
                     <connections>
+                        <outlet property="age" destination="H38-l6-bOh" id="ZI7-85-quN"/>
+                        <outlet property="height" destination="97q-aO-oPn" id="A9x-hK-SwU"/>
+                        <outlet property="userEmail" destination="32W-Cc-UXO" id="328-aL-LIp"/>
+                        <outlet property="userImg" destination="Wx9-Qz-mvE" id="FZt-Pb-ef1"/>
+                        <outlet property="username" destination="Emc-f0-f3k" id="x5o-6F-GbO"/>
+                        <outlet property="weight" destination="BZH-05-jka" id="tho-90-sti"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="LogOut" modalPresentationStyle="fullScreen" id="CfA-SG-nD8"/>
                     </connections>
                 </viewController>
@@ -806,6 +812,9 @@
                     <connections>
                         <outlet property="segmentedControl" destination="RC3-t5-hXf" id="iyO-PS-7Sw"/>
                         <outlet property="tableView" destination="d9a-3G-vXM" id="tDL-Z5-hf4"/>
+                        <outlet property="userEmail" destination="YZz-H5-MLe" id="rY7-MA-88e"/>
+                        <outlet property="userImg" destination="A13-wd-Hnf" id="EwE-8m-VNs"/>
+                        <outlet property="username" destination="bYh-Aj-wFz" id="AjF-6c-vBi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9j2-ri-eWB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1124,8 +1133,10 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="ke5-j6-Gwy"/>
                     <connections>
+                        <outlet property="calorieBudget" destination="jl7-0Q-Gyt" id="nb1-1F-1gP"/>
                         <outlet property="nameTxt" destination="nMl-T2-MVT" id="173-Ta-dfD"/>
                         <outlet property="tableView" destination="yyy-R4-pOX" id="fve-3c-iYo"/>
+                        <outlet property="userImg" destination="I48-RA-QfQ" id="teX-aH-X6B"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MBb-v6-Xhx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
