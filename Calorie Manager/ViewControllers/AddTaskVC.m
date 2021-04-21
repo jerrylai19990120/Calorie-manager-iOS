@@ -7,6 +7,7 @@
 //
 
 #import "AddTaskVC.h"
+#import "DataService.h"
 
 @interface AddTaskVC ()
 
@@ -25,7 +26,15 @@
 
 
 - (IBAction)addBtnPressed:(id)sender {
-    [self dismissViewControllerAnimated:true completion:nil];
+    
+    Plan *plan = [[Plan alloc]initWithTitle:self.planName.text progress:[[NSNumber alloc]initWithInt:0] goalDays:(NSNumber *)self.planLength.text];
+    
+    [DataService.sharedInstance addPlan:plan completion:^(BOOL *status) {
+        if(status){
+            [self dismissViewControllerAnimated:true completion:nil];
+        }
+    }];
+    
 }
 
 @end

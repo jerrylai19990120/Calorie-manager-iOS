@@ -27,7 +27,7 @@
     // Configure the view for the selected state
 }
 
-- (void)configureCell{
+- (void)configureCellWithMeal:(Meal *)meal{
     self.img.image = [UIImage imageNamed:@"salad"];
     self.calories.text = @"80kCal";
     self.name.text = @"Green Salad";

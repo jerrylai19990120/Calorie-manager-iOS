@@ -106,4 +106,45 @@
     }];
 }
 
+
+- (void)getAllMealsWithCompletion:(void (^)(NSMutableArray *))completion{
+    
+    NSMutableArray *meals = [[NSMutableArray alloc]init];
+    
+    [[[[DataService.sharedInstance.ref child:@"users"]child:[FIRAuth auth].currentUser.uid]child:@"meals"]getDataWithCompletionBlock:^(NSError * _Nullable error, FIRDataSnapshot * _Nonnull snapshot) {
+        if(error==nil){
+            for (FIRDataSnapshot *meal in snapshot.children.allObjects) {
+                Meal *item = [[Meal alloc]initWithName:meal.value[@"mealName"] type:meal.value[@"mealType"] calories:(NSNumber *)meal.value[@"calories"]];
+                [meals addObject:item];
+            }
+            completion(meals);
+        }else{
+            completion(meals);
+        }
+    }];
+}
+
+
+- (void)addPlan:(Plan *)plan completion:(void (^)(BOOL *))completion{
+    
+    NSString *key = [DataService.sharedInstance.ref childByAutoId].key;
+    
+    NSDictionary *values = @{
+        @"title": plan.title,
+        @"progress": plan.progress,
+        @"length": plan.goalDays
+    };
+    
+    NSDictionary *updated = @{
+        key: values
+    };
+    
+    [[[[DataService.sharedInstance.ref child:@"users"]child:[FIRAuth auth].currentUser.uid]child:@"plans"]updateChildValues:updated withCompletionBlock:^(NSError * _Nullable error, FIRDatabaseReference * _Nonnull ref) {
+        if(error==nil){
+            completion(true);
+        }else{
+            completion(false);
+        }
+    }];
+}
 @end

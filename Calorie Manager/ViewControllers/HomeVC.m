@@ -29,6 +29,12 @@
             
         });
     }];
+    
+    
+    [DataService.sharedInstance getAllMealsWithCompletion:^(NSMutableArray *meals) {
+        self.meals = [[NSMutableArray alloc]initWithArray:meals];
+    }];
+    
 
 }
 
@@ -37,7 +43,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return _meals.count;
+    return [self.meals count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -47,7 +53,7 @@
     if(cell == nil){
         return [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }else{
-        [cell configureCell];
+        [cell configureCellWithMeal:[self.meals objectAtIndex:(NSUInteger)indexPath]];
         return cell;
     }
 }

@@ -29,7 +29,7 @@
 
 - (IBAction)addBtnPressed:(id)sender {
     
-    [self dismissViewControllerAnimated:true completion:nil];
+    
     NSInteger index = self.segmentedControl.selectedSegmentIndex;
     NSString *type = @"Unknown";
     if(index==0){
@@ -45,7 +45,7 @@
     Meal *meal = [[Meal alloc]initWithName:self.mealNameTxt.text type:type calories:(NSNumber *)self.caloriesTxt.text];
     [DataService.sharedInstance addMeal:meal completion:^(BOOL *status) {
         if(status){
-            NSLog(@"success");
+            [self dismissViewControllerAnimated:true completion:nil];
         }
     }];
 }

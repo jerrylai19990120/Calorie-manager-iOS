@@ -11,6 +11,7 @@
 @import Firebase;
 #import "User.h"
 #import "Meal.h"
+#import "Plan.h"
 
 @interface DataService : NSObject
 + (instancetype)sharedInstance;
@@ -20,6 +21,8 @@
 - (NSDictionary *)getUserInfo;
 + (void)userWithCompletion:(void (^)(User *user))completion;
 - (void)addMeal:(Meal *)meal completion:(void (^)(BOOL *status))completion;
+- (void)getAllMealsWithCompletion:(void (^)(NSMutableArray *meals))completion;
+- (void)addPlan:(Plan *)plan completion:(void (^)(BOOL *status))completion;
 @end
 
 #endif /* DataService_h */
