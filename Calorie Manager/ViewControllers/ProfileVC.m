@@ -9,6 +9,7 @@
 #import "ProfileVC.h"
 #import "AuthService.h"
 #import "DataService.h"
+#import "Meal.h"
 
 @interface ProfileVC ()
 
@@ -29,6 +30,25 @@
         });
         
     }];
+    
+    [DataService.sharedInstance getAllMealsWithCompletion:^(NSMutableArray *meals) {
+        self.meals = [meals mutableCopy];
+        
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            if([self.meals count]==0){
+                self.calories.text = @"0kCal";
+                self.mealName.text = @"No meals logged yet";
+                self.mealImg.image = [UIImage imageNamed:@"Breakfast"];
+            }else{
+                Meal* meal = [self.meals objectAtIndex:([self.meals count]-1)];
+                self.calories.text = [NSString stringWithFormat:@"%@kCal", meal.calories];
+                self.mealName.text = meal.mealName;
+                self.mealImg.image = [UIImage imageNamed:meal.mealType];
+            }
+            
+        });
+    }];
+    
 }
 
 - (IBAction)logOutBtnPressed:(id)sender {

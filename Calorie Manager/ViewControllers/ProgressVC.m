@@ -9,6 +9,7 @@
 #import "ProgressVC.h"
 #import "PlanCell.h"
 #import "DataService.h"
+#import "MealCell.h"
 
 @interface ProgressVC ()
 
@@ -45,13 +46,34 @@
         });
     }];
     
+    
+    [self.segmentedControl addTarget:self action:@selector(valueChanged:) forControlEvents:UIControlEventValueChanged];
+    
 }
+
+- (void)valueChanged:(id)sender{
+    [self.tableView reloadData];
+}
+
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    switch (self.segmentedControl.selectedSegmentIndex) {
+        case 0:
+            return [self.plans count];
+            break;
+        case 1:
+            return [self.plans count];
+            break;
+        case 2:
+            return [self.meals count];
+            break;
+        default:
+            break;
+    }
     return [self.plans count];
 }
 
@@ -59,12 +81,38 @@
     
     PlanCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PlanCell" forIndexPath:indexPath];
     
-    if(cell==nil){
-        return [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"PlanCell"];
-    }else{
-        [cell configureCellWithPlan:[self.plans objectAtIndex:indexPath.row]];
-        return cell;
+    MealCell *cell2 = [tableView dequeueReusableCellWithIdentifier:@"MealCell" forIndexPath:indexPath];
+    
+    switch (self.segmentedControl.selectedSegmentIndex) {
+        case 0:
+            if(cell==nil){
+                return [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"PlanCell"];
+            }else{
+                [cell configureCellWithPlan:[self.plans objectAtIndex:indexPath.row]];
+                return cell;
+            }
+            break;
+        case 1:
+            if(cell==nil){
+                return [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"PlanCell"];
+            }else{
+                [cell configureCellWithPlan:[self.plans objectAtIndex:indexPath.row]];
+                return cell;
+            }
+            break;
+        case 2:
+            if(cell2==nil){
+                return [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"MealCell"];
+            }else{
+                [cell2 configureCellWithMeal:[self.meals objectAtIndex:indexPath.row]];
+                return cell2;
+            }
+            break;
+        default:
+            break;
     }
+    
+    return [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"PlanCell"];
     
 }
 

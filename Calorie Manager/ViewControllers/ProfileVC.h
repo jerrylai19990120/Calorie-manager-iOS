@@ -18,8 +18,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *age;
 @property (weak, nonatomic) IBOutlet UILabel *weight;
 @property (weak, nonatomic) IBOutlet UILabel *height;
+@property (weak, nonatomic) IBOutlet UIImageView *mealImg;
+@property (weak, nonatomic) IBOutlet UILabel *mealName;
+@property (weak, nonatomic) IBOutlet UILabel *calories;
 
-
+@property (strong, nonatomic) NSMutableArray *meals;
 @end
 
 NS_ASSUME_NONNULL_END
