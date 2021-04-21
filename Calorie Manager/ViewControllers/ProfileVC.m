@@ -36,5 +36,12 @@
     [self performSegueWithIdentifier:@"LogOut" sender:self];
 }
 
+- (IBAction)pictureBtnPressed:(id)sender {
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc]init];
+    imagePicker.delegate = self;
+    imagePicker.allowsEditing = false;
+    imagePicker.mediaTypes = @[@"public.image", @"public.movie"];
+    imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+}
 
 @end

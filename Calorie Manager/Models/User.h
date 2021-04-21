@@ -21,7 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString *uid;
 - (id) initWithUid:(NSString *)uid username:(NSString *)username email:(NSString *)email age:(NSNumber *)age height:(NSNumber *)height weight:(NSNumber *)weight;
 
-
+- (int)getCaloriedNeededWithAge:(int)age weight:(int)weight height:(int)height;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -9,6 +9,7 @@
 #import "HomeVC.h"
 #import "MealCell.h"
 #import "DataService.h"
+#import "User.h"
 
 @interface HomeVC ()
 
@@ -22,9 +23,10 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [DataService userWithCompletion:^(User *user) {
+        
         dispatch_async(dispatch_get_main_queue(), ^{
             self.nameTxt.text = [NSString stringWithFormat:@"Hello, %@!", user.username];
-            int number = 66+6.23*[user.weight intValue]+12.7*[user.height intValue]-4.7*[user.age intValue];
+            int number = [user getCaloriedNeededWithAge:[user.age intValue] weight:[user.weight intValue] height:[user.height intValue]];
             self.calorieBudget.text = [NSString stringWithFormat:@"%d", number];
             
         });

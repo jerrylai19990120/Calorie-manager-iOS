@@ -26,5 +26,8 @@
     
 }
 
-
+- (int)getCaloriedNeededWithAge:(int)age weight:(int)weight height:(int)height{
+    int calories = 66+6.23*weight+12.7*height-4.7*age;
+    return calories;
+}
 @end

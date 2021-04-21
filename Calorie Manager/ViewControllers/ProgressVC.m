@@ -38,6 +38,13 @@
         });
     }];
     
+    [DataService.sharedInstance getAllMealsWithCompletion:^(NSMutableArray *meals) {
+        self.meals = [meals mutableCopy];
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
+    }];
+    
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
