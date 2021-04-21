@@ -30,9 +30,13 @@
         });
     }];
     
-    
+
     [DataService.sharedInstance getAllMealsWithCompletion:^(NSMutableArray *meals) {
         self.meals = [[NSMutableArray alloc]initWithArray:meals];
+        
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
     }];
     
 
@@ -53,7 +57,8 @@
     if(cell == nil){
         return [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }else{
-        [cell configureCellWithMeal:[self.meals objectAtIndex:(NSUInteger)indexPath]];
+        
+        [cell configureCellWithMeal:[self.meals objectAtIndex:indexPath.row]];
         return cell;
     }
 }

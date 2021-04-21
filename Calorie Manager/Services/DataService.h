@@ -23,6 +23,7 @@
 - (void)addMeal:(Meal *)meal completion:(void (^)(BOOL *status))completion;
 - (void)getAllMealsWithCompletion:(void (^)(NSMutableArray *meals))completion;
 - (void)addPlan:(Plan *)plan completion:(void (^)(BOOL *status))completion;
+- (void)getAllPlansWithCompletion:(void (^)(NSMutableArray *plans))completion;
 @end
 
 #endif /* DataService_h */

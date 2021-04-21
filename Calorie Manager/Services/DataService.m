@@ -147,4 +147,23 @@
         }
     }];
 }
+
+- (void)getAllPlansWithCompletion:(void (^)(NSMutableArray *))completion{
+    NSMutableArray *plans = [[NSMutableArray alloc]init];
+    
+    [[[[DataService.sharedInstance.ref child:@"users"]child:[FIRAuth auth].currentUser.uid]child:@"plans"]getDataWithCompletionBlock:^(NSError * _Nullable error, FIRDataSnapshot * _Nonnull snapshot) {
+        if(error==nil){
+            for(FIRDataSnapshot *plan in snapshot.children.allObjects){
+                Plan *item = [[Plan alloc]initWithTitle:plan.value[@"title"] progress:(NSNumber *)plan.value[@"progress"] goalDays:(NSNumber *)plan.value[@"length"]];
+                
+                [plans addObject:item];
+            }
+            
+            completion(plans);
+        }else{
+            completion(plans);
+        }
+    }];
+}
+
 @end

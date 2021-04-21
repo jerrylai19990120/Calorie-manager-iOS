@@ -31,6 +31,13 @@
         });
     }];
     
+    [DataService.sharedInstance getAllPlansWithCompletion:^(NSMutableArray *plans) {
+        self.plans = [plans mutableCopy];
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
+    }];
+    
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -38,7 +45,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return _meals.count;
+    return [self.plans count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -48,7 +55,7 @@
     if(cell==nil){
         return [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"PlanCell"];
     }else{
-        [cell configureCell];
+        [cell configureCellWithPlan:[self.plans objectAtIndex:indexPath.row]];
         return cell;
     }
     

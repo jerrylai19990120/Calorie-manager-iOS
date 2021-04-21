@@ -28,9 +28,9 @@
 }
 
 - (void)configureCellWithMeal:(Meal *)meal{
-    self.img.image = [UIImage imageNamed:@"salad"];
-    self.calories.text = @"80kCal";
-    self.name.text = @"Green Salad";
+    self.img.image = [UIImage imageNamed:meal.mealType];
+    self.calories.text = [NSString stringWithFormat:@"%@kCal", meal.calories];
+    self.name.text = meal.mealName;
 }
 
 @end

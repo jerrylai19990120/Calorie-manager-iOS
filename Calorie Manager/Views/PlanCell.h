@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Plan.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -15,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *title;
 @property (weak, nonatomic) IBOutlet UILabel *numOfDays;
 @property (weak, nonatomic) IBOutlet UIProgressView *progressBar;
-- (void)configureCell;
+- (void)configureCellWithPlan:(Plan *)plan;
 @end
 
 NS_ASSUME_NONNULL_END

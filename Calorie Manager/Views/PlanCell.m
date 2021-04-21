@@ -21,10 +21,12 @@
     // Configure the view for the selected state
 }
 
-- (void)configureCell{
+- (void)configureCellWithPlan:(Plan *)plan{
+    self.title.text = plan.title;
     self.img.image = [UIImage imageNamed:@"plan"];
-    self.progressBar.progress = 0.6;
-    self.numOfDays.text = @"6 / 10 Days";
+    [self.progressBar setProgress:(plan.progress.floatValue/plan.goalDays.floatValue) animated:true];
+    self.numOfDays.text = [NSString stringWithFormat:@"%@ / %@ Days", plan.progress, plan.goalDays];
 }
+
 
 @end

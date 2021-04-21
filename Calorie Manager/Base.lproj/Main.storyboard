@@ -567,10 +567,10 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="80kCal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fXZ-Fe-nZa">
-                                                <rect key="frame" x="278" y="24" width="58" height="22"/>
+                                                <rect key="frame" x="266" y="24" width="70" height="22"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="22" id="SXi-Sb-5Cs"/>
-                                                    <constraint firstAttribute="width" constant="58" id="k6V-3b-2Bs"/>
+                                                    <constraint firstAttribute="width" constant="70" id="k6V-3b-2Bs"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
                                                 <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1062,9 +1062,8 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="80kCal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q4v-RM-Nw3">
-                                                    <rect key="frame" x="286" y="38" width="58" height="22"/>
+                                                    <rect key="frame" x="286.5" y="38" width="57.5" height="22"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="58" id="9us-wR-tfn"/>
                                                         <constraint firstAttribute="height" constant="22" id="KzD-qV-QEE"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
