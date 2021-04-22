@@ -49,10 +49,16 @@
             
         });
     }];
-    LineChartView *lineView = [[LineChartView alloc]initWithFrame:self.chartView.bounds];
+    LineChartView *lineView = [[LineChartView alloc]init];
+    
     [self.chartView addSubview:lineView];
-    lineView.autoresizingMask = false;
     lineView.backgroundColor = [UIColor systemBlueColor];
+    
+    [lineView.topAnchor constraintEqualToAnchor:self.chartView.topAnchor constant:0].active = true;
+    [lineView.bottomAnchor constraintEqualToAnchor:self.chartView.bottomAnchor constant:0].active = true;
+    [lineView.leadingAnchor constraintEqualToAnchor:self.chartView.leadingAnchor constant:0].active = true;
+    [lineView.trailingAnchor constraintEqualToAnchor:self.chartView.trailingAnchor constant:0].active = true;
+    lineView.translatesAutoresizingMaskIntoConstraints = false;
     
 }
 
