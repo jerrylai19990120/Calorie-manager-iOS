@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "RoundedCornerImage.h"
+@import Charts;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -21,8 +22,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIImageView *mealImg;
 @property (weak, nonatomic) IBOutlet UILabel *mealName;
 @property (weak, nonatomic) IBOutlet UILabel *calories;
+@property (weak, nonatomic) IBOutlet UIView *chartView;
 
 @property (strong, nonatomic) NSMutableArray *meals;
+- (void)setupBarLineChartView:(BarLineChartViewBase *)barLineChart;
 @end
 
 NS_ASSUME_NONNULL_END

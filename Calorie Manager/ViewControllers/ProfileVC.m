@@ -10,6 +10,7 @@
 #import "AuthService.h"
 #import "DataService.h"
 #import "Meal.h"
+@import Charts;
 
 @interface ProfileVC ()
 
@@ -48,6 +49,10 @@
             
         });
     }];
+    LineChartView *lineView = [[LineChartView alloc]initWithFrame:self.chartView.bounds];
+    [self.chartView addSubview:lineView];
+    lineView.autoresizingMask = false;
+    lineView.backgroundColor = [UIColor systemBlueColor];
     
 }
 
@@ -62,6 +67,23 @@
     imagePicker.allowsEditing = false;
     imagePicker.mediaTypes = @[@"public.image", @"public.movie"];
     imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+}
+
+- (void)setupBarLineChartView:(BarLineChartViewBase *)barLineChart{
+    
+    barLineChart.chartDescription.enabled = false;
+    
+    barLineChart.drawGridBackgroundEnabled = false;
+    
+    barLineChart.dragEnabled = true;
+    [barLineChart setScaleEnabled:true];
+    barLineChart.pinchZoomEnabled = false;
+    
+    ChartXAxis *xAxis = barLineChart.xAxis;
+    xAxis.labelPosition = XAxisLabelPositionBottom;
+    
+    barLineChart.rightAxis.enabled = false;
+    
 }
 
 @end
