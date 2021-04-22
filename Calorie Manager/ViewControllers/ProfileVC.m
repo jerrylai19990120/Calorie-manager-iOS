@@ -49,16 +49,29 @@
             
         });
     }];
-    LineChartView *lineView = [[LineChartView alloc]init];
     
-    [self.chartView addSubview:lineView];
-    lineView.backgroundColor = [UIColor systemBlueColor];
+    BarChartView *barView = [[BarChartView alloc]init];
     
-    [lineView.topAnchor constraintEqualToAnchor:self.chartView.topAnchor constant:0].active = true;
-    [lineView.bottomAnchor constraintEqualToAnchor:self.chartView.bottomAnchor constant:0].active = true;
-    [lineView.leadingAnchor constraintEqualToAnchor:self.chartView.leadingAnchor constant:0].active = true;
-    [lineView.trailingAnchor constraintEqualToAnchor:self.chartView.trailingAnchor constant:0].active = true;
-    lineView.translatesAutoresizingMaskIntoConstraints = false;
+    [self.chartView addSubview:barView];
+    barView.backgroundColor = [UIColor whiteColor];
+    
+    [barView.topAnchor constraintEqualToAnchor:self.chartView.topAnchor constant:0].active = true;
+    [barView.bottomAnchor constraintEqualToAnchor:self.chartView.bottomAnchor constant:0].active = true;
+    [barView.leadingAnchor constraintEqualToAnchor:self.chartView.leadingAnchor constant:0].active = true;
+    [barView.trailingAnchor constraintEqualToAnchor:self.chartView.trailingAnchor constant:0].active = true;
+    barView.translatesAutoresizingMaskIntoConstraints = false;
+    
+    NSArray *entries = @[
+        [[BarChartDataEntry alloc]initWithX:1 y:80],
+        [[BarChartDataEntry alloc]initWithX:2 y:90],
+        [[BarChartDataEntry alloc]initWithX:3 y:180],
+    ];
+    BarChartDataSet *dataSet = [[BarChartDataSet alloc]initWithEntries:entries label:@""];
+    barView.data = [[BarChartData alloc]initWithDataSet:dataSet];
+}
+
+
+- (void)chartValueSelected:(ChartViewBase *)chartView entry:(ChartDataEntry *)entry highlight:(ChartHighlight *)highlight{
     
 }
 

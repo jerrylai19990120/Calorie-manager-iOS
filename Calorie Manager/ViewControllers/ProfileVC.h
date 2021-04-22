@@ -12,7 +12,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ProfileVC : UIViewController
+@interface ProfileVC : UIViewController<ChartViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *username;
 @property (weak, nonatomic) IBOutlet UILabel *userEmail;
