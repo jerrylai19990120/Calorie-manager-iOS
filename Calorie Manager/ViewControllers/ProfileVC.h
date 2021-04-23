@@ -12,7 +12,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ProfileVC : UIViewController<ChartViewDelegate>
+@interface ProfileVC : UIViewController<ChartViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *username;
 @property (weak, nonatomic) IBOutlet UILabel *userEmail;
@@ -23,9 +23,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *mealName;
 @property (weak, nonatomic) IBOutlet UILabel *calories;
 @property (weak, nonatomic) IBOutlet UIView *chartView;
+@property (weak, nonatomic) IBOutlet UIImageView *userImg;
 
 @property (strong, nonatomic) NSMutableArray *meals;
 - (void)setupBarLineChartView:(BarLineChartViewBase *)barLineChart;
+- (void)pickPhoto;
 @end
 
 NS_ASSUME_NONNULL_END

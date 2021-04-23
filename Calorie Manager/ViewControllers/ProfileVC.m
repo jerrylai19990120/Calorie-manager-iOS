@@ -68,6 +68,11 @@
     ];
     BarChartDataSet *dataSet = [[BarChartDataSet alloc]initWithEntries:entries label:@""];
     barView.data = [[BarChartData alloc]initWithDataSet:dataSet];
+    
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(pickPhoto)];
+    singleTap.numberOfTapsRequired = 1;
+    [self.userImg setUserInteractionEnabled:true];
+    [self.userImg addGestureRecognizer:singleTap];
 }
 
 
@@ -80,12 +85,17 @@
     [self performSegueWithIdentifier:@"LogOut" sender:self];
 }
 
-- (IBAction)pictureBtnPressed:(id)sender {
+- (void)pickPhoto{
     UIImagePickerController *imagePicker = [[UIImagePickerController alloc]init];
+    imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     imagePicker.delegate = self;
-    imagePicker.allowsEditing = false;
-    imagePicker.mediaTypes = @[@"public.image", @"public.movie"];
-    imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    [self presentViewController:imagePicker animated:true completion:nil];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<UIImagePickerControllerInfoKey,id> *)info{
+    UIImage *image = info[UIImagePickerControllerOriginalImage];
+    self.userImg.image = image;
+    [picker dismissViewControllerAnimated:true completion:nil];
 }
 
 - (void)setupBarLineChartView:(BarLineChartViewBase *)barLineChart{
