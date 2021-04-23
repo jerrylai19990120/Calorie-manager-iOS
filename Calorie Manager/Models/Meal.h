@@ -14,7 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (assign) NSString *mealName;
 @property (assign) NSNumber *calories;
 @property (assign) NSString *mealType;
-- (id)initWithName:(NSString *)name type:(NSString *)type calories:(NSNumber *)calories;
+@property (assign) NSString *date;
+- (id)initWithName:(NSString *)name type:(NSString *)type calories:(NSNumber *)calories date:(NSString *)date;
 @end
 
 NS_ASSUME_NONNULL_END

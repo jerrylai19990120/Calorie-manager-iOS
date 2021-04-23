@@ -87,18 +87,26 @@
 }
 
 - (void)addMeal:(Meal *)meal completion:(void (^)(BOOL *))completion{
-        
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+    [formatter setDateFormat:@"MM-dd-yyyy"];
+    NSString *today = [formatter stringFromDate:[NSDate date]];
+    
     NSString *key = [DataService.sharedInstance.ref childByAutoId].key;
+    
+    NSString *finalKey = [NSString stringWithFormat:@"%@:%@",today, key];
     
     NSDictionary *values = @{
         @"mealName": meal.mealName,
         @"mealType": meal.mealType,
-        @"calories": meal.calories
+        @"calories": meal.calories,
+        @"date": today
     };
     
     NSDictionary *updatedValue = @{
-        key: values
+        finalKey: values
     };
+    
     
     [[[[DataService.sharedInstance.ref child:@"users"]child:[FIRAuth auth].currentUser.uid]child:@"meals"]updateChildValues:updatedValue withCompletionBlock:^(NSError * _Nullable error, FIRDatabaseReference * _Nonnull ref) {
         if(error==nil){
@@ -118,7 +126,7 @@
     [[[[DataService.sharedInstance.ref child:@"users"]child:[FIRAuth auth].currentUser.uid]child:@"meals"]getDataWithCompletionBlock:^(NSError * _Nullable error, FIRDataSnapshot * _Nonnull snapshot) {
         if(error==nil){
             for (FIRDataSnapshot *meal in snapshot.children.allObjects) {
-                Meal *item = [[Meal alloc]initWithName:meal.value[@"mealName"] type:meal.value[@"mealType"] calories:(NSNumber *)meal.value[@"calories"]];
+                Meal *item = [[Meal alloc]initWithName:meal.value[@"mealName"] type:meal.value[@"mealType"] calories:(NSNumber *)meal.value[@"calories"] date:snapshot.value[@"date"]];
                 [meals addObject:item];
             }
             completion(meals);
@@ -201,6 +209,36 @@
 - (void)downloadImageWithURL:(NSString *)url imageView:(UIImageView *)imageView{
     NSURL *URL = [NSURL URLWithString:url];
     [imageView sd_setImageWithURL:URL placeholderImage:[UIImage imageNamed:@"anon"]];
+}
+
+- (void)getMealsForTodayWithCompletion:(void (^)(NSMutableArray *))completion{
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+    [formatter setDateFormat:@"MM-dd-yyyy"];
+    
+    NSMutableArray *meals = [[NSMutableArray alloc]init];
+    
+    [[[[self.ref child:@"users"]child:[FIRAuth auth].currentUser.uid]child:@"meals"]getDataWithCompletionBlock:^(NSError * _Nullable error, FIRDataSnapshot * _Nonnull snapshot) {
+        
+        if(error!=nil){
+            NSLog(@"%@", error.localizedDescription);
+            completion(meals);
+        }else{
+            for(FIRDataSnapshot *meal in snapshot.children.allObjects){
+                NSString *dateString = [meal.key componentsSeparatedByString:@":"][0];
+                NSDate *date = [formatter dateFromString:dateString];
+                if([[NSCalendar currentCalendar]isDateInToday:date]){
+                    Meal *item = [[Meal alloc]initWithName:meal.value[@"mealName"] type:meal.value[@"mealType"] calories:(NSNumber *)meal.value[@"calories"] date:meal.value[@"date"]];
+                    
+                    [meals addObject:item];
+                }
+                
+            }
+            
+            completion(meals);
+        }
+    }];
+    
 }
 
 @end

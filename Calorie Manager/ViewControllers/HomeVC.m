@@ -36,13 +36,18 @@
         });
     }];
     
-
-    [DataService.sharedInstance getAllMealsWithCompletion:^(NSMutableArray *meals) {
-        self.meals = [[NSMutableArray alloc]initWithArray:meals];
+    [DataService.sharedInstance getMealsForTodayWithCompletion:^(NSMutableArray *meals) {
+        self.meals = [meals mutableCopy];
         
         dispatch_sync(dispatch_get_main_queue(), ^{
+            int total = self.calorieBudget.text.intValue;
+            for(Meal *meal in self.meals){
+                total = total - meal.calories.intValue;
+            }
+            self.calorieBudget.text = [NSString stringWithFormat:@"%d", total];
             [self.tableView reloadData];
         });
+        
     }];
     
 

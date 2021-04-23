@@ -1089,8 +1089,8 @@
                                     <constraint firstItem="4CT-hp-Ht5" firstAttribute="leading" secondItem="aBU-oR-eOw" secondAttribute="leading" constant="80" id="qvJ-dP-F7I"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recent Meal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZVi-l7-kks">
-                                <rect key="frame" x="8" y="399" width="116" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today's Meals" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZVi-l7-kks">
+                                <rect key="frame" x="8" y="399" width="132" height="24"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="20"/>
                                 <color key="textColor" red="0.1764705882" green="0.21960784310000001" blue="0.38431372549999998" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>

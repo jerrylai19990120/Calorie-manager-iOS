@@ -42,7 +42,11 @@
         type = @"Snack";
     }
     
-    Meal *meal = [[Meal alloc]initWithName:self.mealNameTxt.text type:type calories:(NSNumber *)self.caloriesTxt.text];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+    [formatter setDateFormat:@"MM-dd-yyyy"];
+    NSString *today = [formatter stringFromDate:[NSDate date]];
+    
+    Meal *meal = [[Meal alloc]initWithName:self.mealNameTxt.text type:type calories:(NSNumber *)self.caloriesTxt.text date:today];
     [DataService.sharedInstance addMeal:meal completion:^(BOOL *status) {
         if(status){
             [self dismissViewControllerAnimated:true completion:nil];
