@@ -18,8 +18,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (assign) NSNumber *height;
 @property (assign) NSNumber *weight;
 @property (assign) NSNumber *calorieBudget;
+@property (assign) NSString *imgUrl;
 @property (nonatomic, strong) NSString *uid;
-- (id) initWithUid:(NSString *)uid username:(NSString *)username email:(NSString *)email age:(NSNumber *)age height:(NSNumber *)height weight:(NSNumber *)weight;
+- (id) initWithUid:(NSString *)uid username:(NSString *)username email:(NSString *)email age:(NSNumber *)age height:(NSNumber *)height weight:(NSNumber *)weight imgUrl:(NSString *)imgUrl;
 
 - (int)getCaloriedNeededWithAge:(int)age weight:(int)weight height:(int)height;
 @end

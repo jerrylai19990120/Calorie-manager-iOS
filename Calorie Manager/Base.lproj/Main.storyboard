@@ -686,27 +686,27 @@
                                 <color key="textColor" red="0.1764705882" green="0.21960784310000001" blue="0.38431372549999998" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="anon" translatesAutoresizingMaskIntoConstraints="NO" id="A13-wd-Hnf" customClass="RoundedCornerImage">
-                                <rect key="frame" x="28" y="59" width="53" height="47"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="anon" translatesAutoresizingMaskIntoConstraints="NO" id="A13-wd-Hnf" customClass="RoundedImage">
+                                <rect key="frame" x="28" y="59" width="50" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="47" id="Nkx-Lg-CJK"/>
-                                    <constraint firstAttribute="width" constant="53" id="nVV-dS-s28"/>
+                                    <constraint firstAttribute="height" constant="50" id="Nkx-Lg-CJK"/>
+                                    <constraint firstAttribute="width" constant="50" id="nVV-dS-s28"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alex Gen" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bYh-Aj-wFz">
-                                <rect key="frame" x="89" y="59" width="70" height="20.5"/>
+                                <rect key="frame" x="86" y="59" width="70" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                 <color key="textColor" red="0.1764705882" green="0.21960784310000001" blue="0.38431372549999998" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Body Builder" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YZz-H5-MLe">
-                                <rect key="frame" x="89" y="84.5" width="100" height="20.5"/>
+                                <rect key="frame" x="86" y="84.5" width="100" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                 <color key="textColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="d9a-3G-vXM">
-                                <rect key="frame" x="0.0" y="152" width="375" height="466"/>
+                                <rect key="frame" x="0.0" y="155" width="375" height="463"/>
                                 <color key="backgroundColor" red="1" green="0.96311531630000002" blue="0.94410137289999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MealCell" rowHeight="105" id="1sS-zk-Yqs" customClass="MealCell">
@@ -837,7 +837,7 @@
                                 </connections>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RC3-t5-hXf">
-                                <rect key="frame" x="0.0" y="114" width="375" height="32"/>
+                                <rect key="frame" x="0.0" y="117" width="375" height="32"/>
                                 <color key="backgroundColor" red="1" green="0.96470588239999999" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <segments>
                                     <segment title="Active"/>
@@ -1152,10 +1152,10 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="anon" translatesAutoresizingMaskIntoConstraints="NO" id="I48-RA-QfQ" customClass="RoundedCornerImage">
-                                <rect key="frame" x="293" y="30" width="53" height="50"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="anon" translatesAutoresizingMaskIntoConstraints="NO" id="I48-RA-QfQ" customClass="RoundedImage">
+                                <rect key="frame" x="296" y="30" width="50" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="53" id="ads-7W-fKJ"/>
+                                    <constraint firstAttribute="width" constant="50" id="ads-7W-fKJ"/>
                                     <constraint firstAttribute="height" constant="50" id="sKN-SH-H9i"/>
                                 </constraints>
                             </imageView>

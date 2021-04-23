@@ -9,6 +9,7 @@
 #import "SceneDelegate.h"
 #import "HomeTabBarVC.h"
 @import Firebase;
+#import "WelcomeVC.h"
 
 @interface SceneDelegate ()
 
@@ -26,6 +27,10 @@
             UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
             HomeTabBarVC* homeVC = [storyboard instantiateViewControllerWithIdentifier:@"HomeTabBarVC"];
             self.window.rootViewController = homeVC;
+        }else{
+            UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            WelcomeVC* welcomeVC = [storyboard instantiateViewControllerWithIdentifier:@"WelcomeVC"];
+            self.window.rootViewController = welcomeVC;
         }
     }];
     

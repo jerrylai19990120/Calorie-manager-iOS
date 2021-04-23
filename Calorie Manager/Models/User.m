@@ -10,7 +10,7 @@
 
 @implementation User
 
-- (id)initWithUid:(NSString *)uid username:(NSString *)username email:(NSString *)email age:(NSNumber *)age height:(NSNumber *)height weight:(NSNumber *)weight{
+- (id)initWithUid:(NSString *)uid username:(NSString *)username email:(NSString *)email age:(NSNumber *)age height:(NSNumber *)height weight:(NSNumber *)weight imgUrl:(nonnull NSString *)imgUrl{
     
     self = [super init];
     if(self){
@@ -20,7 +20,7 @@
         self.height = height;
         self.weight = weight;
         self.uid = uid;
-        
+        self.imgUrl = imgUrl;
     }
     return self;
     

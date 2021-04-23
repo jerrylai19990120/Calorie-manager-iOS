@@ -29,6 +29,9 @@
         dispatch_sync(dispatch_get_main_queue(), ^{
             self.username.text = user.username;
             self.userEmail.text = user.email;
+            if(user.imgUrl!=nil){
+                [DataService.sharedInstance downloadImageWithURL:user.imgUrl imageView:self.userImg];
+            }
         });
     }];
     

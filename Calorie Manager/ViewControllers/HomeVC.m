@@ -24,10 +24,14 @@
     self.tableView.dataSource = self;
     [DataService userWithCompletion:^(User *user) {
         
-        dispatch_async(dispatch_get_main_queue(), ^{
+        dispatch_sync(dispatch_get_main_queue(), ^{
             self.nameTxt.text = [NSString stringWithFormat:@"Hello, %@!", user.username];
             int number = [user getCaloriedNeededWithAge:[user.age intValue] weight:[user.weight intValue] height:[user.height intValue]];
             self.calorieBudget.text = [NSString stringWithFormat:@"%d", number];
+            
+            if(user.imgUrl!=nil){
+                [DataService.sharedInstance downloadImageWithURL:user.imgUrl imageView:self.userImg];
+            }
             
         });
     }];

@@ -28,6 +28,9 @@
             self.height.text = (NSString *)user.height;
             self.weight.text = (NSString *)user.weight;
             self.userEmail.text = user.email;
+            if(user.imgUrl!=nil){
+                [DataService.sharedInstance downloadImageWithURL:user.imgUrl imageView:self.userImg];
+            }
         });
         
     }];
@@ -95,6 +98,11 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<UIImagePickerControllerInfoKey,id> *)info{
     UIImage *image = info[UIImagePickerControllerOriginalImage];
     self.userImg.image = image;
+    [DataService.sharedInstance uploadImage:image completion:^(BOOL status) {
+        if(status){
+            NSLog(@"success");
+        }
+    }];
     [picker dismissViewControllerAnimated:true completion:nil];
 }
 

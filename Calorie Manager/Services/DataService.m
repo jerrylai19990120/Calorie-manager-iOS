@@ -10,6 +10,7 @@
 #import "DataService.h"
 #import "User.h"
 @import Firebase;
+@import SDWebImage;
 
 @interface DataService()
 
@@ -24,6 +25,10 @@
     if (self) {
         self.ref = nil;
         self.ref = [[FIRDatabase database]reference];
+        self.storage = nil;
+        self.storageRef = nil;
+        self.storage = [FIRStorage storage];
+        self.storageRef = [self.storage reference];
     }
     return self;
 }
@@ -73,8 +78,7 @@
     [[[DataService.sharedInstance.ref child:@"users"]child:[[[FIRAuth auth]currentUser]uid]]getDataWithCompletionBlock:^(NSError * _Nullable error, FIRDataSnapshot * _Nonnull snapshot) {
         if(error==nil){
             
-            User *user = [[User alloc]initWithUid:[FIRAuth auth].currentUser.uid username:snapshot.value[@"username"] email:snapshot.value[@"email"] age:(NSNumber *)snapshot.value[@"age"] height:(NSNumber *)snapshot.value[@"height"] weight:(NSNumber *)snapshot.value[@"weight"]];
-            
+            User *user = [[User alloc]initWithUid:[FIRAuth auth].currentUser.uid username:snapshot.value[@"username"] email:snapshot.value[@"email"] age:(NSNumber *)snapshot.value[@"age"] height:(NSNumber *)snapshot.value[@"height"] weight:(NSNumber *)snapshot.value[@"weight"] imgUrl:snapshot.value[@"img_url"]];
             completion(user);
         }else{
             completion(nil);
@@ -164,6 +168,39 @@
             completion(plans);
         }
     }];
+}
+
+
+- (void)uploadImage:(UIImage *)image completion:(void (^)(BOOL))completion{
+    FIRStorageReference *imageRef = [self.storageRef child:[NSString stringWithFormat:@"avatarImages/%@",[FIRAuth auth].currentUser.uid]];
+    
+    NSData *data = UIImagePNGRepresentation(image);
+    [imageRef putData:data metadata:nil completion:^(FIRStorageMetadata * _Nullable metadata, NSError * _Nullable error) {
+        if(error!=nil){
+            NSLog(@"%@",error.localizedDescription);
+            completion(false);
+        }else{
+            [imageRef downloadURLWithCompletion:^(NSURL * _Nullable URL, NSError * _Nullable error) {
+                if(error!=nil){
+                    completion(false);
+                }else{
+                    NSURL *url = URL;
+                    NSDictionary *updatedValue = @{
+                        @"img_url": url.absoluteString
+                    };
+                    [[[self.ref child:@"users"]child:[FIRAuth auth].currentUser.uid]updateChildValues:updatedValue];
+                    completion(true);
+                }
+            }];
+        }
+    }];
+    
+    
+}
+
+- (void)downloadImageWithURL:(NSString *)url imageView:(UIImageView *)imageView{
+    NSURL *URL = [NSURL URLWithString:url];
+    [imageView sd_setImageWithURL:URL placeholderImage:[UIImage imageNamed:@"anon"]];
 }
 
 @end
