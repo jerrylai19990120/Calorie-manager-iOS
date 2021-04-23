@@ -36,7 +36,18 @@
     }];
     
     [DataService.sharedInstance getAllPlansWithCompletion:^(NSMutableArray *plans) {
-        self.plans = [plans mutableCopy];
+        self.inactivePlans = [[NSMutableArray alloc]init];
+        self.plans = [[NSMutableArray alloc]init];
+        
+        for(Plan *item in plans){
+            
+            if(item.goalDays.intValue == item.progress.intValue){
+                [self.inactivePlans addObject:item];
+            }else{
+                [self.plans addObject:item];
+            }
+        }
+        
         dispatch_sync(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
         });
@@ -88,7 +99,7 @@
     
     switch (self.segmentedControl.selectedSegmentIndex) {
         case 0:
-            if(cell==nil){
+            if(cell==nil || [self.plans count]==0){
                 return [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"PlanCell"];
             }else{
                 [cell configureCellWithPlan:[self.plans objectAtIndex:indexPath.row]];
@@ -96,10 +107,10 @@
             }
             break;
         case 1:
-            if(cell==nil){
+            if(cell==nil || [self.inactivePlans count]==0){
                 return [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"PlanCell"];
             }else{
-                [cell configureCellWithPlan:[self.plans objectAtIndex:indexPath.row]];
+                [cell configureCellWithPlan:[self.inactivePlans objectAtIndex:indexPath.row]];
                 return cell;
             }
             break;
