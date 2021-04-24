@@ -243,6 +243,13 @@
 
 - (void)logPlanProgressWithPlan:(Plan *)plan{
     
+    NSNumber *val = [NSNumber numberWithInt:plan.progress.intValue+1];
+    
+    NSDictionary *updated = @{
+        @"progress": val
+    };
+    
+    [[[[[self.ref child:@"users"]child:[FIRAuth auth].currentUser.uid]child:@"plans"]child:plan.uid]updateChildValues:updated];
 }
 
 - (void)removePlan:(Plan *)plan{
