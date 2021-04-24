@@ -64,13 +64,28 @@
     [barView.trailingAnchor constraintEqualToAnchor:self.chartView.trailingAnchor constant:0].active = true;
     barView.translatesAutoresizingMaskIntoConstraints = false;
     
-    NSArray *entries = @[
-        [[BarChartDataEntry alloc]initWithX:1 y:80],
-        [[BarChartDataEntry alloc]initWithX:2 y:90],
-        [[BarChartDataEntry alloc]initWithX:3 y:180],
-    ];
-    BarChartDataSet *dataSet = [[BarChartDataSet alloc]initWithEntries:entries label:@""];
-    barView.data = [[BarChartData alloc]initWithDataSet:dataSet];
+    
+    [DataService.sharedInstance getAllMealsWithCompletion:^(NSMutableArray *meals) {
+    
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            NSMutableArray *entries = [[NSMutableArray alloc]init];
+            int i = 0;
+            for(Meal *meal in meals){
+                [entries addObject:[[BarChartDataEntry alloc]initWithX:i y:meal.calories.doubleValue]];
+                i++;
+                if(i==8){
+                    break;
+                }
+            }
+            BarChartDataSet *dataSet = [[BarChartDataSet alloc]initWithEntries:entries label:@"Calories For Recent Meals"];
+            dataSet.colors = @[[UIColor orangeColor], [UIColor yellowColor], [UIColor greenColor],
+            [UIColor blueColor], [UIColor purpleColor], [UIColor systemIndigoColor]];
+            barView.noDataText = @"Go add some meals";
+            barView.data = [[BarChartData alloc]initWithDataSet:dataSet];
+        });
+        
+    }];
+    
     
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(pickPhoto)];
     singleTap.numberOfTapsRequired = 1;
