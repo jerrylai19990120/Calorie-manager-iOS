@@ -802,18 +802,40 @@
                                                         </progressView>
                                                     </subviews>
                                                 </stackView>
+                                                <view alpha="0.46000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8DV-aP-Eie">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="102"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="COMPLETED" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IfL-ZU-aRX">
+                                                            <rect key="frame" x="103" y="34.5" width="169.5" height="33.5"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstItem="IfL-ZU-aRX" firstAttribute="centerX" secondItem="8DV-aP-Eie" secondAttribute="centerX" id="9Hw-P7-uh2"/>
+                                                        <constraint firstItem="IfL-ZU-aRX" firstAttribute="centerY" secondItem="8DV-aP-Eie" secondAttribute="centerY" id="CsO-Cd-zVV"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottomMargin" secondItem="vw1-Zs-FXU" secondAttribute="bottom" constant="10" id="189-MM-bX6"/>
+                                                <constraint firstAttribute="bottom" secondItem="8DV-aP-Eie" secondAttribute="bottom" id="6Q5-zi-lR4"/>
                                                 <constraint firstItem="fI0-us-PnV" firstAttribute="centerY" secondItem="vw1-Zs-FXU" secondAttribute="centerY" id="8sn-Da-iQL"/>
                                                 <constraint firstItem="vw1-Zs-FXU" firstAttribute="top" secondItem="vBF-yC-gtj" secondAttribute="topMargin" constant="10" id="G33-8i-A9Z"/>
                                                 <constraint firstAttribute="trailing" secondItem="qN4-Vp-yqv" secondAttribute="trailing" constant="21" id="WMp-Xu-BlO"/>
+                                                <constraint firstItem="8DV-aP-Eie" firstAttribute="top" secondItem="vBF-yC-gtj" secondAttribute="top" id="Xpf-Hc-X1s"/>
                                                 <constraint firstItem="qN4-Vp-yqv" firstAttribute="centerY" secondItem="fI0-us-PnV" secondAttribute="centerY" id="YIf-UL-Scx"/>
                                                 <constraint firstItem="fI0-us-PnV" firstAttribute="leading" secondItem="vw1-Zs-FXU" secondAttribute="trailing" constant="23" id="ZQ2-Eb-Dff"/>
                                                 <constraint firstItem="vw1-Zs-FXU" firstAttribute="leading" secondItem="vBF-yC-gtj" secondAttribute="leadingMargin" constant="9" id="at8-e1-Doi"/>
+                                                <constraint firstAttribute="trailing" secondItem="8DV-aP-Eie" secondAttribute="trailing" id="uhF-92-rcE"/>
+                                                <constraint firstItem="8DV-aP-Eie" firstAttribute="leading" secondItem="vBF-yC-gtj" secondAttribute="leading" id="uoS-9C-wKp"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="completionBackground" destination="8DV-aP-Eie" id="2vI-Qx-pHa"/>
+                                            <outlet property="completionLabel" destination="IfL-ZU-aRX" id="C50-3P-LiN"/>
                                             <outlet property="img" destination="vw1-Zs-FXU" id="UBz-Ke-JuG"/>
                                             <outlet property="numOfDays" destination="8Nc-rS-3HP" id="xJg-FW-LCI"/>
                                             <outlet property="progressBar" destination="ZBU-zO-QZN" id="alK-BH-BV4"/>

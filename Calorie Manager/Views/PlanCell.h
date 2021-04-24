@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *title;
 @property (weak, nonatomic) IBOutlet UILabel *numOfDays;
 @property (weak, nonatomic) IBOutlet UIProgressView *progressBar;
+@property (weak, nonatomic) IBOutlet UIView *completionBackground;
+@property (weak, nonatomic) IBOutlet UILabel *completionLabel;
 - (void)configureCellWithPlan:(Plan *)plan;
 @end
 

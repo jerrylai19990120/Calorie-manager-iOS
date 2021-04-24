@@ -94,12 +94,6 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    /*PlanCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PlanCell" forIndexPath:indexPath];
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapOnCellAction)];
-    tap.numberOfTapsRequired = 1;
-    [cell setUserInteractionEnabled:true];
-    [cell addGestureRecognizer:tap];*/
-    
     switch (self.segmentedControl.selectedSegmentIndex) {
         case 0:
             [self tapOnCellActionWithPlan:[self.plans objectAtIndex:indexPath.row]];

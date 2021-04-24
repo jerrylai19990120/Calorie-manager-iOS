@@ -25,6 +25,11 @@
     self.img.image = [UIImage imageNamed:@"plan"];
     [self.progressBar setProgress:(plan.progress.floatValue/plan.goalDays.floatValue) animated:true];
     self.numOfDays.text = [NSString stringWithFormat:@"%@ / %@ Days", plan.progress, plan.goalDays];
+    
+    if(plan.goalDays.intValue!=plan.progress.intValue){
+        [self.completionBackground setHidden:true];
+        [self.completionLabel setHidden:true];
+    }
 }
 
 
