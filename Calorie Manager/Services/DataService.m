@@ -139,16 +139,15 @@
 
 - (void)addPlan:(Plan *)plan completion:(void (^)(BOOL *))completion{
     
-    NSString *key = [DataService.sharedInstance.ref childByAutoId].key;
-    
     NSDictionary *values = @{
         @"title": plan.title,
         @"progress": plan.progress,
-        @"length": plan.goalDays
+        @"length": plan.goalDays,
+        @"uid": plan.uid
     };
     
     NSDictionary *updated = @{
-        key: values
+        plan.uid: values
     };
     
     [[[[DataService.sharedInstance.ref child:@"users"]child:[FIRAuth auth].currentUser.uid]child:@"plans"]updateChildValues:updated withCompletionBlock:^(NSError * _Nullable error, FIRDatabaseReference * _Nonnull ref) {
@@ -166,7 +165,7 @@
     [[[[DataService.sharedInstance.ref child:@"users"]child:[FIRAuth auth].currentUser.uid]child:@"plans"]getDataWithCompletionBlock:^(NSError * _Nullable error, FIRDataSnapshot * _Nonnull snapshot) {
         if(error==nil){
             for(FIRDataSnapshot *plan in snapshot.children.allObjects){
-                Plan *item = [[Plan alloc]initWithTitle:plan.value[@"title"] progress:(NSNumber *)plan.value[@"progress"] goalDays:(NSNumber *)plan.value[@"length"]];
+                Plan *item = [[Plan alloc]initWithTitle:plan.value[@"title"] progress:(NSNumber *)plan.value[@"progress"] goalDays:(NSNumber *)plan.value[@"length"] uid:plan.value[@"uid"]];
                 
                 [plans addObject:item];
             }
@@ -241,4 +240,13 @@
     
 }
 
+
+- (void)logPlanProgressWithPlan:(Plan *)plan{
+    
+}
+
+- (void)removePlan:(Plan *)plan{
+    
+    [[[[[self.ref child:@"users"]child:[FIRAuth auth].currentUser.uid]child:@"plans"]child:plan.uid]removeValue];
+}
 @end

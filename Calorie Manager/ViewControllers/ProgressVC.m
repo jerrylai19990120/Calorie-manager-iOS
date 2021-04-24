@@ -91,6 +91,43 @@
     return [self.plans count];
 }
 
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    /*PlanCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PlanCell" forIndexPath:indexPath];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapOnCellAction)];
+    tap.numberOfTapsRequired = 1;
+    [cell setUserInteractionEnabled:true];
+    [cell addGestureRecognizer:tap];*/
+    
+    switch (self.segmentedControl.selectedSegmentIndex) {
+        case 0:
+            [self tapOnCellActionWithPlan:[self.plans objectAtIndex:indexPath.row]];
+            break;
+        default:
+            break;
+    }
+}
+
+- (void)tapOnCellActionWithPlan:(Plan *)plan{
+    
+    UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:@"Actions" message:@"Add progress to your plan" preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    [actionSheet addAction:[UIAlertAction actionWithTitle:@"Log Progress" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [DataService.sharedInstance logPlanProgressWithPlan:plan];
+    }]];
+    
+    [actionSheet addAction:[UIAlertAction actionWithTitle:@"Remove Plan" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+        [DataService.sharedInstance removePlan:plan];
+    }]];
+    
+    [actionSheet addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        [self dismissViewControllerAnimated:true completion:nil];
+    }]];
+    
+    [self presentViewController:actionSheet animated:true completion:nil];
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     PlanCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PlanCell" forIndexPath:indexPath];

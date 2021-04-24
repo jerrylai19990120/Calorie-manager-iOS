@@ -14,7 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (assign) NSString *title;
 @property (assign) NSNumber *goalDays;
 @property (assign) NSNumber *progress;
-- (id)initWithTitle:(NSString *)title progress:(NSNumber *)progress goalDays:(NSNumber *)goalDays;
+@property (strong, nonatomic) NSString *uid;
+- (id)initWithTitle:(NSString *)title progress:(NSNumber *)progress goalDays:(NSNumber *)goalDays uid:(NSString *)uid;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -30,6 +30,8 @@
 - (void)uploadImage:(UIImage *)image completion:(void (^)(BOOL status))completion;
 - (void)downloadImageWithURL:(NSString *)url imageView:(UIImageView *)imageView;
 - (void)getMealsForTodayWithCompletion:(void (^)(NSMutableArray *meals))completion;
+- (void)logPlanProgressWithPlan:(Plan *)plan;
+- (void)removePlan:(Plan *)plan;
 @end
 
 #endif /* DataService_h */

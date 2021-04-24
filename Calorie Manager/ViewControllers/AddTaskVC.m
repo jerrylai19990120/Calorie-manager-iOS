@@ -27,7 +27,9 @@
 
 - (IBAction)addBtnPressed:(id)sender {
     
-    Plan *plan = [[Plan alloc]initWithTitle:self.planName.text progress:[[NSNumber alloc]initWithInt:0] goalDays:(NSNumber *)self.planLength.text];
+    NSString *key = [DataService.sharedInstance.ref childByAutoId].key;
+    
+    Plan *plan = [[Plan alloc]initWithTitle:self.planName.text progress:[[NSNumber alloc]initWithInt:0] goalDays:(NSNumber *)self.planLength.text uid:key];
     
     [DataService.sharedInstance addPlan:plan completion:^(BOOL *status) {
         if(status){
