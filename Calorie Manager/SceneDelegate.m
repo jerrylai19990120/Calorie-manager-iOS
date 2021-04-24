@@ -27,19 +27,9 @@
             UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
             HomeTabBarVC* homeVC = [storyboard instantiateViewControllerWithIdentifier:@"HomeTabBarVC"];
             self.window.rootViewController = homeVC;
-        }else{
-            UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            WelcomeVC* welcomeVC = [storyboard instantiateViewControllerWithIdentifier:@"WelcomeVC"];
-            self.window.rootViewController = welcomeVC;
         }
     }];
     
-    /*if([[FIRAuth auth]currentUser] != nil){
-        UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        HomeTabBarVC* homeVC = [storyboard instantiateViewControllerWithIdentifier:@"HomeTabBarVC"];
-        self.window.rootViewController = homeVC;
-        
-    }*/
 }
 
 
