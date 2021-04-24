@@ -80,7 +80,7 @@
             return [self.plans count];
             break;
         case 1:
-            return [self.plans count];
+            return [self.inactivePlans count];
             break;
         case 2:
             return [self.meals count];

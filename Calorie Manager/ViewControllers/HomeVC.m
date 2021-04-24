@@ -50,7 +50,14 @@
         
     }];
     
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapAction)];
+    tap.numberOfTapsRequired = 1;
+    [self.userImg setUserInteractionEnabled:true];
+    [self.userImg addGestureRecognizer:tap];
+}
 
+- (void)tapAction{
+    self.tabBarController.selectedIndex = 2;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
