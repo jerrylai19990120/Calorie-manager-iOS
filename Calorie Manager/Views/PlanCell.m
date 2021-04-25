@@ -29,6 +29,9 @@
     if(plan.goalDays.intValue!=plan.progress.intValue){
         [self.completionBackground setHidden:true];
         [self.completionLabel setHidden:true];
+    }else{
+        [self.completionBackground setHidden:false];
+        [self.completionLabel setHidden:false];
     }
 }
 
