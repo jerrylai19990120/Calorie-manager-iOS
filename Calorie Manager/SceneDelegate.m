@@ -23,11 +23,13 @@
     // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
     // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
     [[FIRAuth auth]addAuthStateDidChangeListener:^(FIRAuth * _Nonnull auth, FIRUser * _Nullable user) {
-        if(user!=nil){
-            UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            HomeTabBarVC* homeVC = [storyboard instantiateViewControllerWithIdentifier:@"HomeTabBarVC"];
-            self.window.rootViewController = homeVC;
-        }
+        [[FIRAuth auth].currentUser reloadWithCompletion:^(NSError * _Nullable error) {
+            if(error == nil){
+                UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                HomeTabBarVC* homeVC = [storyboard instantiateViewControllerWithIdentifier:@"HomeTabBarVC"];
+                self.window.rootViewController = homeVC;
+            }
+        }];
     }];
     
 }

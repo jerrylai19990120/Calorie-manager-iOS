@@ -8,6 +8,7 @@
 
 #import "SignupVC.h"
 #import "AuthService.h"
+#import "BasicInfoVC.h"
 
 @interface SignupVC ()
 @property (weak, nonatomic) IBOutlet UITextField *usernameTxt;
@@ -32,20 +33,11 @@
     
     [instance createUserWithEmail:self.emailTxt.text password:self.password.text username:self.usernameTxt.text completion:^(BOOL *status) {
         if(status){
-            [self performSegueWithIdentifier:@"HomeVC2" sender:self];
+            BasicInfoVC *infoVC = [[BasicInfoVC alloc]init];
+            [self presentViewController:infoVC animated:true completion:nil];
         }
     }];
 }
 
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
