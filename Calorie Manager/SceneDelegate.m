@@ -27,11 +27,12 @@
             if(error == nil){
                 UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
                 HomeTabBarVC* homeVC = [storyboard instantiateViewControllerWithIdentifier:@"HomeTabBarVC"];
-                self.window.rootViewController = homeVC;
+                homeVC.modalPresentationStyle = UIModalPresentationFullScreen;
+                [self.window makeKeyAndVisible];
+                [self.window.rootViewController presentViewController:homeVC animated:true completion:nil];
             }
         }];
     }];
-    
 }
 
 

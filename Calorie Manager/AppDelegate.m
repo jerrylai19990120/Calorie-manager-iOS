@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 @import Firebase;
+#import "HomeTabBarVC.h"
+#import "WelcomeVC.h"
 
 @interface AppDelegate ()
 
@@ -19,6 +21,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     [FIRApp configure];
+    
+    
     return YES;
 }
 
