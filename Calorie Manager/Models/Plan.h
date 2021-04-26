@@ -11,9 +11,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Plan : NSObject
-@property (assign) NSString *title;
-@property (assign) NSNumber *goalDays;
-@property (assign) NSNumber *progress;
+@property (strong, nonatomic) NSString *title;
+@property (strong, nonatomic) NSNumber *goalDays;
+@property (strong, nonatomic) NSNumber *progress;
 @property (strong, nonatomic) NSString *uid;
 - (id)initWithTitle:(NSString *)title progress:(NSNumber *)progress goalDays:(NSNumber *)goalDays uid:(NSString *)uid;
 @end

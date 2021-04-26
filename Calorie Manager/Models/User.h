@@ -12,13 +12,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface User : NSObject
 
-@property (assign) NSString *username;
-@property (assign) NSString *email;
-@property (assign) NSNumber *age;
-@property (assign) NSNumber *height;
-@property (assign) NSNumber *weight;
-@property (assign) NSNumber *calorieBudget;
-@property (assign) NSString *imgUrl;
+@property (strong, nonatomic) NSString *username;
+@property (strong, nonatomic) NSString *email;
+@property (strong, nonatomic) NSNumber *age;
+@property (strong, nonatomic) NSNumber *height;
+@property (strong, nonatomic) NSNumber *weight;
+@property (strong, nonatomic) NSNumber *calorieBudget;
+@property (strong, nonatomic) NSString *imgUrl;
 @property (nonatomic, strong) NSString *uid;
 - (id) initWithUid:(NSString *)uid username:(NSString *)username email:(NSString *)email age:(NSNumber *)age height:(NSNumber *)height weight:(NSNumber *)weight imgUrl:(NSString *)imgUrl;
 

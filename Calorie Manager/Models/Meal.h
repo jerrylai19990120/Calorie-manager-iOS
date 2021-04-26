@@ -11,10 +11,10 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Meal : NSObject
-@property (assign) NSString *mealName;
-@property (assign) NSNumber *calories;
-@property (assign) NSString *mealType;
-@property (assign) NSString *date;
+@property (strong, nonatomic) NSString *mealName;
+@property (strong, nonatomic) NSNumber *calories;
+@property (strong, nonatomic) NSString *mealType;
+@property (strong, nonatomic) NSString *date;
 - (id)initWithName:(NSString *)name type:(NSString *)type calories:(NSNumber *)calories date:(NSString *)date;
 @end
 
