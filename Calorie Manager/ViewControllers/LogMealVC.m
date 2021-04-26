@@ -49,6 +49,19 @@
     Meal *meal = [[Meal alloc]initWithName:self.mealNameTxt.text type:type calories:(NSNumber *)self.caloriesTxt.text date:today];
     [DataService.sharedInstance addMeal:meal completion:^(BOOL *status) {
         if(status){
+            NSDictionary *mealInfo = @{
+                @"name": self.mealNameTxt.text,
+                @"type": type,
+                @"calories": self.caloriesTxt.text,
+                @"date": today
+            };
+            
+            NSDictionary *changes = @{
+                @"changes": self.caloriesTxt.text
+            };
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"MealAdded" object:self userInfo:mealInfo];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"CalorieChange" object:self userInfo:changes];
+            
             [self dismissViewControllerAnimated:true completion:nil];
         }
     }];

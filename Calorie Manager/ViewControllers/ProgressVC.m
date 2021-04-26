@@ -63,6 +63,15 @@
     
     [self.segmentedControl addTarget:self action:@selector(valueChanged:) forControlEvents:UIControlEventValueChanged];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(mealAdded:) name:@"MealAdded" object:nil];
+    
+}
+
+- (void)mealAdded:(NSNotification *)notif{
+    NSDictionary *mealInfo = notif.userInfo;
+    Meal *meal = [[Meal alloc]initWithName:(NSString *)[mealInfo valueForKey:@"name"] type:(NSString *)[mealInfo valueForKey:@"type"] calories:(NSNumber *)[mealInfo valueForKey:@"calories"] date:(NSString *)[mealInfo valueForKey:@"date"]];
+    [self.meals addObject:meal];
+    [self.tableView reloadData];
 }
 
 - (void)valueChanged:(id)sender{

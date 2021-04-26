@@ -24,8 +24,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *calories;
 @property (weak, nonatomic) IBOutlet UIView *chartView;
 @property (weak, nonatomic) IBOutlet UIImageView *userImg;
-
+@property (strong, nonatomic) NSMutableArray *entries;
 @property (strong, nonatomic) NSMutableArray *meals;
+@property (strong, nonatomic) BarChartView *barView;
 - (void)setupBarLineChartView:(BarLineChartViewBase *)barLineChart;
 - (void)pickPhoto;
 @end

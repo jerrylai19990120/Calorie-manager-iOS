@@ -53,35 +53,34 @@
         });
     }];
     
-    BarChartView *barView = [[BarChartView alloc]init];
+    self.barView = [[BarChartView alloc]init];
     
-    [self.chartView addSubview:barView];
-    barView.backgroundColor = [UIColor whiteColor];
+    [self.chartView addSubview:self.barView];
+    self.barView.backgroundColor = [UIColor whiteColor];
     
-    [barView.topAnchor constraintEqualToAnchor:self.chartView.topAnchor constant:0].active = true;
-    [barView.bottomAnchor constraintEqualToAnchor:self.chartView.bottomAnchor constant:0].active = true;
-    [barView.leadingAnchor constraintEqualToAnchor:self.chartView.leadingAnchor constant:0].active = true;
-    [barView.trailingAnchor constraintEqualToAnchor:self.chartView.trailingAnchor constant:0].active = true;
-    barView.translatesAutoresizingMaskIntoConstraints = false;
+    [self.barView.topAnchor constraintEqualToAnchor:self.chartView.topAnchor constant:0].active = true;
+    [self.barView.bottomAnchor constraintEqualToAnchor:self.chartView.bottomAnchor constant:0].active = true;
+    [self.barView.leadingAnchor constraintEqualToAnchor:self.chartView.leadingAnchor constant:0].active = true;
+    [self.barView.trailingAnchor constraintEqualToAnchor:self.chartView.trailingAnchor constant:0].active = true;
+    self.barView.translatesAutoresizingMaskIntoConstraints = false;
     
     
     [DataService.sharedInstance getAllMealsWithCompletion:^(NSMutableArray *meals) {
-    
+        self.entries = [[NSMutableArray alloc]init];
         dispatch_sync(dispatch_get_main_queue(), ^{
-            NSMutableArray *entries = [[NSMutableArray alloc]init];
             int i = 0;
             for(Meal *meal in meals){
-                [entries addObject:[[BarChartDataEntry alloc]initWithX:i y:meal.calories.doubleValue]];
+                [self.entries addObject:[[BarChartDataEntry alloc]initWithX:i y:meal.calories.doubleValue]];
                 i++;
                 if(i==8){
                     break;
                 }
             }
-            BarChartDataSet *dataSet = [[BarChartDataSet alloc]initWithEntries:entries label:@"Calories For Recent Meals"];
+            BarChartDataSet *dataSet = [[BarChartDataSet alloc]initWithEntries:self.entries label:@"Calories For Recent Meals"];
             dataSet.colors = @[[UIColor orangeColor], [UIColor yellowColor], [UIColor greenColor],
             [UIColor blueColor], [UIColor purpleColor], [UIColor systemIndigoColor]];
-            barView.noDataText = @"Go add some meals";
-            barView.data = [[BarChartData alloc]initWithDataSet:dataSet];
+            self.barView.noDataText = @"Go add some meals";
+            self.barView.data = [[BarChartData alloc]initWithDataSet:dataSet];
         });
         
     }];
@@ -91,6 +90,29 @@
     singleTap.numberOfTapsRequired = 1;
     [self.userImg setUserInteractionEnabled:true];
     [self.userImg addGestureRecognizer:singleTap];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(mealAdded:) name:@"MealAdded" object:nil];
+}
+
+- (void)mealAdded:(NSNotification *)notif{
+    NSDictionary *mealInfo = notif.userInfo;
+    Meal *meal = [[Meal alloc]initWithName:(NSString *)[mealInfo valueForKey:@"name"] type:(NSString *)[mealInfo valueForKey:@"type"] calories:(NSNumber *)[mealInfo valueForKey:@"calories"] date:(NSString *)[mealInfo valueForKey:@"date"]];
+    self.calories.text = [NSString stringWithFormat:@"%@kCal", meal.calories];
+    self.mealName.text = meal.mealName;
+    self.mealImg.image = [UIImage imageNamed:meal.mealType];
+    if([self.entries count]!=0){
+        [self.entries removeObjectAtIndex:0];
+    }
+    
+    double val = [NSNumber numberWithUnsignedInteger:[self.entries count]].doubleValue;
+    
+    [self.entries addObject:[[BarChartDataEntry alloc]initWithX:val y:meal.calories.doubleValue]];
+    
+    BarChartDataSet *dataSet = [[BarChartDataSet alloc]initWithEntries:self.entries label:@"Calories For Recent Meals"];
+    dataSet.colors = @[[UIColor orangeColor], [UIColor yellowColor], [UIColor greenColor],
+    [UIColor blueColor], [UIColor purpleColor], [UIColor systemIndigoColor]];
+    self.barView.noDataText = @"Go add some meals";
+    self.barView.data = [[BarChartData alloc]initWithDataSet:dataSet];
 }
 
 

@@ -22,6 +22,11 @@
     // Do any additional setup after loading the view.
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleCalorieChange:) name:@"CalorieChange" object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(mealAdded:) name:@"MealAdded" object:nil];
+    
     [DataService userWithCompletion:^(User *user) {
         
         dispatch_sync(dispatch_get_main_queue(), ^{
@@ -54,6 +59,19 @@
     tap.numberOfTapsRequired = 1;
     [self.userImg setUserInteractionEnabled:true];
     [self.userImg addGestureRecognizer:tap];
+}
+
+- (void)handleCalorieChange:(NSNotification *)notif{
+    NSDictionary *changes = notif.userInfo;
+    int val = [[changes valueForKey:@"changes"]intValue];
+    self.calorieBudget.text = [NSString stringWithFormat:@"%d", self.calorieBudget.text.intValue-val];
+}
+
+- (void)mealAdded:(NSNotification *)notif{
+    NSDictionary *mealInfo = notif.userInfo;
+    Meal *meal = [[Meal alloc]initWithName:(NSString *)[mealInfo valueForKey:@"name"] type:(NSString *)[mealInfo valueForKey:@"type"] calories:(NSNumber *)[mealInfo valueForKey:@"calories"] date:(NSString *)[mealInfo valueForKey:@"date"]];
+    [self.meals addObject:meal];
+    [self.tableView reloadData];
 }
 
 - (void)tapAction{
