@@ -33,6 +33,13 @@
     
     [DataService.sharedInstance addPlan:plan completion:^(BOOL *status) {
         if(status){
+            NSDictionary *dict = @{
+                @"title": self.planName.text,
+                @"progress": [[NSNumber alloc]initWithInt:0],
+                @"goalDays": self.planLength.text,
+                @"uid": key
+            };
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"PlanAdded" object:nil userInfo:dict];
             [self dismissViewControllerAnimated:true completion:nil];
         }
     }];

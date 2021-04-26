@@ -252,13 +252,22 @@
     NSNumber *val = [NSNumber numberWithInt:plan.progress.intValue+1];
     
     NSDictionary *updated = @{
+        @"uid": plan.uid,
         @"progress": val
     };
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"PlanLogged" object:nil userInfo:updated];
     
     [[[[[self.ref child:@"users"]child:[FIRAuth auth].currentUser.uid]child:@"plans"]child:plan.uid]updateChildValues:updated];
 }
 
 - (void)removePlan:(Plan *)plan{
+    
+    NSDictionary *dict = @{
+        @"uid": plan.uid
+    };
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"PlanRemoved" object:nil userInfo:dict];
     
     [[[[[self.ref child:@"users"]child:[FIRAuth auth].currentUser.uid]child:@"plans"]child:plan.uid]removeValue];
 }

@@ -65,6 +65,9 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(mealAdded:) name:@"MealAdded" object:nil];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handlePlanChanged:) name:@"PlanAdded" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handlePlanChanged:) name:@"PlanLogged" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handlePlanChanged:) name:@"PlanRemoved" object:nil];
 }
 
 - (void)mealAdded:(NSNotification *)notif{
@@ -72,6 +75,39 @@
     Meal *meal = [[Meal alloc]initWithName:(NSString *)[mealInfo valueForKey:@"name"] type:(NSString *)[mealInfo valueForKey:@"type"] calories:(NSNumber *)[mealInfo valueForKey:@"calories"] date:(NSString *)[mealInfo valueForKey:@"date"]];
     [self.meals addObject:meal];
     [self.tableView reloadData];
+}
+
+- (void)handlePlanChanged:(NSNotification *)notif{
+    
+    NSDictionary *dict = notif.userInfo;
+    
+    if([notif.name isEqual:@"PlanAdded"]){
+        Plan *plan = [[Plan alloc]initWithTitle:[dict valueForKey:@"title"] progress:[dict valueForKey:@"progress"] goalDays:(NSNumber *)[dict valueForKey:@"goalDays"] uid:[dict valueForKey:@"uid"]];
+        [self.plans addObject:plan];
+        [self.tableView reloadData];
+    }else if([notif.name isEqual:@"PlanLogged"]){
+        for(Plan *plan in self.plans){
+            if([plan.uid isEqualToString:[dict valueForKey:@"uid"]]){
+                plan.progress = (NSNumber *)[dict valueForKey:@"progress"];
+                if(plan.progress.intValue == plan.goalDays.intValue){
+                    [self.inactivePlans addObject:plan];
+                    [self.plans removeObject:plan];
+                }
+                break;
+            }
+        }
+        
+        [self.tableView reloadData];
+    }else if([notif.name isEqual:@"PlanRemoved"]){
+        for(Plan *plan in self.plans){
+            if([plan.uid isEqualToString:[dict valueForKey:@"uid"]]){
+                [self.plans removeObject:plan];
+                break;
+            }
+        }
+        [self.tableView reloadData];
+    }
+    
 }
 
 - (void)valueChanged:(id)sender{
@@ -125,7 +161,7 @@
     }]];
     
     [actionSheet addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-        [self dismissViewControllerAnimated:true completion:nil];
+        //dismissing
     }]];
     
     [self presentViewController:actionSheet animated:true completion:nil];

@@ -100,14 +100,18 @@
     self.calories.text = [NSString stringWithFormat:@"%@kCal", meal.calories];
     self.mealName.text = meal.mealName;
     self.mealImg.image = [UIImage imageNamed:meal.mealType];
-    if([self.entries count]!=0){
+    if([self.entries count]==8){
         [self.entries removeObjectAtIndex:0];
     }
     
     double val = [NSNumber numberWithUnsignedInteger:[self.entries count]].doubleValue;
     
     [self.entries addObject:[[BarChartDataEntry alloc]initWithX:val y:meal.calories.doubleValue]];
-    
+    int i = 0;
+    for(BarChartDataEntry *entry in self.entries){
+        [entry setX:i];
+        i++;
+    }
     BarChartDataSet *dataSet = [[BarChartDataSet alloc]initWithEntries:self.entries label:@"Calories For Recent Meals"];
     dataSet.colors = @[[UIColor orangeColor], [UIColor yellowColor], [UIColor greenColor],
     [UIColor blueColor], [UIColor purpleColor], [UIColor systemIndigoColor]];
