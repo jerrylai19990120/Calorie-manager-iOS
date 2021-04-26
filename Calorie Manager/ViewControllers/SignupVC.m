@@ -29,14 +29,17 @@
 }
 
 - (IBAction)signupBtnPressed:(id)sender {
-    AuthService *instance = [AuthService sharedInstance];
     
-    [instance createUserWithEmail:self.emailTxt.text password:self.password.text username:self.usernameTxt.text completion:^(BOOL *status) {
-        if(status){
-            [self performSegueWithIdentifier:@"BasicInfo" sender:sender];
-        }
-    }];
+    [self performSegueWithIdentifier:@"BasicInfo" sender:self];
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqual: @"BasicInfo"]){
+        BasicInfoVC *infoVC = segue.destinationViewController;
+        infoVC.username = self.usernameTxt.text;
+        infoVC.email = self.emailTxt.text;
+        infoVC.password = self.password.text;
+    }
+}
 
 @end

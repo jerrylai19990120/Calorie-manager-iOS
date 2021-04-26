@@ -135,7 +135,7 @@
                                             <constraint firstAttribute="width" constant="260" id="ewd-xT-be9"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="acu-qv-j3e">
                                         <rect key="frame" x="0.0" y="276" width="260" height="2"/>
