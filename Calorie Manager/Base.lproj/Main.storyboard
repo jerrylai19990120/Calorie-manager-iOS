@@ -86,7 +86,7 @@
         <!--Basic InfoVC-->
         <scene sceneID="QWE-ce-BUb">
             <objects>
-                <viewController id="BcL-Bh-afg" customClass="BasicInfoVC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BasicInfoVC" id="BcL-Bh-afg" customClass="BasicInfoVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Gjh-QX-8dw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -179,7 +179,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DeY-t4-Adq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="70" y="1379"/>
+            <point key="canvasLocation" x="932" y="937"/>
         </scene>
         <!--SignupVC-->
         <scene sceneID="5Kg-hD-Cw5">
@@ -268,7 +268,7 @@
                                             <constraint firstAttribute="width" constant="260" id="WMo-iE-jbn"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="21"/>
-                                        <state key="normal" title="Join us">
+                                        <state key="normal" title="Next">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -300,11 +300,12 @@
                         <outlet property="emailTxt" destination="WVG-6t-xkK" id="a9b-9v-BGe"/>
                         <outlet property="password" destination="YVa-4d-O11" id="aIO-Xa-Fw4"/>
                         <outlet property="usernameTxt" destination="Tra-LM-Wl9" id="v6d-qX-fgj"/>
+                        <segue destination="BcL-Bh-afg" kind="presentation" identifier="BasicInfo" modalPresentationStyle="fullScreen" id="jvp-vC-te6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nj9-Gc-fji" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="879" y="840"/>
+            <point key="canvasLocation" x="137" y="937"/>
         </scene>
         <!--LoginVC-->
         <scene sceneID="Y0b-ne-107">
@@ -1384,7 +1385,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="t7B-hh-HYa"/>
+        <segue reference="d8c-wt-Mh6"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="anon" width="860" height="681"/>

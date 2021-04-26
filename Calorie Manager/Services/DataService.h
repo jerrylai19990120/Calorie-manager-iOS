@@ -19,7 +19,7 @@
 @property (strong, nonatomic) FIRDatabaseReference *ref;
 @property (strong, nonatomic) FIRStorage *storage;
 @property (strong, nonatomic) FIRStorageReference *storageRef;
-- (void)createDBUserWithUid:(NSString *)uid dict:(NSDictionary *)dict;
+- (void)createDBUserWithUid:(NSString *)uid dict:(NSDictionary *)dict completion:(void (^)(BOOL status))completion;
 - (void)addBasicInfoWithAge:(NSNumber *)age height:(NSNumber *)height weight:(NSNumber *)weight uid:(NSString *)uid completion:(void (^)(BOOL *status))completion;
 - (NSDictionary *)getUserInfo;
 + (void)userWithCompletion:(void (^)(User *user))completion;

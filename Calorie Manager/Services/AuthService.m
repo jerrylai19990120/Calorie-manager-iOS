@@ -46,8 +46,11 @@
     [[FIRAuth auth] createUserWithEmail:email password:password completion:^(FIRAuthDataResult * _Nullable authResult, NSError * _Nullable error) {
         if(error == nil){
             NSDictionary *dict = @{@"username": username, @"email": email};
-            [DataService.sharedInstance createDBUserWithUid:authResult.user.uid dict:dict];
-            completion(true);
+            [DataService.sharedInstance createDBUserWithUid:authResult.user.uid dict:dict completion:^(BOOL status) {
+                if(status){
+                    completion(true);
+                }
+            }];
         }else{
             completion(false);
         }

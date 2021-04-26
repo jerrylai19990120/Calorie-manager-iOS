@@ -44,8 +44,14 @@
     return sharedInstance;
 }
 
-- (void)createDBUserWithUid:(NSString *)uid dict:(NSDictionary *)dict{
-    [[[self.ref child:@"users"]child:uid]updateChildValues:dict];
+- (void)createDBUserWithUid:(NSString *)uid dict:(NSDictionary *)dict completion:(void (^)(BOOL))completion{
+    [[[self.ref child:@"users"]child:uid]updateChildValues:dict withCompletionBlock:^(NSError * _Nullable error, FIRDatabaseReference * _Nonnull ref) {
+        if(error==nil){
+            completion(true);
+        }else{
+            completion(false);
+        }
+    }];
 }
 
 - (void)addBasicInfoWithAge:(NSNumber *)age height:(NSNumber *)height weight:(NSNumber *)weight uid:(NSString *)uid completion:(void (^)(BOOL *))completion{

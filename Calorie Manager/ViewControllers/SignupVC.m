@@ -33,8 +33,7 @@
     
     [instance createUserWithEmail:self.emailTxt.text password:self.password.text username:self.usernameTxt.text completion:^(BOOL *status) {
         if(status){
-            BasicInfoVC *infoVC = [[BasicInfoVC alloc]init];
-            [self presentViewController:infoVC animated:true completion:nil];
+            [self performSegueWithIdentifier:@"BasicInfo" sender:sender];
         }
     }];
 }
