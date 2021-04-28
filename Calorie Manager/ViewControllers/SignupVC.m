@@ -23,7 +23,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismissKeyboard)];
+    [self.view addGestureRecognizer:tap];
 }
+
+- (void)dismissKeyboard{
+    [self.usernameTxt resignFirstResponder];
+    [self.emailTxt resignFirstResponder];
+    [self.password resignFirstResponder];
+    [self.confirmPassword resignFirstResponder];
+}
+
 - (IBAction)backBtnPressed:(id)sender {
     [self dismissViewControllerAnimated:true completion:nil];
 }

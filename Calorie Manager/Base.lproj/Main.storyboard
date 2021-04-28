@@ -218,7 +218,7 @@
                                             <constraint firstAttribute="height" constant="19" id="Bnf-F8-jXH"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mAE-m7-6kO">
                                         <rect key="frame" x="0.0" y="169" width="260" height="2"/>
@@ -340,7 +340,7 @@
                                                             <constraint firstAttribute="width" constant="260" id="rXi-iE-cTd"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jni-it-6zD">
                                                         <rect key="frame" x="0.0" y="39" width="260" height="2"/>
@@ -966,7 +966,7 @@
                                     <constraint firstAttribute="height" constant="34" id="ZNT-GA-RFI"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Days" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E7v-GM-TrC">
                                 <rect key="frame" x="123" y="338" width="50" height="34"/>
@@ -1326,7 +1326,7 @@
                                     <constraint firstAttribute="width" constant="97" id="68U-HL-Xe5"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="kCal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="26O-Qc-ofQ">
                                 <rect key="frame" x="121" y="362" width="50" height="34"/>

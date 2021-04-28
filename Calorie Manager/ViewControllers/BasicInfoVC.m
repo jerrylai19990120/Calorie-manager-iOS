@@ -20,8 +20,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismissKeyboard)];
+    [self.view addGestureRecognizer:tap];
 }
 
+- (void)dismissKeyboard{
+    [self.ageTxt resignFirstResponder];
+    [self.heightTxt resignFirstResponder];
+    [self.weightTxt resignFirstResponder];
+}
 
 - (IBAction)startBtnPressed:(id)sender {
     
