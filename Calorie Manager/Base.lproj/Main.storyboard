@@ -1130,7 +1130,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="105"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V6O-aN-ypj">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V6O-aN-ypj" customClass="CustomTableCellView">
                                                     <rect key="frame" x="10" y="8" width="355" height="89"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="salad" translatesAutoresizingMaskIntoConstraints="NO" id="Fwe-qy-VXa">
@@ -1163,6 +1163,7 @@
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstItem="q4v-RM-Nw3" firstAttribute="centerY" secondItem="V6O-aN-ypj" secondAttribute="centerY" id="9S7-hw-k5m"/>
+                                                        <constraint firstAttribute="height" constant="89" id="Dpe-1m-u0V"/>
                                                         <constraint firstItem="Fwe-qy-VXa" firstAttribute="leading" secondItem="V6O-aN-ypj" secondAttribute="leading" constant="18" id="NXC-a5-kf0"/>
                                                         <constraint firstAttribute="trailing" secondItem="q4v-RM-Nw3" secondAttribute="trailing" constant="8.5" id="S9s-66-UFr"/>
                                                         <constraint firstItem="pSE-bm-FoI" firstAttribute="centerY" secondItem="V6O-aN-ypj" secondAttribute="centerY" id="cqY-zs-gSG"/>
@@ -1171,7 +1172,7 @@
                                                     </constraints>
                                                 </view>
                                             </subviews>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="V6O-aN-ypj" firstAttribute="leading" secondItem="M7r-59-nRP" secondAttribute="leading" constant="10" id="d8i-YA-u34"/>
                                                 <constraint firstAttribute="trailing" secondItem="V6O-aN-ypj" secondAttribute="trailing" constant="10" id="jmt-KZ-mYT"/>
@@ -1179,6 +1180,7 @@
                                                 <constraint firstItem="V6O-aN-ypj" firstAttribute="top" secondItem="M7r-59-nRP" secondAttribute="top" constant="8" id="yMw-v8-B2U"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="calories" destination="q4v-RM-Nw3" id="kqT-QE-FkJ"/>
                                             <outlet property="img" destination="Fwe-qy-VXa" id="gTV-9o-T4T"/>

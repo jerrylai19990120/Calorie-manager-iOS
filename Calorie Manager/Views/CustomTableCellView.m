@@ -20,7 +20,14 @@
 }
 
 - (void)setupView{
+    self.backgroundColor = [UIColor whiteColor];
+    self.layer.cornerRadius = 10;
+    self.layer.masksToBounds = true;
     
+    self.layer.shadowColor = [UIColor blackColor].CGColor;
+    self.layer.shadowOffset = CGSizeZero;
+    self.layer.shadowOpacity = 1;
+    self.layer.shadowRadius = 5;
 }
 
 /*
