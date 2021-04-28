@@ -24,6 +24,7 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:tap];
     [self.scroller setHidden:true];
+    [self.scroller stopAnimating];
 }
 
 - (void)dismissKeyboard{
@@ -34,10 +35,11 @@
 - (IBAction)closeBtnPressed:(id)sender {
     [self dismissViewControllerAnimated:true completion:nil];
     [self.scroller setHidden:true];
+    [self.scroller stopAnimating];
 }
 
 - (IBAction)addBtnPressed:(id)sender {
-    
+    [self.scroller startAnimating];
     [self.scroller setHidden:false];
     NSInteger index = self.segmentedControl.selectedSegmentIndex;
     NSString *type = @"Unknown";
@@ -71,6 +73,7 @@
             [[NSNotificationCenter defaultCenter] postNotificationName:@"MealAdded" object:self userInfo:mealInfo];
             [[NSNotificationCenter defaultCenter] postNotificationName:@"CalorieChange" object:self userInfo:changes];
             [self.scroller setHidden:true];
+            [self.scroller stopAnimating];
             [self dismissViewControllerAnimated:true completion:nil];
         }
     }];

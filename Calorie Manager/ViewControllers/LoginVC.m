@@ -23,6 +23,7 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:tap];
     [self.scroller setHidden:true];
+    [self.scroller stopAnimating];
 }
 
 - (void)dismissKeyboard{
@@ -36,10 +37,12 @@
 
 - (IBAction)loginBtnPressed:(id)sender {
     AuthService *instance = [AuthService sharedInstance];
+    [self.scroller startAnimating];
     [self.scroller setHidden:false];
     [instance loginUserWithEmail:self.emailTxt.text password:self.passwordTxt.text completion:^(BOOL *status) {
         if(status){
             [self.scroller setHidden:true];
+            [self.scroller stopAnimating];
             [self performSegueWithIdentifier:@"HomeVC" sender:self];
         }
     }];
