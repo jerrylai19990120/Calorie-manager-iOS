@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		16FAEC126A1308689A28B388 /* Pods_Calorie_Manager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D740D1ACFB7DFAB4FB56FA8 /* Pods_Calorie_Manager.framework */; };
+		92043BFF2638DE4A008A0748 /* CustomTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92043BFE2638DE4A008A0748 /* CustomTableCellView.m */; };
 		9231785F2623C5B60068B8BE /* AuthService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9231785E2623C5B60068B8BE /* AuthService.m */; };
 		923178622623C8E70068B8BE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 923178612623C8E70068B8BE /* GoogleService-Info.plist */; };
 		92317865262522C60068B8BE /* HomeTabBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 92317864262522C60068B8BE /* HomeTabBarVC.m */; };
@@ -44,6 +45,8 @@
 /* Begin PBXFileReference section */
 		00689C612E9D2A93F1B5E20C /* Pods-Calorie Manager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Calorie Manager.release.xcconfig"; path = "Target Support Files/Pods-Calorie Manager/Pods-Calorie Manager.release.xcconfig"; sourceTree = "<group>"; };
 		3D740D1ACFB7DFAB4FB56FA8 /* Pods_Calorie_Manager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Calorie_Manager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		92043BFD2638DE4A008A0748 /* CustomTableCellView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomTableCellView.h; sourceTree = "<group>"; };
+		92043BFE2638DE4A008A0748 /* CustomTableCellView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomTableCellView.m; sourceTree = "<group>"; };
 		9231785E2623C5B60068B8BE /* AuthService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuthService.m; sourceTree = "<group>"; };
 		923178602623C5D30068B8BE /* AuthService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuthService.h; sourceTree = "<group>"; };
 		923178612623C8E70068B8BE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -199,6 +202,8 @@
 				92A7B228262B9CE1001C6251 /* PlanCell.m */,
 				92DDB4D4263359150078974F /* RoundedImage.h */,
 				92DDB4D5263359150078974F /* RoundedImage.m */,
+				92043BFD2638DE4A008A0748 /* CustomTableCellView.h */,
+				92043BFE2638DE4A008A0748 /* CustomTableCellView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -399,6 +404,7 @@
 				9231785F2623C5B60068B8BE /* AuthService.m in Sources */,
 				92BF5456261E83DD0055051E /* LoginVC.m in Sources */,
 				92BF542C261E419D0055051E /* SceneDelegate.m in Sources */,
+				92043BFF2638DE4A008A0748 /* CustomTableCellView.m in Sources */,
 				92DDB4DA263657590078974F /* Constants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
