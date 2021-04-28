@@ -22,6 +22,7 @@
     // Do any additional setup after loading the view.
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:tap];
+    [self.scroller setHidden:true];
 }
 
 - (void)dismissKeyboard{
@@ -35,9 +36,10 @@
 
 - (IBAction)loginBtnPressed:(id)sender {
     AuthService *instance = [AuthService sharedInstance];
-
+    [self.scroller setHidden:false];
     [instance loginUserWithEmail:self.emailTxt.text password:self.passwordTxt.text completion:^(BOOL *status) {
         if(status){
+            [self.scroller setHidden:true];
             [self performSegueWithIdentifier:@"HomeVC" sender:self];
         }
     }];

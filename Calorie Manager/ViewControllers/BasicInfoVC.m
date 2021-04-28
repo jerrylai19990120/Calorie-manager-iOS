@@ -22,6 +22,7 @@
     // Do any additional setup after loading the view.
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:tap];
+    [self.scroller setHidden:true];
 }
 
 - (void)dismissKeyboard{
@@ -31,11 +32,12 @@
 }
 
 - (IBAction)startBtnPressed:(id)sender {
-    
+    [self.scroller setHidden:false];
     [AuthService.sharedInstance createUserWithEmail:self.email password:self.password username:self.username completion:^(BOOL *status) {
         if(self.ageTxt.text!=nil && self.heightTxt.text!=nil && self.weightTxt.text!=nil){
             [DataService.sharedInstance addBasicInfoWithAge:(NSNumber *)self.ageTxt.text height:(NSNumber *)self.heightTxt.text weight:(NSNumber *)self.weightTxt.text uid:[[[FIRAuth auth]currentUser]uid] completion:^(BOOL *status) {
                 if(status){
+                    [self.scroller setHidden:true];
                     [self performSegueWithIdentifier:@"HomePage" sender:self];
                 }
             }];

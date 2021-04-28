@@ -20,6 +20,7 @@
     // Do any additional setup after loading the view.
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:tap];
+    [self.scroller setHidden:true];
 }
 
 - (void)dismissKeyboard{
@@ -29,11 +30,12 @@
 
 - (IBAction)closeBtnPressed:(id)sender {
     [self dismissViewControllerAnimated:true completion:nil];
+    [self.scroller setHidden:true];
 }
 
 
 - (IBAction)addBtnPressed:(id)sender {
-    
+    [self.scroller setHidden:false];
     NSString *key = [DataService.sharedInstance.ref childByAutoId].key;
     
     Plan *plan = [[Plan alloc]initWithTitle:self.planName.text progress:[[NSNumber alloc]initWithInt:0] goalDays:(NSNumber *)self.planLength.text uid:key];
@@ -47,6 +49,7 @@
                 @"uid": key
             };
             [[NSNotificationCenter defaultCenter] postNotificationName:@"PlanAdded" object:nil userInfo:dict];
+            [self.scroller setHidden:true];
             [self dismissViewControllerAnimated:true completion:nil];
         }
     }];

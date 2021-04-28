@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UITextField *weightTxt;
 @property (strong, nonatomic) NSString *username;
 @property (strong, nonatomic) NSString *email;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *scroller;
 @property (strong, nonatomic) NSString *password;
 @end
 

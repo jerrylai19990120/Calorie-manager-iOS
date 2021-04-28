@@ -23,6 +23,7 @@
     [self.segmentedControl setTitleTextAttributes:[NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:NSForegroundColorAttributeName] forState:UIControlStateSelected];
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:tap];
+    [self.scroller setHidden:true];
 }
 
 - (void)dismissKeyboard{
@@ -32,11 +33,12 @@
 
 - (IBAction)closeBtnPressed:(id)sender {
     [self dismissViewControllerAnimated:true completion:nil];
+    [self.scroller setHidden:true];
 }
 
 - (IBAction)addBtnPressed:(id)sender {
     
-    
+    [self.scroller setHidden:false];
     NSInteger index = self.segmentedControl.selectedSegmentIndex;
     NSString *type = @"Unknown";
     if(index==0){
@@ -68,7 +70,7 @@
             };
             [[NSNotificationCenter defaultCenter] postNotificationName:@"MealAdded" object:self userInfo:mealInfo];
             [[NSNotificationCenter defaultCenter] postNotificationName:@"CalorieChange" object:self userInfo:changes];
-            
+            [self.scroller setHidden:true];
             [self dismissViewControllerAnimated:true completion:nil];
         }
     }];
