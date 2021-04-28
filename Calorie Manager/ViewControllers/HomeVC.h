@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "RoundedCornerImage.h"
 
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface HomeVC : UIViewController<UITableViewDelegate, UITableViewDataSource>
@@ -17,7 +18,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet RoundedCornerImage *userImg;
 @property (weak, nonatomic) IBOutlet UILabel *calorieBudget;
 @property (strong, nonatomic) NSMutableArray *meals;
-
 @end
 
 NS_ASSUME_NONNULL_END

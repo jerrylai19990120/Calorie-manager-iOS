@@ -25,8 +25,8 @@
         dispatch_sync(dispatch_get_main_queue(), ^{
             self.username.text = user.username;
             self.age.text = (NSString *)user.age;
-            self.height.text = (NSString *)user.height;
-            self.weight.text = (NSString *)user.weight;
+            self.height.text = [NSString stringWithFormat:@"%@ cm", user.height];
+            self.weight.text = [NSString stringWithFormat:@"%@ kg", user.weight];
             self.userEmail.text = user.email;
             if(user.imgUrl!=nil){
                 [DataService.sharedInstance downloadImageWithURL:user.imgUrl imageView:self.userImg];
