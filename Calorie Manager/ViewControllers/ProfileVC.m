@@ -138,6 +138,10 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<UIImagePickerControllerInfoKey,id> *)info{
     UIImage *image = info[UIImagePickerControllerOriginalImage];
+    NSDictionary *dict = @{
+        @"image": image
+    };
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"PictureChanged" object:nil userInfo:dict];
     self.userImg.image = image;
     [DataService.sharedInstance uploadImage:image completion:^(BOOL status) {
         if(status){

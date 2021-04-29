@@ -27,6 +27,8 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(mealAdded:) name:@"MealAdded" object:nil];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pictureChange:) name:@"PictureChanged" object:nil];
+    
     [DataService userWithCompletion:^(User *user) {
         
         dispatch_sync(dispatch_get_main_queue(), ^{
@@ -59,6 +61,12 @@
     tap.numberOfTapsRequired = 1;
     [self.userImg setUserInteractionEnabled:true];
     [self.userImg addGestureRecognizer:tap];
+}
+
+- (void)pictureChange:(NSNotification *)notif{
+    NSDictionary *dict = notif.userInfo;
+    UIImage *image = (UIImage *)[dict valueForKey:@"image"];
+    self.userImg.image = image;
 }
 
 - (void)handleCalorieChange:(NSNotification *)notif{

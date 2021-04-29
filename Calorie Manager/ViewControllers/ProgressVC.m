@@ -68,6 +68,14 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handlePlanChanged:) name:@"PlanAdded" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handlePlanChanged:) name:@"PlanLogged" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handlePlanChanged:) name:@"PlanRemoved" object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pictureChange:) name:@"PictureChanged" object:nil];
+}
+
+- (void)pictureChange:(NSNotification *)notif{
+    NSDictionary *dict = notif.userInfo;
+    UIImage *image = (UIImage *)[dict valueForKey:@"image"];
+    self.userImg.image = image;
 }
 
 - (void)mealAdded:(NSNotification *)notif{
