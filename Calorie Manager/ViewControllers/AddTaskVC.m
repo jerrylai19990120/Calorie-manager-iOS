@@ -55,6 +55,9 @@
             [self.scroller setHidden:true];
             [self.scroller stopAnimating];
             [self dismissViewControllerAnimated:true completion:nil];
+        }else{
+            [self.scroller setHidden:true];
+            [self.scroller stopAnimating];
         }
     }];
     

@@ -44,6 +44,9 @@
             [self.scroller setHidden:true];
             [self.scroller stopAnimating];
             [self performSegueWithIdentifier:@"HomeVC" sender:self];
+        }else{
+            [self.scroller setHidden:true];
+            [self.scroller stopAnimating];
         }
     }];
 }

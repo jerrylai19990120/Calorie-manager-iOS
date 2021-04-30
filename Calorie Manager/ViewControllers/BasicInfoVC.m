@@ -42,6 +42,9 @@
                     [self.scroller setHidden:true];
                     [self.scroller stopAnimating];
                     [self performSegueWithIdentifier:@"HomePage" sender:self];
+                }else{
+                    [self.scroller setHidden:true];
+                    [self.scroller stopAnimating];
                 }
             }];
         }
