@@ -12,7 +12,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LoginVC : UIViewController
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *scroller;
-- (void)validateAuthInput;
+- (void)validateAuthInputWithErr:(NSError * _Nullable)err;
+@property (weak, nonatomic) IBOutlet UILabel *emailErrTxt;
+@property (weak, nonatomic) IBOutlet UILabel *passwordErrTxt;
+@property (weak, nonatomic) IBOutlet UIView *passwordLine;
+@property (weak, nonatomic) IBOutlet UIView *emailLine;
+
 @end
 
 NS_ASSUME_NONNULL_END

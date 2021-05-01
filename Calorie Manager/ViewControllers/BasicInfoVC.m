@@ -35,7 +35,7 @@
 - (IBAction)startBtnPressed:(id)sender {
     [self.scroller startAnimating];
     [self.scroller setHidden:false];
-    [AuthService.sharedInstance createUserWithEmail:self.email password:self.password username:self.username completion:^(BOOL *status) {
+    [AuthService.sharedInstance createUserWithEmail:self.email password:self.password username:self.username completion:^(BOOL *status, NSError * _Nullable err) {
         if(self.ageTxt.text!=nil && self.heightTxt.text!=nil && self.weightTxt.text!=nil){
             [DataService.sharedInstance addBasicInfoWithAge:(NSNumber *)self.ageTxt.text height:(NSNumber *)self.heightTxt.text weight:(NSNumber *)self.weightTxt.text uid:[[[FIRAuth auth]currentUser]uid] completion:^(BOOL *status) {
                 if(status){
