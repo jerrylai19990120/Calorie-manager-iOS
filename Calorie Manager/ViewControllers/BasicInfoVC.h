@@ -11,6 +11,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface BasicInfoVC : UIViewController
+@property (weak, nonatomic) IBOutlet UIView *ageLine;
+@property (weak, nonatomic) IBOutlet UIView *heightLine;
+@property (weak, nonatomic) IBOutlet UIView *weightLine;
 @property (weak, nonatomic) IBOutlet UITextField *ageTxt;
 @property (weak, nonatomic) IBOutlet UITextField *heightTxt;
 @property (weak, nonatomic) IBOutlet UITextField *weightTxt;
@@ -18,6 +21,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) NSString *email;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *scroller;
 @property (strong, nonatomic) NSString *password;
+@property (weak, nonatomic) IBOutlet UILabel *ageErr;
+@property (weak, nonatomic) IBOutlet UILabel *heightErr;
+@property (weak, nonatomic) IBOutlet UILabel *weightErr;
+- (BOOL)validateInputs;
+- (void)resetInputs;
 @end
 
 NS_ASSUME_NONNULL_END

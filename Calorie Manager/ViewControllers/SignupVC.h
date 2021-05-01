@@ -11,7 +11,17 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SignupVC : UIViewController
+@property (weak, nonatomic) IBOutlet UILabel *usernameErr;
+@property (weak, nonatomic) IBOutlet UILabel *emailErr;
+@property (weak, nonatomic) IBOutlet UILabel *passwordErr;
+@property (weak, nonatomic) IBOutlet UILabel *confirmErr;
+@property (weak, nonatomic) IBOutlet UIView *usernameLine;
+@property (weak, nonatomic) IBOutlet UIView *emailLine;
+@property (weak, nonatomic) IBOutlet UIView *passwordLine;
+@property (weak, nonatomic) IBOutlet UIView *confirmLine;
 
+- (BOOL)validateInputs;
+- (void)resetInputs;
 @end
 
 NS_ASSUME_NONNULL_END

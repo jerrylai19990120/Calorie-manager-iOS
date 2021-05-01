@@ -25,6 +25,7 @@
     // Do any additional setup after loading the view.
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:tap];
+    [self resetInputs];
 }
 
 - (void)dismissKeyboard{
@@ -39,8 +40,11 @@
 }
 
 - (IBAction)signupBtnPressed:(id)sender {
-    
-    [self performSegueWithIdentifier:@"BasicInfo" sender:self];
+    [self resetInputs];
+    BOOL validated = [self validateInputs];
+    if(validated){
+        [self performSegueWithIdentifier:@"BasicInfo" sender:self];
+    }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
@@ -50,6 +54,59 @@
         infoVC.email = self.emailTxt.text;
         infoVC.password = self.password.text;
     }
+}
+
+- (void)resetInputs{
+    [self.usernameErr setHidden:true];
+    self.usernameLine.backgroundColor = [UIColor colorNamed:@"mainColor"];
+    [self.emailErr setHidden:true];
+    self.emailLine.backgroundColor = [UIColor colorNamed:@"mainColor"];
+    [self.passwordErr setHidden:true];
+    self.passwordLine.backgroundColor = [UIColor colorNamed:@"mainColor"];
+    [self.confirmErr setHidden:true];
+    self.confirmLine.backgroundColor = [UIColor colorNamed:@"mainColor"];
+}
+
+- (BOOL)validateInputs{
+    
+    BOOL check = true;
+    
+    if([self.emailTxt.text isEqualToString:@""]){
+        self.emailLine.backgroundColor = [UIColor colorNamed:@"errColor"];
+        self.emailErr.text = @"Cannot be empty";
+        [self.emailErr setHidden:false];
+        check = false;
+    }
+    
+    if([self.password.text isEqualToString:@""]){
+        self.passwordLine.backgroundColor = [UIColor colorNamed:@"errColor"];
+        self.passwordErr.text = @"Cannot be empty";
+        [self.passwordErr setHidden:false];
+        check = false;
+    }
+    
+    if([self.confirmPassword.text isEqualToString:@""]){
+        self.confirmLine.backgroundColor = [UIColor colorNamed:@"errColor"];
+        self.confirmErr.text = @"Cannot be empty";
+        [self.confirmErr setHidden:false];
+        check = false;
+    }
+    
+    if([self.usernameTxt.text isEqualToString:@""]){
+        self.usernameLine.backgroundColor = [UIColor colorNamed:@"errColor"];
+        self.usernameErr.text = @"Cannot be empty";
+        [self.usernameErr setHidden:false];
+        check = false;
+    }
+    
+    if(![self.password.text isEqualToString:self.confirmPassword.text]){
+        self.confirmLine.backgroundColor = [UIColor colorNamed:@"errColor"];
+        self.confirmErr.text = @"Password doesn't match";
+        [self.confirmErr setHidden:false];
+        check = false;
+    }
+        
+    return check;
 }
 
 @end
