@@ -25,6 +25,7 @@
     [self.view addGestureRecognizer:tap];
     [self.scroller setHidden:true];
     [self.scroller stopAnimating];
+    [self resetInputs];
 }
 
 - (void)dismissKeyboard{
@@ -39,6 +40,7 @@
 }
 
 - (IBAction)addBtnPressed:(id)sender {
+    [self resetInputs];
     [self.scroller startAnimating];
     [self.scroller setHidden:false];
     NSInteger index = self.segmentedControl.selectedSegmentIndex;
@@ -57,31 +59,61 @@
     [formatter setDateFormat:@"MM-dd-yyyy"];
     NSString *today = [formatter stringFromDate:[NSDate date]];
     
-    Meal *meal = [[Meal alloc]initWithName:self.mealNameTxt.text type:type calories:(NSNumber *)self.caloriesTxt.text date:today];
-    [DataService.sharedInstance addMeal:meal completion:^(BOOL *status) {
-        if(status){
-            NSDictionary *mealInfo = @{
-                @"name": self.mealNameTxt.text,
-                @"type": type,
-                @"calories": self.caloriesTxt.text,
-                @"date": today
-            };
-            
-            NSDictionary *changes = @{
-                @"changes": self.caloriesTxt.text
-            };
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"MealAdded" object:self userInfo:mealInfo];
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"CalorieChange" object:self userInfo:changes];
-            [self.scroller setHidden:true];
-            [self.scroller stopAnimating];
-            [self dismissViewControllerAnimated:true completion:nil];
-        }else{
-            [self.scroller setHidden:true];
-            [self.scroller stopAnimating];
-        }
-    }];
+    if([self validateInputs]){
+        
+        Meal *meal = [[Meal alloc]initWithName:self.mealNameTxt.text type:type calories:(NSNumber *)self.caloriesTxt.text date:today];
+            [DataService.sharedInstance addMeal:meal completion:^(BOOL *status) {
+                if(status){
+                    NSDictionary *mealInfo = @{
+                        @"name": self.mealNameTxt.text,
+                        @"type": type,
+                        @"calories": self.caloriesTxt.text,
+                        @"date": today
+                    };
+                    
+                    NSDictionary *changes = @{
+                        @"changes": self.caloriesTxt.text
+                    };
+                    [[NSNotificationCenter defaultCenter] postNotificationName:@"MealAdded" object:self userInfo:mealInfo];
+                    [[NSNotificationCenter defaultCenter] postNotificationName:@"CalorieChange" object:self userInfo:changes];
+                    [self.scroller setHidden:true];
+                    [self.scroller stopAnimating];
+                    [self dismissViewControllerAnimated:true completion:nil];
+                }else{
+                    [self.scroller setHidden:true];
+                    [self.scroller stopAnimating];
+                }
+            }];
+    }else{
+        [self.scroller setHidden:true];
+        [self.scroller stopAnimating];
+    }
+    
 }
 
+- (void)resetInputs{
+    [self.nameErr setHidden:true];
+    [self.calErr setHidden:true];
+    self.nameLine.backgroundColor = [UIColor colorNamed:@"mainColor"];
+}
 
+- (BOOL)validateInputs{
+    BOOL check = true;
+    
+    if([self.mealNameTxt.text isEqualToString:@""]){
+        self.nameLine.backgroundColor = [UIColor colorNamed:@"errColor"];
+        self.nameErr.text = @"Cannot be empty";
+        [self.nameErr setHidden:false];
+        check = false;
+    }
+    
+    if([self.caloriesTxt.text isEqualToString:@""]){
+        self.calErr.text = @"Cannot be empty";
+        [self.calErr setHidden:false];
+        check = false;
+    }
+    
+    return check;
+}
 
 @end

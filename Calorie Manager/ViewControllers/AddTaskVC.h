@@ -14,6 +14,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UITextField *planName;
 @property (weak, nonatomic) IBOutlet UITextField *planLength;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *scroller;
+- (void)resetInputs;
+- (BOOL)validateInputs;
+@property (weak, nonatomic) IBOutlet UILabel *nameErr;
+@property (weak, nonatomic) IBOutlet UILabel *daysErr;
+@property (weak, nonatomic) IBOutlet UIView *nameLine;
 
 @end
 
