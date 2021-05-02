@@ -33,6 +33,11 @@
     [self.weightTxt resignFirstResponder];
 }
 
+- (IBAction)backBtnPressed:(id)sender {
+    [self dismissViewControllerAnimated:true completion:nil];
+}
+
+
 - (IBAction)startBtnPressed:(id)sender {
     [self resetInputs];
     [self.scroller startAnimating];
@@ -41,17 +46,34 @@
     if([self validateInputs]){
         [AuthService.sharedInstance createUserWithEmail:self.email password:self.password username:self.username completion:^(BOOL *status, NSError * _Nullable err) {
             
+            if(err!=nil){
+                [self.scroller setHidden:true];
+                [self.scroller stopAnimating];
+                if([err.userInfo[@"FIRAuthErrorUserInfoNameKey"] isEqualToString:@"ERROR_WEAK_PASSWORD"]){
+                    self.otherErr.text = @"Weak password";
+                    [self.otherErr setHidden:false];
+                }else if([err.userInfo[@"FIRAuthErrorUserInfoNameKey"] isEqualToString:@"ERROR_EMAIL_ALREADY_IN_USE"]){
+                    self.otherErr.text = @"Email already in use";
+                    [self.otherErr setHidden:false];
+                }else{
+                    self.otherErr.text = @"Unknown errors";
+                    [self.otherErr setHidden:false];
+                }
+                
+            }else{
                 [DataService.sharedInstance addBasicInfoWithAge:(NSNumber *)self.ageTxt.text height:(NSNumber *)self.heightTxt.text weight:(NSNumber *)self.weightTxt.text uid:[[[FIRAuth auth]currentUser]uid] completion:^(BOOL *status) {
-                    if(status){
-                        [self.scroller setHidden:true];
-                        [self.scroller stopAnimating];
-                        [self performSegueWithIdentifier:@"HomePage" sender:self];
-                    }else{
-                        [self.scroller setHidden:true];
-                        [self.scroller stopAnimating];
-                    }
-                }];
-            }];
+                                    if(status){
+                                        [self.scroller setHidden:true];
+                                        [self.scroller stopAnimating];
+                                        [self performSegueWithIdentifier:@"HomePage" sender:self];
+                                    }else{
+                                        [self.scroller setHidden:true];
+                                        [self.scroller stopAnimating];
+                                    }
+                                }];
+            }
+                
+        }];
     }else{
         [self.scroller setHidden:true];
         [self.scroller stopAnimating];
@@ -69,6 +91,7 @@
     self.heightLine.backgroundColor = [UIColor colorNamed:@"mainColor"];
     [self.weightErr setHidden:true];
     self.weightLine.backgroundColor = [UIColor colorNamed:@"mainColor"];
+    [self.otherErr setHidden:true];
 }
 
 - (BOOL)validateInputs{

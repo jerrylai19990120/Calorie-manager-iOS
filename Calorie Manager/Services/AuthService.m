@@ -56,23 +56,6 @@
     }];
 }
 
-/*-(void)createUserWithEmail:(NSString *)email password:(NSString *)password username:(NSString *)username completion:(void (^)(BOOL *))completion errorFound:(void (^)(NSError * _Nullable))errorFound{
-    
-    [[FIRAuth auth] createUserWithEmail:email password:password completion:^(FIRAuthDataResult * _Nullable authResult, NSError * _Nullable error) {
-        if(error == nil){
-            NSDictionary *dict = @{@"username": username, @"email": email};
-            [DataService.sharedInstance createDBUserWithUid:authResult.user.uid dict:dict completion:^(BOOL status) {
-                if(status){
-                    errorFound(nil);
-                    completion(true);
-                }
-            }];
-        }else{
-            errorFound(error);
-            completion(false);
-        }
-    }];
-}*/
 
 - (void)logoutUser{
     NSError *error;
