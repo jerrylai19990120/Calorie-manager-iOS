@@ -32,6 +32,7 @@
 - (void)getMealsForTodayWithCompletion:(void (^)(NSMutableArray *meals))completion;
 - (void)logPlanProgressWithPlan:(Plan *)plan;
 - (void)removePlan:(Plan *)plan;
+- (void)updateBasicInfoWithAge:(NSString *)age height:(NSString *)height weight:(NSString *)weight completion:(void (^)(BOOL status))completion;
 @end
 
 #endif /* DataService_h */

@@ -10,6 +10,7 @@
 #import "AuthService.h"
 #import "DataService.h"
 #import "Meal.h"
+#import "ChangeInfoVC.h"
 @import Charts;
 
 @interface ProfileVC ()
@@ -92,6 +93,7 @@
     [self.userImg addGestureRecognizer:singleTap];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(mealAdded:) name:@"MealAdded" object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(changeInfo:) name:@"ChangeInfo" object:nil];
 }
 
 - (void)mealAdded:(NSNotification *)notif{
@@ -117,8 +119,15 @@
     [UIColor blueColor], [UIColor purpleColor], [UIColor systemIndigoColor]];
     self.barView.noDataText = @"Go add some meals";
     self.barView.data = [[BarChartData alloc]initWithDataSet:dataSet];
+    
 }
 
+- (void)changeInfo:(NSNotification *)notif{
+    NSDictionary *dict = notif.userInfo;
+    self.age.text = [dict valueForKey:@"age"];
+    self.height.text = [NSString stringWithFormat:@"%@ cm", [dict valueForKey:@"height"]];
+    self.weight.text = [NSString stringWithFormat:@"%@ kg", [dict valueForKey:@"weight"]];
+}
 
 - (void)chartValueSelected:(ChartViewBase *)chartView entry:(ChartDataEntry *)entry highlight:(ChartHighlight *)highlight{
     
@@ -127,6 +136,9 @@
 - (IBAction)logOutBtnPressed:(id)sender {
     [[AuthService sharedInstance]logoutUser];
     [self performSegueWithIdentifier:@"LogOut" sender:self];
+}
+- (IBAction)settingBtnPressed:(id)sender {
+    [self performSegueWithIdentifier:@"ChangeInfo" sender:self];
 }
 
 - (void)pickPhoto{
@@ -166,6 +178,15 @@
     
     barLineChart.rightAxis.enabled = false;
     
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqual:@"ChangeInfo"]){
+        ChangeInfoVC *infoVC = segue.destinationViewController;
+        infoVC.age= [self.age.text componentsSeparatedByString:@" "][0];
+        infoVC.height = [self.height.text componentsSeparatedByString:@" "][0];
+        infoVC.weight = [self.weight.text componentsSeparatedByString:@" "][0];
+    }
 }
 
 @end

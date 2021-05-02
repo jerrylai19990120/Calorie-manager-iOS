@@ -271,4 +271,21 @@
     
     [[[[[self.ref child:@"users"]child:[FIRAuth auth].currentUser.uid]child:@"plans"]child:plan.uid]removeValue];
 }
+
+- (void)updateBasicInfoWithAge:(NSString *)age height:(NSString *)height weight:(NSString *)weight completion:(void (^)(BOOL))completion{
+    
+    NSDictionary *updated = @{
+        @"age": age,
+        @"height": height,
+        @"weight": weight
+    };
+    
+    [[[self.ref child:@"users"]child:[FIRAuth auth].currentUser.uid]updateChildValues:updated withCompletionBlock:^(NSError * _Nullable error, FIRDatabaseReference * _Nonnull ref) {
+        if(error == nil){
+            completion(true);
+        }else{
+            completion(false);
+        }
+    }];
+}
 @end

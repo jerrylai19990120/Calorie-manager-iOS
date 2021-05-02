@@ -61,7 +61,22 @@
     tap.numberOfTapsRequired = 1;
     [self.userImg setUserInteractionEnabled:true];
     [self.userImg addGestureRecognizer:tap];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeInfo:) name:@"ChangeInfo" object:nil];
 }
+
+- (void)changeInfo:(NSNotification *)notif{
+    NSDictionary *dict = notif.userInfo;
+    User *user = [[User alloc]init];
+    int num = [user getCaloriedNeededWithAge:[(NSNumber *)[dict valueForKey:@"age"] intValue] weight:[(NSNumber *)[dict valueForKey:@"weight"]intValue] height:[(NSNumber *)[dict valueForKey:@"height"]intValue]];
+    self.calorieBudget.text = [NSString stringWithFormat:@"%d", num];
+    int total = self.calorieBudget.text.intValue;
+    for(Meal *meal in self.meals){
+        total = total - meal.calories.intValue;
+    }
+    self.calorieBudget.text = [NSString stringWithFormat:@"%d", total];
+}
+
 
 - (void)pictureChange:(NSNotification *)notif{
     NSDictionary *dict = notif.userInfo;
