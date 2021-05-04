@@ -20,7 +20,7 @@
 
 
 @implementation AuthService
-
+//singleton instance
 + (instancetype)sharedInstance{
     static AuthService *sharedInstance = nil;
     static dispatch_once_t onceToken;
@@ -31,6 +31,7 @@
     return sharedInstance;
 }
 
+//firebase user sign in
 - (void)loginUserWithEmail:(NSString *)email password:(NSString *)password completion:(void (^)(BOOL *, NSError * _Nullable))completion{
     [[FIRAuth auth] signInWithEmail:email password:password completion:^(FIRAuthDataResult * _Nullable authResult, NSError * _Nullable error) {
         if(error == nil){
@@ -41,6 +42,7 @@
     }];
 }
 
+//firebase create new user
 - (void)createUserWithEmail:(NSString *)email password:(NSString *)password username:(NSString *)username completion:(void (^)(BOOL *, NSError * _Nullable))completion{
     [[FIRAuth auth] createUserWithEmail:email password:password completion:^(FIRAuthDataResult * _Nullable authResult, NSError * _Nullable error) {
         if(error == nil){
@@ -56,7 +58,7 @@
     }];
 }
 
-
+//firebase sign out user
 - (void)logoutUser{
     NSError *error;
     [[FIRAuth auth]signOut:&error];

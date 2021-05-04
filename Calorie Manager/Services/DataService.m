@@ -32,7 +32,7 @@
     }
     return self;
 }
-
+//singleton instance
 + (instancetype)sharedInstance{
     
     static DataService *sharedInstance = nil;
