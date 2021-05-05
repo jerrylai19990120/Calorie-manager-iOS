@@ -44,6 +44,7 @@
     return sharedInstance;
 }
 
+//create database user
 - (void)createDBUserWithUid:(NSString *)uid dict:(NSDictionary *)dict completion:(void (^)(BOOL))completion{
     [[[self.ref child:@"users"]child:uid]updateChildValues:dict withCompletionBlock:^(NSError * _Nullable error, FIRDatabaseReference * _Nonnull ref) {
         if(error==nil){
@@ -54,6 +55,7 @@
     }];
 }
 
+//update user in database with information
 - (void)addBasicInfoWithAge:(NSNumber *)age height:(NSNumber *)height weight:(NSNumber *)weight uid:(NSString *)uid completion:(void (^)(BOOL *))completion{
     if(age==nil || height==nil || weight==nil){
         completion(false);
@@ -64,7 +66,7 @@
         completion(true);
     }
 }
-
+//retrieve user information from database
 - (NSDictionary *)getUserInfo{
     
     __block NSDictionary *dict = nil;
@@ -79,6 +81,7 @@
     return dict;
 }
 
+//retrieve user object
 + (void)userWithCompletion:(void (^)(User *))completion{
     
     [[[DataService.sharedInstance.ref child:@"users"]child:[[[FIRAuth auth]currentUser]uid]]getDataWithCompletionBlock:^(NSError * _Nullable error, FIRDataSnapshot * _Nonnull snapshot) {
@@ -183,7 +186,7 @@
     }];
 }
 
-
+//upload image to firebase storage
 - (void)uploadImage:(UIImage *)image completion:(void (^)(BOOL))completion{
     FIRStorageReference *imageRef = [self.storageRef child:[NSString stringWithFormat:@"avatarImages/%@",[FIRAuth auth].currentUser.uid]];
     
@@ -211,6 +214,7 @@
     
 }
 
+//download avatar image with url
 - (void)downloadImageWithURL:(NSString *)url imageView:(UIImageView *)imageView{
     NSURL *URL = [NSURL URLWithString:url];
     [imageView sd_setImageWithURL:URL placeholderImage:[UIImage imageNamed:@"anon"]];
@@ -246,7 +250,7 @@
     
 }
 
-
+//update progress of plan
 - (void)logPlanProgressWithPlan:(Plan *)plan{
     
     NSNumber *val = [NSNumber numberWithInt:plan.progress.intValue+1];
@@ -261,6 +265,7 @@
     [[[[[self.ref child:@"users"]child:[FIRAuth auth].currentUser.uid]child:@"plans"]child:plan.uid]updateChildValues:updated];
 }
 
+//remove plan from database
 - (void)removePlan:(Plan *)plan{
     
     NSDictionary *dict = @{
