@@ -277,6 +277,8 @@
     [[[[[self.ref child:@"users"]child:[FIRAuth auth].currentUser.uid]child:@"plans"]child:plan.uid]removeValue];
 }
 
+
+//update user information
 - (void)updateBasicInfoWithAge:(NSString *)age height:(NSString *)height weight:(NSString *)weight completion:(void (^)(BOOL))completion{
     
     NSDictionary *updated = @{
